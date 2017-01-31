@@ -15,11 +15,17 @@
                 authorities: []
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/account/reset/finish/reset.finish.html',
                     controller: 'ResetFinishController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('reset');
+                    return $translate.refresh();
+                }]
             }
         });
     }

@@ -1,0 +1,97 @@
+<nav id='cssmenu' role="navigation" role="navigation" ng-switch="vm.isAuthenticated()">
+    <div class="logo">
+        <a href="index.html">javagap </a>
+    </div>
+    <div id="head-mobile"></div>
+    <div class="button"></div>
+    <ul>
+        <li class="active">
+            <a href="#" ng-click="vm.home()">Home</a>
+        </li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Account</a>
+          <ul>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Delete</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Courses</a>
+          <ul>
+              <li><a href="#">Database Programming</a>
+                  <ul>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">MySQL</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">NoSQL</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Liquibase</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">ORM</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">JPA</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Messaging Middleware</a>
+                  <ul>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">JMS</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Active MQ</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Tibco EMS</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Websphere MQ</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">Cloud Development</a>
+                  <ul>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">AWS</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Azzure</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">GAE</a></li>
+                  </ul>
+              </li>
+              <li><a href="#">DevOps</a>
+                  <ul>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Jenkins</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Ansible</a></li>
+                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Chef</a></li>
+                  </ul>
+              </li>
+          </ul>
+        </li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Consulting</a></li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Training</a></li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Blog</a></li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Why JavaGap?</a></li>
+        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">About Us</a></li>
+        <li><a ui-sref="help" ng-click="vm.collapseNavbar()">Help</a></li>
+        <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">Contact Us</a></li>
+
+        <li ng-class="{active: vm.$state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN">
+          <a>Admin</a>
+          <ul>
+            <li ui-sref-active="active">
+              <a ui-sref="user-management" ng-click="vm.collapseNavbar()">User management</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="jhi-metrics" ng-click="vm.collapseNavbar()">Metrics</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="jhi-health" ng-click="vm.collapseNavbar()">Health</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="jhi-configuration" ng-click="vm.collapseNavbar()">Configuration</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="audits" ng-click="vm.collapseNavbar()">Audits</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="logs" ng-click="vm.collapseNavbar()">Logs</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="docs" ng-click="vm.collapseNavbar()">API</a>
+            </li>
+          </ul>
+        </li>
+        <li ui-sref-active="active" ng-switch-when="true">
+          <a ng-click="vm.logout()">Sign out</a>
+        </li>
+        <li ui-sref-active="active" ng-switch-when="false">
+          <a ng-click="vm.login()">Sign in</a>
+        </li>
+        <li ui-sref-active="active" ng-switch-when="false">
+          <a ng-click="vm.register()">Sign Up</a>
+        </li>
+    </ul>
+</nav>
+<script src="content/js/dropdownNavMenu/dropdownNavMenu.js"></script>

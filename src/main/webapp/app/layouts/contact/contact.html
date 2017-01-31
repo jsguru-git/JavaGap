@@ -1,0 +1,111 @@
+<div class="vc_column-inner vc_col-sm-6">
+	<div class="wpb_wrapper">
+		<div style='overflow:hidden;height:700px;width:100%;'>
+			<div id='gmap_canvas' style='height:700px;width:100%;'></div>
+			<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+		</div> 
+		<a href='https://www.add-map.net/'>google maps html widget</a>
+		<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=cdc9117a76dc37c7dbc5a7165508ebde61caf27a'>			
+		</script>
+		<script type='text/javascript'>
+			function init_map(){var myOptions = {zoom:17,center:new google.maps.LatLng(40.71208499999999,-74.00727),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(40.71208499999999,-74.00727)});infowindow = new google.maps.InfoWindow({content:'<strong>Google Map</strong><br>43 Park Row<br>NY 10038 NEW YORK<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}/*google.maps.event.addDomListener(window, 'load', init_map);*/$(function() {init_map();});
+		</script>
+	</div>
+</div>
+<div class="vc_column-inner vc_col-sm-6">
+	<div class="wpb_wrapper">
+		<div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1475672850216">
+			<div class="wpb_column vc_col-xs-6">
+				<div class="vc_column-inner ">
+					<div class="wpb_wrapper">
+						<div class="wpb_text_column wpb_content_element ">
+							<div class="wpb_wrapper">
+								<h4>Address:</h4>
+							</div>
+						</div>
+
+						<div class="wpb_text_column wpb_content_element  vc_custom_1475672836573">
+							<div class="wpb_wrapper">
+								<p>43 Park Row<br>NEW YORK, NY 10038</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wpb_column vc_col-xs-6">
+				<div class="vc_column-inner ">
+					<div class="wpb_wrapper">
+						<div class="wpb_text_column wpb_content_element ">
+							<div class="wpb_wrapper">
+								<h4>Phone:</h4>
+							</div>
+						</div>
+
+						<div class="wpb_text_column wpb_content_element  vc_custom_1475672841892">
+							<div class="wpb_wrapper">
+								<p>+1-951-365-2811<br>+1-858-435-8184</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="vc_row wpb_row vc_inner vc_row-fluid">
+			<div class="wpb_column vc_column_container col-sm-12">
+				<div class="vc_column-inner ">
+					<div class="wpb_wrapper">
+						<div class="wpb_text_column wpb_content_element ">
+							<div class="wpb_wrapper">
+								<h4>Contact Form:</h4>
+							</div>
+						</div>
+
+						<div class="wpb_text_column wpb_content_element  vc_custom_1475673035631">
+							<div class="wpb_wrapper">
+								<div role="form" class="wpcf7" id="wpcf7-f4-o1" dir="ltr" lang="en-US">
+									<div class="screen-reader-response"></div>
+									<form action="#" method="post" class="wpcf7-form" novalidate="novalidate">
+										<div style="display: none;">
+											<input name="_wpcf7" value="4" type="hidden">
+											<input name="_wpcf7_version" value="4.5.1" type="hidden">
+											<input name="_wpcf7_locale" value="en_US" type="hidden">
+											<input name="_wpcf7_unit_tag" value="wpcf7-f4-o1" type="hidden">
+											<input name="_wpnonce" value="e9f93c691d" type="hidden">
+										</div>
+										<p>
+											<div class="form-group">
+												<input name="your-name" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" type="text">
+											</div>
+											<div class="form-group">
+												<input name="email" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" type="email">
+											</div>
+											<div class="form-group">
+												<input name="phone" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Phone" type="text">
+											</div>
+											<div class="form-group">
+												<input name="budget" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Project Budget" type="text">
+											</div>
+											<div class="form-group">
+												<input name="special-request" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Special Requests" type="text">
+											</div>
+											<div class="form-group">
+												<input name="message" value="" size="40" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your Message" type="text">
+											</div>
+											<button class="wpcf7-form-control wpcf7-submit form-button special big" type="submit">
+												SUBMIT
+											</button>
+											<img class="ajax-loader" src="../content/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
+										</p>
+										<div class="wpcf7-response-output wpcf7-display-none">
+											
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

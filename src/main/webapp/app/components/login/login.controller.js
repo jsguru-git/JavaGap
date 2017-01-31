@@ -5,9 +5,9 @@
         .module('javagapApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance'];
+    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance', 'RegisterformService'];
 
-    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance) {
+    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance, RegisterformService) {
         var vm = this;
 
         vm.authenticationError = false;
@@ -62,7 +62,8 @@
 
         function register () {
             $uibModalInstance.dismiss('cancel');
-            $state.go('register');
+            // $state.go('register');
+            RegisterformService.open();
         }
 
         function requestResetPassword () {

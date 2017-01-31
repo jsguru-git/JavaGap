@@ -5,9 +5,9 @@
         .module('javagapApp')
         .controller('SettingsController', SettingsController);
 
-    SettingsController.$inject = ['Principal', 'Auth'];
+    SettingsController.$inject = ['Principal', 'Auth', 'JhiLanguageService', '$translate'];
 
-    function SettingsController (Principal, Auth) {
+    function SettingsController (Principal, Auth, JhiLanguageService, $translate) {
         var vm = this;
 
         vm.error = null;
@@ -39,6 +39,11 @@
                 vm.success = 'OK';
                 Principal.identity(true).then(function(account) {
                     vm.settingsAccount = copyAccount(account);
+                });
+                JhiLanguageService.getCurrent().then(function(current) {
+                    if (vm.settingsAccount.langKey !== current) {
+                        $translate.use(vm.settingsAccount.langKey);
+                    }
                 });
             }).catch(function() {
                 vm.success = null;

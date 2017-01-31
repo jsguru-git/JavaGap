@@ -13,12 +13,17 @@
             url: '/docs',
             data: {
                 authorities: ['ROLE_ADMIN'],
-                pageTitle: 'API'
+                pageTitle: 'global.menu.admin.apidocs'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/admin/docs/docs.html'
                 }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', function ($translate) {
+                    return $translate.refresh();
+                }]
             }
         });
     }

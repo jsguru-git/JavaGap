@@ -824,7 +824,7 @@ function arrayRemove(array, value) {
  * * If `source` is identical to `destination` an exception will be thrown.
  *
  * <br />
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  *   Only enumerable properties are taken into account. Non-enumerable properties (both on `source`
  *   and on `destination`) will be ignored.
  * </div>
@@ -1679,12 +1679,12 @@ function angularInit(element, bootstrap) {
  * each of the subsequent scripts. This prevents strange results in applications, where otherwise
  * multiple instances of Angular try to work on the DOM.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** Protractor based end-to-end tests cannot use this function to bootstrap manually.
  * They must use {@link ng.directive:ngApp ngApp}.
  * </div>
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** Do not bootstrap the app on an element with a directive that uses {@link ng.$compile#transclusion transclusion},
  * such as {@link ng.ngIf `ngIf`}, {@link ng.ngInclude `ngInclude`} and {@link ngRoute.ngView `ngView`}.
  * Doing this misplaces the app {@link ng.$rootElement `$rootElement`} and the app's {@link auto.$injector injector},
@@ -2236,7 +2236,7 @@ function setupModuleLoader(window) {
            * @description
            * See {@link ng.$filterProvider#register $filterProvider.register()}.
            *
-           * <div class="alert alert-warning">
+           * <div class="alert alert-warning-custom">
            * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
            * Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
            * your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
@@ -2713,7 +2713,7 @@ function publishExternalAPI(angular) {
  * <div class="alert alert-info">**Note:** All element references in Angular are always wrapped with jQuery or
  * jqLite (such as the element argument in a directive's compile / link function). They are never raw DOM references.</div>
  *
- * <div class="alert alert-warning">**Note:** Keep in mind that this function will not find elements
+ * <div class="alert alert-warning-custom">**Note:** Keep in mind that this function will not find elements
  * by tag name / CSS selector. For lookups by tag name, try instead `angular.element(document).find(...)`
  * or `$document.find()`, or use the standard DOM APIs, e.g. `document.querySelectorAll()`.</div>
  *
@@ -4816,7 +4816,7 @@ function $AnchorScrollProvider() {
    *   their height and/or positioning according to the viewport's size.
    *
    * <br />
-   * <div class="alert alert-warning">
+   * <div class="alert alert-warning-custom">
    * In order for `yOffset` to work properly, scrolling should take place on the document's root and
    * not some child element.
    * </div>
@@ -6719,7 +6719,7 @@ function $TemplateCacheProvider() {
  * The compilation is a process of walking the DOM tree and matching DOM elements to
  * {@link ng.$compileProvider#directive directives}.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** This document is an in-depth reference of all directive options.
  * For a gentle introduction to directives with examples of common use cases,
  * see the {@link guide/directive directive guide}.
@@ -6777,7 +6777,7 @@ function $TemplateCacheProvider() {
  *   });
  * ```
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** Any unspecified options will use the default value. You can see the default values below.
  * </div>
  *
@@ -7050,7 +7050,7 @@ function $TemplateCacheProvider() {
  * `$onInit`, which is called after all the controllers on an element have been constructed and had their bindings
  * initialized.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Deprecation warning:** although bindings for non-ES6 class controllers are currently
  * bound to `this` before the controller constructor is called, this use is now deprecated. Please place initialization
  * code that relies upon bindings inside a `$onInit` method on the controller, instead.
@@ -7219,14 +7219,14 @@ function $TemplateCacheProvider() {
  *
  *   * `transclude` -  [*DEPRECATED*!] A transclude linking function: `function(scope, cloneLinkingFn)`
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** The template instance and the link instance may be different objects if the template has
  * been cloned. For this reason it is **not** safe to do anything other than DOM transformations that
  * apply to all cloned DOM nodes within the compile function. Specifically, DOM listener registration
  * should be done in a linking function rather than in a compile function.
  * </div>
 
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** The compile function cannot handle directives that recursively use themselves in their
  * own templates or compile functions. Compiling these directives results in an infinite loop and
  * stack overflow errors.
@@ -7324,7 +7324,7 @@ function $TemplateCacheProvider() {
  * This makes it possible for the widget to have private state for its template, while the transcluded
  * content has access to its originating scope.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** When testing an element transclude directive you must not place the directive at the root of the
  * DOM fragment that is being compiled. See {@link guide/unit-testing#testing-transclusion-directives
  * Testing Transclusion Directives}.
@@ -7488,7 +7488,7 @@ function $TemplateCacheProvider() {
  *
  * ## Example
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note**: Typically directives are registered with `module.directive`. The example below is
  * to illustrate how `$compile` works.
  * </div>
@@ -11045,7 +11045,7 @@ function $HttpProvider() {
      * the transformed value (`function(data, headersGetter, status)`) or an array of such transformation functions,
      * which allows you to `push` or `unshift` a new transformation function into the transformation chain.
      *
-     * <div class="alert alert-warning">
+     * <div class="alert alert-warning-custom">
      * **Note:** Angular does not make a copy of the `data` parameter before it is passed into the `transformRequest` pipeline.
      * That means changes to the properties of `data` are not local to the transform function (since Javascript passes objects by reference).
      * For example, when calling `$http.get(url, $scope.myObject)`, modifications to the object's properties in a transformRequest
@@ -12501,7 +12501,7 @@ function $IntervalProvider() {
       * move forward by `millis` milliseconds and trigger any functions scheduled to run in that
       * time.
       *
-      * <div class="alert alert-warning">
+      * <div class="alert alert-warning-custom">
       * **Note**: Intervals created by this service must be explicitly destroyed when you are finished
       * with them.  In particular they are not automatically destroyed when a controller's scope or a
       * directive's element are destroyed.
@@ -18327,7 +18327,7 @@ function $SceDelegateProvider() {
    *    Follow {@link ng.$sce#resourceUrlPatternItem this link} for a description of the items
    *    allowed in this array.
    *
-   *    <div class="alert alert-warning">
+   *    <div class="alert alert-warning-custom">
    *    **Note:** an empty whitelist array will block all URLs!
    *    </div>
    *
@@ -19869,7 +19869,7 @@ function $$CookieReaderProvider() {
  * Dependency Injected. To achieve this a filter definition consists of a factory function which is
  * annotated with dependencies and is responsible for creating a filter function.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
  * Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
  * your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
@@ -19958,7 +19958,7 @@ function $FilterProvider($provide) {
    * @param {string|Object} name Name of the filter function, or an object map of filters where
    *    the keys are the filter names and the values are the filter factories.
    *
-   *    <div class="alert alert-warning">
+   *    <div class="alert alert-warning-custom">
    *    **Note:** Filter names must be valid angular {@link expression} identifiers, such as `uppercase` or `orderBy`.
    *    Names with special characters, such as hyphens and dots, are not allowed. If you wish to namespace
    *    your filters, then you can use capitalization (`myappSubsectionFilterx`) or underscores
@@ -22123,7 +22123,7 @@ var htmlAnchorDirective = valueFn({
  * A special directive is necessary because we cannot use interpolation inside the `selected`
  * attribute. See the {@link guide/interpolation interpolation guide} for more info.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  *   **Note:** `ngSelected` does not interact with the `select` and `ngModel` directives, it only
  *   sets the `selected` attribute on the element. If you are using `ngModel` on the select, you
  *   should not use `ngSelected` on the options, as `ngModel` will set the select value and
@@ -23504,7 +23504,7 @@ var inputType = {
    * Text input with number validation and transformation. Sets the `number` validation
    * error if not a valid number.
    *
-   * <div class="alert alert-warning">
+   * <div class="alert alert-warning-custom">
    * The model must always be of type `number` otherwise Angular will throw an error.
    * Be aware that a string containing a number is not enough. See the {@link ngModel:numfmt}
    * error docs for more information and an example of how to convert your model if necessary.
@@ -23614,7 +23614,7 @@ var inputType = {
    * Text input with URL validation. Sets the `url` validation error key if the content is not a
    * valid URL.
    *
-   * <div class="alert alert-warning">
+   * <div class="alert alert-warning-custom">
    * **Note:** `input[url]` uses a regex to validate urls that is derived from the regex
    * used in Chromium. If you need stricter validation, you can use `ng-pattern` or modify
    * the built-in validators (see the {@link guide/forms Forms guide})
@@ -23713,7 +23713,7 @@ var inputType = {
    * Text input with email validation. Sets the `email` validation error key if not a valid email
    * address.
    *
-   * <div class="alert alert-warning">
+   * <div class="alert alert-warning-custom">
    * **Note:** `input[email]` uses a regex to validate email addresses that is derived from the regex
    * used in Chromium. If you need stricter validation (e.g. requiring a top-level domain), you can
    * use `ng-pattern` or modify the built-in validators (see the {@link guide/forms Forms guide})
@@ -24411,7 +24411,7 @@ function checkboxInputType(scope, element, attr, ctrl, $sniffer, $browser, $filt
  * input state control, and validation.
  * Input control follows HTML5 input types and polyfills the HTML5 validation behavior for older browsers.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** Not every feature offered is available for all input types.
  * Specifically, data binding and event handling via `ng-model` is unsupported for `input[file]`.
  * </div>
@@ -26146,7 +26146,7 @@ forEach(
  * server and reloading the current page), but only if the form does not contain `action`,
  * `data-action`, or `x-action` attributes.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Warning:** Be careful not to cause "double-submission" by using both the `ngClick` and
  * `ngSubmit` handlers together. See the
  * {@link form#submitting-a-form-and-preventing-the-default-action `form` directive documentation}
@@ -26467,7 +26467,7 @@ var ngIfDirective = ['$animate', '$compile', function($animate, $compile) {
  * @param {string} ngInclude|src angular expression evaluating to URL. If the source is a string constant,
  *                 make sure you wrap it in **single** quotes, e.g. `src="'myPartialTemplate.html'"`.
  * @param {string=} onload Expression to evaluate when a new partial is loaded.
- *                  <div class="alert alert-warning">
+ *                  <div class="alert alert-warning-custom">
  *                  **Note:** When using onload on SVG elements in IE11, the browser will try to call
  *                  a function with the name on the window element, which will usually throw a
  *                  "function is undefined" error. To fix this, you can instead use `data-onload` or a
@@ -26753,7 +26753,7 @@ var ngIncludeFillContentDirective = ['$compile',
  * rather than `ngInit` to initialize values on a scope.
  * </div>
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note**: If you have assignment in `ngInit` along with a {@link ng.$filter `filter`}, make
  * sure you have parentheses to ensure correct operator precedence:
  * <pre class="prettyprint">
@@ -28457,7 +28457,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  *
  * ### `select` **`as`** and **`track by`**
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * Be careful when using `select` **`as`** and **`track by`** in the same expression.
  * </div>
  *
@@ -29457,7 +29457,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', '$log', function($locale,
  *    </div>
  * ```
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * **Note:** `track by` must always be the last expression:
  * </div>
  * ```
@@ -30926,7 +30926,7 @@ var SelectController =
  * the content of the `value` attribute or the textContent of the `<option>`, if the value attribute is missing.
  * If you want dynamic value attributes, you can use interpolation inside the value attribute.
  *
- * <div class="alert alert-warning">
+ * <div class="alert alert-warning-custom">
  * Note that the value of a `select` directive used without `ngOptions` is always a string.
  * When the model needs to be bound to a non-string value, you must either explicitly convert it
  * using a directive (see example below) or use `ngOptions` to specify the set of options.

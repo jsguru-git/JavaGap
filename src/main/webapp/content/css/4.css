@@ -1,0 +1,14 @@
+h2, .megamenu h2 {
+    font-family: "Open Sans";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 44px;
+    opacity: 1;
+    transition: opacity 0.24s ease-in-out 0s;
+    visibility: visible;
+}
+
+.light_scheme h2 {
+    color: #2a2a2a;
+}

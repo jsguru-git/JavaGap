@@ -4,6 +4,8 @@
     angular
         .module('javagapApp', [
             'ngStorage',
+            'tmh.dynamicLocale',
+            'pascalprecht.translate',
             'ngResource',
             'ngCookies',
             'ngAria',
@@ -18,9 +20,10 @@
         ])
         .run(run);
 
-    run.$inject = ['stateHandler'];
+    run.$inject = ['stateHandler', 'translationHandler'];
 
-    function run(stateHandler) {
+    function run(stateHandler, translationHandler) {
         stateHandler.initialize();
+        translationHandler.initialize();
     }
 })();

@@ -14,9 +14,9 @@
             this.toast = isToast;
         };
 
-        getService.$inject = ['$timeout', '$sce'];
+        getService.$inject = ['$timeout', '$sce', '$translate'];
 
-        function getService ($timeout, $sce) {
+        function getService ($timeout, $sce,$translate) {
             var toast = this.toast,
                 alertId = 0, // unique id for each alert. Starts from 0.
                 alerts = [],
@@ -113,6 +113,7 @@
 
             function addAlert(alertOptions, extAlerts) {
                 alertOptions.alertId = alertId++;
+                alertOptions.msg = $translate.instant(alertOptions.msg, alertOptions.params);
                 var that = this;
                 var alert = this.factory(alertOptions);
                 if (alertOptions.timeout && alertOptions.timeout > 0) {

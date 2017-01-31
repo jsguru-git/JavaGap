@@ -13,7 +13,7 @@
             url: '/register',
             data: {
                 authorities: [],
-                pageTitle: 'Registration'
+                pageTitle: 'register.title'
             },
             views: {
                 'content@': {
@@ -21,6 +21,12 @@
                     controller: 'RegisterController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('register');
+                    return $translate.refresh();
+                }]
             }
         });
     }

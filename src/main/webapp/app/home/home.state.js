@@ -20,6 +20,12 @@
                     controller: 'HomeController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                    $translatePartialLoader.addPart('home');
+                    return $translate.refresh();
+                }]
             }
         });
     }

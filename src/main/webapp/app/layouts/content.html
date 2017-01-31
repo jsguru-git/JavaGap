@@ -1,0 +1,31 @@
+<header id="header" ui-view="header">
+    <!-- Angular views -->
+</header>
+<div class="wrapper">
+    <section id="content">
+        <div class="inner" ui-view="content">
+            <!-- Angular views -->
+        </div>
+    </section>
+</div>
+<footer id="footer" ui-view="footer" ng-cloak>
+    <!-- Angular views -->
+</footer>
+<script type="text/javascript">
+	$(function() {
+        global.is_front_page = 'false';
+		var $header = $('#header');
+		if($header.hasClass('with-banner'))
+			$header.removeClass('with-banner');
+		if($header.hasClass('alt'))
+			$header.removeClass('alt');
+        $('.scrolly').scrolly(); 
+        // $('#page-wrapper').on('click', function (e) {
+        //     var body = $('body');
+        //     if(body.hasClass("is-menu-visible")){
+        //         body.removeClass("is-menu-visible");
+        //     }else{
+        //     }
+        // });
+	});
+</script>

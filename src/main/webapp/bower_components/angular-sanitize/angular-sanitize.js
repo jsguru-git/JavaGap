@@ -177,7 +177,7 @@ function $SanitizeProvider() {
    * @description
    * Enables a subset of svg to be supported by the sanitizer.
    *
-   * <div class="alert alert-warning">
+   * <div class="alert alert-warning-custom">
    *   <p>By enabling this setting without taking other precautions, you might expose your
    *   application to click-hijacking attacks. In these attacks, sanitized svg elements could be positioned
    *   outside of the containing element and be rendered over other elements on the page (e.g. a login

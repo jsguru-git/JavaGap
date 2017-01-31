@@ -5,9 +5,9 @@
         .module('javagapApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'Auth', 'Principal', 'ProfileService', 'LoginService'];
+    NavbarController.$inject = ['$state', '$window', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RegisterformService'];
 
-    function NavbarController ($state, Auth, Principal, ProfileService, LoginService) {
+    function NavbarController ($state, $window, Auth, Principal, ProfileService, LoginService, RegisterformService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -18,21 +18,40 @@
             vm.swaggerEnabled = response.swaggerEnabled;
         });
 
+        vm.home = home;
         vm.login = login;
         vm.logout = logout;
+        vm.register = register;
+        
+        vm.contactUs = contactUs;
+
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;
         vm.$state = $state;
 
-        function login() {
+        function home() {
             collapseNavbar();
+            $window.location.href = '';
+        }
+
+        function login() {
             LoginService.open();
         }
 
         function logout() {
             collapseNavbar();
             Auth.logout();
-            $state.go('home');
+            $state.go('app');
+        }
+
+        function register() {
+            RegisterformService.open();
+        }
+
+        function contactUs() {
+            if(global.is_front_page === 'false') {
+                $window.location.href = '#contact';
+            }
         }
 
         function toggleNavbar() {
@@ -41,6 +60,7 @@
 
         function collapseNavbar() {
             vm.isNavbarCollapsed = true;
+            $('html, body').animate({scrollTop: 0}, 0);
         }
     }
 })();

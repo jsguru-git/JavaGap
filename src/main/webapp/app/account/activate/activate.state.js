@@ -13,14 +13,20 @@
             url: '/activate?key',
             data: {
                 authorities: [],
-                pageTitle: 'Activation'
+                pageTitle: 'activate.title'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/account/activate/activate.html',
                     controller: 'ActivationController',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('activate');
+                    return $translate.refresh();
+                }]
             }
         });
     }

@@ -1,0 +1,58 @@
+<div class="site-content-contain">
+	<div id="course" class="site-content">
+		<div class="wrap">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
+					<article id="post-2" class="post-2 page type-page status-publish hentry">
+						<div class="entry-content">
+
+						</div><!-- .entry-content -->
+					</article><!-- #post-## -->
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div><!-- .wrap -->
+	</div><!-- #content -->
+</div>
+
+<script type="text/javascript">
+	var content = '<div class="wpb_animate_when_almost_visible wpb_fadeInRight fadeInRight wpb_column vc_column_container vc_col-md-3 vc_col-sm-6 wpb_start_animation animated">'+
+				'<div class="vc_column-inner ">'+
+					'<div class="wpb_wrapper wpb_wrapper_back_white">'+
+						'<div class="wpb_images_carousel wpb_content_element vc_clearfix">'+
+							'<div class="wpb_wrapper">'+
+								'<div id="vc_images-carousel-4-1485458875" data-ride="vc_carousel" data-wrap="false" style="width: inherit;" data-interval="0" data-auto-height="yes" data-mode="horizontal" data-partial="false" data-per-view="1" data-hide-on-end="true" class="vc_slide vc_images_carousel vc_build">'+
+									'<!-- Wrapper for slides -->'+
+									'<div class="vc_carousel-inner">'+
+										'<div style="width: inherit;" class="vc_carousel-slideline">'+
+											'<div class="vc_carousel-slideline-inner">'+
+												'<div style="width: 100%; height: 156px;" class="vc_item vc_active">'+
+													'<div class="vc_inner">'+
+														'<a class="prettyphoto" href="content/images/content.jpeg" data-rel="prettyPhoto[rel-2-938775935]">'+
+															'<img src="content/images/content.jpeg" class="attachment-thumbnail" alt="" sizes="100vw" width="inherit" height="150">'+
+														'</a>'+
+													'</div>'+
+												'</div>'+
+											'</div>'+
+										'</div>'+
+									'</div>'+
+								'</div>'+
+							'</div>'+
+						'</div>'+
+						'<div class="wpb_text_column wpb_content_element ">'+
+							'<div class="wpb_wrapper">'+
+								'<p>I am text block. Click edit button to change this text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>'+
+							'</div>'+
+						'</div>'+
+					'</div>'+
+				'</div>'+
+			'</div>';
+	$(function() {
+		var i, j;
+		for(i = 0; i < 3; i++) {
+			$('article > .entry-content').append('<div class="vc_row vc_row_' + i + ' wpb_row vc_row-fluid">');
+			for(j = 0; j < 4; j++) {
+				$('article > .entry-content > .vc_row_' + i).append(content);	
+			}
+		}
+	});	
+</script>

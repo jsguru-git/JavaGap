@@ -5,10 +5,10 @@
         .module('javagapApp')
         .factory('stateHandler', stateHandler);
 
-    stateHandler.$inject = ['$rootScope', '$state', '$sessionStorage',  '$window',
+    stateHandler.$inject = ['$rootScope', '$state', '$sessionStorage', '$translate', 'JhiLanguageService', 'translationHandler', '$window',
         'Auth', 'Principal', 'VERSION'];
 
-    function stateHandler($rootScope, $state, $sessionStorage,  $window,
+    function stateHandler($rootScope, $state, $sessionStorage, $translate, JhiLanguageService, translationHandler, $window,
         Auth, Principal, VERSION) {
         return {
             initialize: initialize
@@ -32,16 +32,20 @@
                     Auth.authorize();
                 }
 
+                // Update the language
+                JhiLanguageService.getCurrent().then(function (language) {
+                    $translate.use(language);
+                });
             });
 
             var stateChangeSuccess = $rootScope.$on('$stateChangeSuccess',  function(event, toState, toParams, fromState, fromParams) {
-                var titleKey = 'javagap' ;
+                var titleKey = 'global.title' ;
 
                 // Set the page title key to the one configured in state or use default one
                 if (toState.data.pageTitle) {
                     titleKey = toState.data.pageTitle;
                 }
-                $window.document.title = titleKey;
+                translationHandler.updateTitle(titleKey);
             });
 
             $rootScope.$on('$destroy', function () {

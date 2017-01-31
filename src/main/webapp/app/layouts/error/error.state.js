@@ -14,12 +14,18 @@
                 url: '/error',
                 data: {
                     authorities: [],
-                    pageTitle: 'Error page!'
+                    pageTitle: 'error.title'
                 },
                 views: {
                     'content@': {
                         templateUrl: 'app/layouts/error/error.html'
                     }
+                },
+                resolve: {
+                    mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('error');
+                        return $translate.refresh();
+                    }]
                 }
             })
             .state('accessdenied', {
@@ -32,6 +38,12 @@
                     'content@': {
                         templateUrl: 'app/layouts/error/accessdenied.html'
                     }
+                },
+                resolve: {
+                    mainTranslatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                        $translatePartialLoader.addPart('error');
+                        return $translate.refresh();
+                    }]
                 }
             });
     }
