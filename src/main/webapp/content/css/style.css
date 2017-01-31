@@ -671,7 +671,7 @@ p {
 
 }
 
-input {
+input, textarea {
     border: 1px solid #dadbd8;
     color: rgba(0, 0, 0, 0.87);
     font-size: 15px;
