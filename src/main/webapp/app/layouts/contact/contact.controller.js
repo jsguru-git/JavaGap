@@ -9,9 +9,8 @@
 
     function ContactController (RegisterformService) {
         var vm = this;
-
         vm.isNavbarCollapsed = true;
-        
+
         vm.register = register;
         vm.toggleNavbar = toggleNavbar;
         vm.collapseNavbar = collapseNavbar;

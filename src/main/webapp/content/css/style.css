@@ -786,11 +786,150 @@ section header.major {
     padding: 6em 0 3em; 
 }
 
+.light_scheme {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #86939e;
+}
+
+.light_scheme h1, h3, h4 {
+    letter-spacing: 0;
+}
+
+.light_scheme h1, h4 {
+    color: #2d2d2d;
+}
+
+.light_scheme h4 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.light_scheme h3 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    color: #333333;
+}
+
+.dark_scheme {
+    font-family: roboto;
+    color: #ffffff;
+}
+
+.dark_scheme h1 {
+    color: inherit;
+    font-size: 55px;
+    letter-spacing: normal;
+}
+
+.jqx-scrollview p {
+    text-align: center;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto!important;
+    font-size: 18px;
+    line-height: 1.7em;
+}
+
+.testimonial_title {
+    color: #FE7E17;
+}
+
+.vc_custom_box {
+    border: 1px solid #aaaaaa;
+    border-radius: 20px;
+    padding: 70px 40px 30px 40px !important;
+}
+
+.light_scheme h2 {
+    color: #43484d;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 32px;
+    font-style: normal;
+}
+
+.light_scheme h5 {
+    font-family: Roboto;
+    line-height: 25px;
+    font-weight: 600;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.vc_custom_footer {
+    font-size: 10px;
+    color: #358ed7;
+    line-height: 10;
+    text-align: center;
+    font-family:Montserrat;
+    font-weight:700;
+    font-style:normal;
+    margin-top: -45px;
+}
+
+.photo {
+    width: 100%;
+    height: 300px;
+    background-color: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.vc_parallax .jqx-scrollview {
+    background-color: inherit;
+}
+
+.testimonials-background {
+    height: 100%;
+    background-image: url('../images/testimonials-bg.jpg') !important;
+    background-attachment: fixed !important;
+    background-position: 0 40% !important;
+    
+}
+
+.outline.icon:before {
+    font-family: outline;
+}
+
+#services {
+    background: url('../images/services_bg.jpg');
+}
+
+input.empty, textarea.empty {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+}
+
 @media (min-width: 700px) {
   .modal-dialog {
     width: 400px;
   }
 }
+/* jqwidget customize */
+.jqx-fill-state-normal {
+    border: 1px solid #fe7e17;
+    background: #000000;
+}
+
+.jqx-fill-state-pressed {
+    background: #fe7e17;
+    border: 1px solid #fe7e17;
+}
+
+.jqx-scrollview-button {
+    width: 8px;
+    height: 8px;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    margin: 5px;
+}
+
 /* dropdownNavMenu-css customize */
 nav {
     width: 100%;

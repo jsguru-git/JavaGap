@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <!-- endinject -->
+    <link rel="stylesheet" href="content/css/jqwidgets/jqx.base.css" />
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
@@ -22,14 +23,14 @@
     <link rel="stylesheet" href="content/css/visualComposer/style.css" />
     <link rel="stylesheet" href="content/css/visualComposer/js_composer.css" />
     <link rel="stylesheet" href="content/css/hgr-vc-extender-elements.css" />
-    <link rel="stylesheet" href="content/css/custom.css" />
     <link rel="stylesheet" href="content/css/2.css" />
     <link rel="stylesheet" href="content/css/4.css" />
     <!-- end custom css -->
 
     <!-- fonts -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
-    <link rel="stylesheet" href="content/fonts/font-awesome/css/font-awesome.min.css" />              
+    <link rel="stylesheet" href="content/fonts/font-awesome/css/font-awesome.min.css" /> 
+    <link rel="stylesheet" href="content/fonts/outline/css/outline.min.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />    
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' /> 
     <!-- end fonts -->   
@@ -70,6 +71,12 @@
     <!-- endinject -->
     <!-- endbuild -->
 
+    <script src="content/js/jqwidgets/jqxcore.js"></script>
+    <script src="content/js/jqwidgets/jqxscrollview.js"></script>
+    <script src="content/js/jqwidgets/jqxbuttons.js"></script>
+    <script src="content/js/jqwidgets/jqxangular.js"></script>
+    <script src="content/js/jqwidgets/demos.js"></script>
+    
     <!-- build:js app/app.js  -->
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
@@ -93,12 +100,16 @@
     <script src="app/layouts/error/error.state.js"></script>
     <script src="app/layouts/contact/contact.controller.js"></script>
     <script src="app/layouts/banner/banner.controller.js"></script>
+    <script src="app/layouts/services/services.controller.js"></script>
+    <script src="app/layouts/testimonials/testimonials.controller.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/entities/work/work.state.js"></script>
     <script src="app/entities/work/work.controller.js"></script>
     <script src="app/entities/services/services.state.js"></script>
+<!--
     <script src="app/entities/services/services.controller.js"></script>
+-->
     <script src="app/entities/help/help.state.js"></script>
     <script src="app/entities/help/help.controller.js"></script>
     <script src="app/entities/entity.state.js"></script>

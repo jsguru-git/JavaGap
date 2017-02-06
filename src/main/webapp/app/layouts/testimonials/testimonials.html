@@ -1,0 +1,55 @@
+<div class="vc_parallax">
+    <div class="">
+        <div style="padding-top:85px!important; padding-bottom:85px!important;">
+            <div class="vc_row">
+                <div class="vc_col-md-12">
+                    <div class="vc_column-inner">
+                        <div class="wpb_content_element">
+                            <h1 style="text-align: center;">TESTIMONIALS</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="300" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" id="photoGallery">
+            <div>
+                <div class="photo">
+                    <div class="testimonial_text">
+                        <p>{{vm.contents[0].text}}</p>
+                    </div>
+                    <div class="testimonial_title">
+                        <p>{{vm.contents[0].title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="photo">
+                    <div class="testimonial_text">
+                        <p>{{vm.contents[1].text}}</p>
+                    </div>
+                    <div class="testimonial_title">
+                        <p>{{vm.contents[1].title}}</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="photo">
+                    <div class="testimonial_text">
+                        <p>{{vm.contents[2].text}}</p>
+                    </div>
+                    <div class="testimonial_title">
+                        <p>{{vm.contents[2].title}}</p>
+                    </div>
+                </div>
+            </div>
+        </jqx-scroll-view>
+        <!--<div style='margin-top: 20px;'>
+            <br />
+            <div>
+                <jqx-button jqx-on-click="vm.start()">Start Slideshow</jqx-button>
+                <jqx-button jqx-on-click="vm.stop()">Stop Slideshow</jqx-button>
+            </div>
+        </div>-->
+    </div>
+    <div class="vc_parallax-inner parallax testimonials-background"></div>
+</div>
