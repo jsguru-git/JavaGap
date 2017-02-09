@@ -1,54 +1,3 @@
-/*
-Theme Name: Navy
-Theme URI: http://www.highgradelab.com/navy/
-Author: HighGrade
-Author URI: http://highgradelab.com
-Description: Navy is a flexible multi-purpose WordPress theme. It comes with 12 different flavors, with ready-build demos.
-Version: 1.0
-License: Commercial
-License URI: http://themeforest.net
-Tags: one-column, two-columns, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, post-formats, theme-options, translation-ready
-Text Domain: navy
-Domain Path: /languages
-*/
-
-
-
-/*--------------------------------------------------
-[Table of contents]
-1. Reset
-2. General rules
-3. Bootstrap overrides
-4. Visual Composer overrides
-5. Contact Form 7 Overides
-6. Body
-	6.1. Preloader
-	6.2. Header
-		6.2.1. Navbar
-		6.2.2. Fixed Navbar
-	6.3. Content
-		6.3.1. Main column
-			6.3.1.1. Testimonials
-			6.3.1.2. Isotope filtering
-			6.3.1.3. Portfolio
-	6.4. Contact Section
-	6.5. Footer
-	6.6. Effects
-7. Blog Section
-	7.1. Header Section
-	7.2. Images & Media
-	7.3. Sidebar
-		7.3.1. Widgets
-	7.4. Forms (Search, Post password)
-	7.5. Comments
-	7.6. Navigation
-	7.7. Post formats
-8. Other
-9. WooCommerce
-10.Custom Code
-------------------------------------------------- */
-
-
 
 /* 1. Reset +++++++++++++++++++++++++++++++++++++++++++++++++++ */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
@@ -587,7 +536,7 @@ a:hover {
 	border-color: transparent!important;
 }
 .navbar-brand {
-	padding: 0!important;
+	/*padding: 0!important;*/
 }
 a.navbar-brand {
 	height:100%;
@@ -629,7 +578,7 @@ ul.nav a.active{}
 
 .dropdown-menu{
 	list-style:none!important;
-	padding:0!important;
+	/*padding:0!important;*/
 }
 .dropdown-menu, .megamenu{
 	-webkit-box-shadow: 0 22px 40px rgba(0, 0, 0, 0.15);

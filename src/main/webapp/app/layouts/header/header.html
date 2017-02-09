@@ -1,97 +1,167 @@
-<nav id='cssmenu' role="navigation" role="navigation" ng-switch="vm.isAuthenticated()">
-    <div class="logo">
-        <a href="index.html">javagap </a>
-    </div>
-    <div id="head-mobile"></div>
-    <div class="button"></div>
-    <ul>
-        <li class="active">
-            <a href="#" ng-click="vm.home()">Home</a>
-        </li>
-        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Account</a>
-          <ul>
-            <li><a href="#">Edit</a></li>
-            <li><a href="#">Delete</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Courses</a>
-          <ul>
-              <li><a href="#">Database Programming</a>
-                  <ul>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">MySQL</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">NoSQL</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Liquibase</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">ORM</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">JPA</a></li>
-                  </ul>
-              </li>
-              <li><a href="#">Messaging Middleware</a>
-                  <ul>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">JMS</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Active MQ</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Tibco EMS</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Websphere MQ</a></li>
-                  </ul>
-              </li>
-              <li><a href="#">Cloud Development</a>
-                  <ul>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">AWS</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Azzure</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">GAE</a></li>
-                  </ul>
-              </li>
-              <li><a href="#">DevOps</a>
-                  <ul>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Jenkins</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Ansible</a></li>
-                      <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Chef</a></li>
-                  </ul>
-              </li>
-          </ul>
-        </li>
-        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Consulting</a></li>
-        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Training</a></li>
-        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Blog</a></li>
-        <li><a ui-sref="about" ng-click="vm.collapseNavbar()">Why JavaGap?</a></li>
-        <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">About Us</a></li>
-        <li><a ui-sref="help" ng-click="vm.collapseNavbar()">Help</a></li>
-        <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">Contact Us</a></li>
+<nav class="navbar navbar-default navbar-static-top" ng-switch="vm.isAuthenticated()">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">JAVAGAP</a>
+        </div>
+        <div class="navbar-collapse collapse" style="float: right;">
+      <ul class="nav navbar-nav">
+      <li><a href="#" ng-click="vm.home()">HOME</a></li>
+      <li class="dropdown menu-large">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
+        <ul class="dropdown-menu normalmenu row">
+            <li><a>Edit</a></li>
+            <li><a>Delete</a></li>
+        </ul>
+      </li>
 
-        <li ng-class="{active: vm.$state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN">
-          <a>Admin</a>
-          <ul>
+      <li class="dropdown menu-large">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>       
+        <ul class="dropdown-menu megamenu row">
+          <li class="col-sm-3">
+            <ul>
+              <li class="dropdown-header">DATABASE PROGRAMMING</li>
+              <li>
+                <a href="#"><i class="icon fa fa-database"></i>MYSQL</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-file-picture-o"></i>NOSQL</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-folder-open-o"></i>LIQUIBASE</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-list-alt"></i>ORM</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-book"></i>JPA</a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-sm-3">
+            <ul>
+              <li class="dropdown-header">MESSAGING MIDDLEWARE</li>
+              <li>
+                <a href="#"><i class="icon fa fa-files-o"></i>JMS</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-tasks"></i>ACTIVE MQ</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-flask"></i>TIBCO EMS</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-table"></i>WEBSPHERE MQ</a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-sm-3">
+            <ul>
+              <li class="dropdown-header">CLOUD DEVELOPMENT</li>
+              <li>
+                <a href="#"><i class="icon fa fa-amazon"></i>AWS</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-university"></i>AZZURE</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-recycle"></i>GAE</a>
+              </li>
+            </ul>
+          </li>
+          <li class="col-sm-3">
+            <ul>
+              <li class="dropdown-header">DEVOPS</li>
+              <li>
+                <a href="#"><i class="icon fa fa-paper-plane"></i>JENKINS</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-codepen"></i>ANSIBLE</a>
+              </li>
+              <li>
+                <a href="#"><i class="icon fa fa-line-chart"></i>CHEF</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown menu-large">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+        <ul class="dropdown-menu normalmenu row">
+            <li><a href="#">CONSULTING</a></li>
+            <li><a href="#">TRAINING</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">WHY JAVAGAP?</a></li>
+            <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
+            <li><a ui-sref="help" ng-click="vm.collapseNavbar()">HELP</a></li>
+            <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">CONTACT US</a></li>
+        </ul>
+      </li>
+      
+      <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
+        <ul class="dropdown-menu normalmenu row">
             <li ui-sref-active="active">
-              <a ui-sref="user-management" ng-click="vm.collapseNavbar()">User management</a>
+                <a ui-sref="user-management" ng-click="vm.collapseNavbar()">User management</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="jhi-metrics" ng-click="vm.collapseNavbar()">Metrics</a>
+                <a ui-sref="jhi-metrics" ng-click="vm.collapseNavbar()">Metrics</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="jhi-health" ng-click="vm.collapseNavbar()">Health</a>
+                <a ui-sref="jhi-health" ng-click="vm.collapseNavbar()">Health</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="jhi-configuration" ng-click="vm.collapseNavbar()">Configuration</a>
+                <a ui-sref="jhi-configuration" ng-click="vm.collapseNavbar()">Configuration</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="audits" ng-click="vm.collapseNavbar()">Audits</a>
+                <a ui-sref="audits" ng-click="vm.collapseNavbar()">Audits</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="logs" ng-click="vm.collapseNavbar()">Logs</a>
+                <a ui-sref="logs" ng-click="vm.collapseNavbar()">Logs</a>
             </li>
             <li ui-sref-active="active">
-              <a ui-sref="docs" ng-click="vm.collapseNavbar()">API</a>
+                <a ui-sref="docs" ng-click="vm.collapseNavbar()">API</a>
             </li>
-          </ul>
-        </li>
-        <li ui-sref-active="active" ng-switch-when="true">
-          <a ng-click="vm.logout()">Sign out</a>
-        </li>
-        <li ui-sref-active="active" ng-switch-when="false">
-          <a ng-click="vm.login()">Sign in</a>
-        </li>
-        <li ui-sref-active="active" ng-switch-when="false">
-          <a ng-click="vm.register()">Sign Up</a>
-        </li>
+        </ul>
+      </li>
+    <li ui-sref-active="active" ng-switch-when="true">
+        <a ng-click="vm.logout()">Sign out</a>
+    </li>
+    <li ui-sref-active="active" ng-switch-when="false">
+        <a ng-click="vm.login()">SIGN IN</a>
+    </li>
+    <li ui-sref-active="active" ng-switch-when="false">
+        <a ng-click="vm.register()">SIGN UP</a></li>
     </ul>
-</nav>
-<script src="content/js/dropdownNavMenu/dropdownNavMenu.js"></script>
+    </div>
+    </nav>
+<script type="text/javascript">
+    // Dropdown Menu Fade       
+    $(document).ready(function(){
+        $(".dropdown").hover(
+            function() { $('.dropdown-menu', this).stop().fadeIn("fast");
+            },
+            function() { $('.dropdown-menu', this).stop().fadeOut("fast");
+        });
+
+        $(".navbar-toggle").on('click', function() {
+          var navbar = $('.navbar-collapse').parents('nav');
+          if(!navbar.hasClass('mobile'))
+            navbar.addClass('mobile');
+          else
+            navbar.removeClass('mobile');
+        });
+    });
+
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+        window.parent.parent.postMessage(["resultsFrame", {
+          height: document.body.getBoundingClientRect().height,
+          slug: "ydcMQ"
+        }], "*")
+    }
+
+</script>

@@ -42,7 +42,8 @@
         function logout() {
             collapseNavbar();
             Auth.logout();
-            $state.go('app');
+            //$state.go('app');
+            $window.location.href = '';
         }
 
         function register() {

@@ -241,10 +241,14 @@ ul.actions.vertical li > * {
 #header a {
     border: 0 none;
     color: inherit;
-    font-size: 0.8em;
+    font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
+}
+
+#header .icon {
+    font-size: 14px;
 }
 
 #banner > video, iframe {
@@ -905,10 +909,69 @@ input.empty, textarea.empty {
     text-decoration: inherit;
 }
 
-@media (min-width: 700px) {
-  .modal-dialog {
-    width: 400px;
-  }
+.navbar {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu {
+    border-top: 2px solid #1b98e0 !important;
+    color: #5c5c5c;
+    left: 10%;
+}
+
+.megamenu {
+    width: 80%;
+    padding-bottom: 40px;
+}
+
+.dropdown-header {
+    padding: 30px 20px 20px;
+}
+
+nav.mobile .navbar-collapse {
+    display: block;
+    width: inherit;
+    background-color: inherit;
+}
+
+.alt nav.mobile .navbar-collapse {
+    background-color: #262d32;
+}
+
+.navbar-brand {
+    font-size: 17px!important;
+}
+@media (max-width: 767px) {
+    .dropdown-menu {
+        position: relative;
+        top: inherit; 
+        float: none;
+    }
+    .normalmenu {
+        width: 80%;
+        left: 10%;
+    }
+    .navbar-collapse {
+        max-height: 100vh;
+        overflow-y: scroll;  
+    }
+}
+
+@media (min-width: 768px) {
+    .modal-dialog {
+        width: 400px;
+    }
+    nav.mobile .navbar-collapse {
+        width: auto;
+        background-color: inherit;
+    }
+    .normalmenu {
+        left: inherit;
+    }
+    .alt nav.mobile .navbar-collapse {
+        background-color: inherit;
+    }
 }
 /* jqwidget customize */
 .jqx-fill-state-normal {

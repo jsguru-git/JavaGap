@@ -5,9 +5,9 @@
         .module('javagapApp')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope', '$state', '$timeout', 'Auth', '$uibModalInstance', 'RegisterformService'];
+    LoginController.$inject = ['$rootScope', '$window', '$state', '$timeout', 'Auth', '$uibModalInstance', 'RegisterformService'];
 
-    function LoginController ($rootScope, $state, $timeout, Auth, $uibModalInstance, RegisterformService) {
+    function LoginController ($rootScope, $window, $state, $timeout, Auth, $uibModalInstance, RegisterformService) {
         var vm = this;
 
         vm.authenticationError = false;
@@ -45,7 +45,6 @@
                     $state.current.name === 'finishReset' || $state.current.name === 'requestReset') {
                     $state.go('home');
                 }
-
                 $rootScope.$broadcast('authenticationSuccess');
 
                 // previousState was set in the authExpiredInterceptor before being redirected to login modal.
@@ -55,6 +54,7 @@
                     Auth.resetPreviousState();
                     $state.go(previousState.name, previousState.params);
                 }
+                $window.location.reload();
             }).catch(function () {
                 vm.authenticationError = true;
             });
