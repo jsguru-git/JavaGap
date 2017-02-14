@@ -3,29 +3,35 @@
 
     angular
         .module('javagapApp')
+        .factory('Contact', Contact)
         .controller('ContactController', ContactController);
 
-    ContactController.$inject = ['RegisterformService'];
+    Contact.$inject = ['$resource'];
 
-    function ContactController (RegisterformService) {
+    function Contact ($resource) {
+        return $resource('api/contactus/:id');
+    }
+
+    ContactController.$inject = ['Contact'];
+
+    function ContactController (Contact) {
         var vm = this;
-        vm.isNavbarCollapsed = true;
 
-        vm.register = register;
-        vm.toggleNavbar = toggleNavbar;
-        vm.collapseNavbar = collapseNavbar;
-        
-        function register() {
-            collapseNavbar();
-            RegisterformService.open();
+        vm.save = save;
+
+        vm.contactInfo = new Contact();
+
+        function onSaveSuccess (result) {
+            alert('contact success');
         }
 
-        function toggleNavbar() {
-            vm.isNavbarCollapsed = !vm.isNavbarCollapsed;
+        function onSaveError () {
+            alert('contact failure');
         }
 
-        function collapseNavbar() {
-            vm.isNavbarCollapsed = true;
+        function save () {
+            Contact.save(vm.contactInfo, onSaveSuccess, onSaveError);
         }
+
     }
 })();

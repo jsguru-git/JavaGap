@@ -12,11 +12,17 @@
 
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
+        vm.identity = Principal.identity;
+        vm.currentAccount = null;
         
         ProfileService.getProfileInfo().then(function(response) {
             vm.inProduction = response.inProduction;
             vm.swaggerEnabled = response.swaggerEnabled;
         });
+
+        /*Principal.identity().then(function(account) {
+            vm.currentAccount = account;
+        });*/
 
         vm.home = home;
         vm.login = login;

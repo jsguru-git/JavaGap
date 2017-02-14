@@ -21,7 +21,9 @@
                     controllerAs: 'vm'
                 },
                 'footer@admin': {
-                    templateUrl: 'app/layouts/footer/footer.html'
+                    templateUrl: 'app/layouts/footer/footer.html',
+                    controller: 'NavbarController',
+                    controllerAs: 'vm'
                 }
             }
         });

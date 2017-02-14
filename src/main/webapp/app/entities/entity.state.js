@@ -22,7 +22,9 @@
                     controllerAs: 'vm'
                 },
                 'footer@entity': {
-                    templateUrl: 'app/layouts/footer/footer.html'
+                    templateUrl: 'app/layouts/footer/footer.html',
+                    controller: 'NavbarController',
+                    controllerAs: 'vm'
                 }
             }
         });

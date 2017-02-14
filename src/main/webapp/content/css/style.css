@@ -272,7 +272,7 @@ ul.actions.vertical li > * {
 .wrapper > * > .inner {
     margin: 0 auto;
     max-width: calc(100% - 4em);
-    width: 70em;
+    width: 90em;
 }
 
 ul.actions.vertical li {
@@ -941,6 +941,22 @@ nav.mobile .navbar-collapse {
 
 .navbar-brand {
     font-size: 17px!important;
+}
+
+.hgr_mc_collector .hgr_mc_email,
+.hgr_mc_collector .hgr_mc_lastname,
+.hgr_mc_collector .hgr_mc_name {
+    background-color: rgba(255,255,255,.7)!important;
+    height: 3em;
+    border: none;
+    padding: 1em;
+    line-height: 1em;
+    width: auto;
+    display: inline-block;
+    color: #000!important;
+    font-size: 14px;
+    font-weight: 300!important;
+    opacity: 1;
 }
 @media (max-width: 767px) {
     .dropdown-menu {

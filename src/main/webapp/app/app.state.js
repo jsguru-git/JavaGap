@@ -55,8 +55,10 @@
                 'aboutUs@app': {
                     templateUrl: 'app/layouts/aboutUs/aboutUs.html'
                 },
-                'wait@app': {
-                    templateUrl: 'app/layouts/wait/wait.html'
+                'join@app': {
+                    templateUrl: 'app/layouts/join/join.html',
+                    controller: 'JoinController',
+                    controllerAs: 'vm'
                 },
                 'contact@app': {
                     templateUrl: 'app/layouts/contact/contact.html',

@@ -11,12 +11,15 @@
     	var vm = this;
         var icons = ["icon outline outline-archery-target", "icon outline outline-search", "icon outline outline-padlock-closed"];
     	var titles = ["Consulting", "Training", "Education"];
+        var hrefs = ["consulting", "training", "education"];
     	var contents = ["Powerfull theme ready for your online shop to rock the online market place.",
     					"Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.",
     					"Short loading time for best user experience and includes everything you need to build something exceptional"];
-    	vm.tiles = buildGridModel({
+    	vm.navTop = navTop;
+        vm.tiles = buildGridModel({
     		icon: "",
-            title : "",
+            title: "",
+            href: "", 
     		content: ""
     	});
 
@@ -26,11 +29,16 @@
         		it = angular.extend({},tileTmpl);
         		it.icon = icons[j];
                 it.title = titles[j];
+                it.href = hrefs[j];
 		        it.content  = contents[j];
 
         		results.push(it);
         	}
         	return results;
+        }
+
+        function navTop() {
+            $('html, body').animate({scrollTop: 0}, 0);
         }
     }
 })();
