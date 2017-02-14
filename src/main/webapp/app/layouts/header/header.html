@@ -160,6 +160,11 @@
           else
             navbar.removeClass('mobile');
         });
+
+        $(".dropdown-menu li").click(
+          function () {
+            $(this).parents(".dropdown-menu").stop().fadeOut("fast");
+          });
     });
 
     // tell the embed parent frame the height of the content

@@ -958,6 +958,14 @@ nav.mobile .navbar-collapse {
     font-weight: 300!important;
     opacity: 1;
 }
+
+.horizontal-align {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    bottom: 10%;
+}
+
 @media (max-width: 767px) {
     .dropdown-menu {
         position: relative;
