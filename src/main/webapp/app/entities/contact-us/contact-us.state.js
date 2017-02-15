@@ -14,11 +14,11 @@
             url: '/contact-us',
             data: {
                 authorities: ['ROLE_USER'],
-                pageTitle: 'Contactuses'
+                pageTitle: 'contactus'
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/entities/contact-us/contactuses.html',
+                    templateUrl: 'app/entities/contact-us/contactus.html',
                     controller: 'ContactUsController',
                     controllerAs: 'vm'
                 }

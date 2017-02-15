@@ -7,7 +7,7 @@
     ContactUs.$inject = ['$resource', 'DateUtils'];
 
     function ContactUs ($resource, DateUtils) {
-        var resourceUrl =  'api/contactuses/:id';
+        var resourceUrl =  'api/contactus/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

@@ -14,9 +14,9 @@ public interface ContactUsMapper {
 
     ContactUsDTO contactUsToContactUsDTO(ContactUs contactUs);
 
-    List<ContactUsDTO> contactusesToContactUsDTOs(List<ContactUs> contactuses);
+    List<ContactUsDTO> contactusToContactUsDTOs(List<ContactUs> contactus);
 
     ContactUs contactUsDTOToContactUs(ContactUsDTO contactUsDTO);
 
-    List<ContactUs> contactUsDTOsToContactuses(List<ContactUsDTO> contactUsDTOs);
+    List<ContactUs> contactUsDTOsTocontactus(List<ContactUsDTO> contactUsDTOs);
 }

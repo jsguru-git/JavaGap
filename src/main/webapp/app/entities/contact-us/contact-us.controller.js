@@ -10,13 +10,13 @@
     function ContactUsController ($scope, $state, ContactUs) {
         var vm = this;
 
-        vm.contactuses = [];
+        vm.contactus = [];
 
         loadAll();
 
         function loadAll() {
             ContactUs.query(function(result) {
-                vm.contactuses = result;
+                vm.contactus = result;
                 vm.searchQuery = null;
             });
         }
