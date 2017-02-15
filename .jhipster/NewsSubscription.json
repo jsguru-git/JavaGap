@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "100"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170215123552",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "news_subscription",
+    "pagination": "no"
+}

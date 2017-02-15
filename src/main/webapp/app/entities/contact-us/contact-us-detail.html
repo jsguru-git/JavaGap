@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Contact Us</span> {{vm.contactUs.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.contactUs.name}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.contactUs.email}}</span>
+        </dd>
+        <dt><span>Phone Number</span></dt>
+        <dd>
+            <span>{{vm.contactUs.phoneNumber}}</span>
+        </dd>
+        <dt><span>Message</span></dt>
+        <dd>
+            <span>{{vm.contactUs.message}}</span>
+        </dd>
+        <dt><span>Created On</span></dt>
+        <dd>
+            <span>{{vm.contactUs.createdOn | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="contact-us-detail.edit({id:vm.contactUs.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
