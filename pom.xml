@@ -410,6 +410,7 @@
         <!-- jhipster-needle-maven-add-dependency -->
     </dependencies>
     <build>
+    	<finalName>javagap</finalName>
         <defaultGoal>spring-boot:run</defaultGoal>
         <testResources>
             <testResource>

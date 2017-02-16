@@ -1,0 +1,64 @@
+<div>
+    <h2>Contactuses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="contact-us.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Contact Us
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Phone Number</span></th>
+                    <th><span>Message</span></th>
+                    <th><span>Created On</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contactUs in vm.contactuses track by contactUs.id">
+                    <td><a ui-sref="contact-us-detail({id:contactUs.id})">{{contactUs.id}}</a></td>
+                    <td>{{contactUs.name}}</td>
+                    <td>{{contactUs.email}}</td>
+                    <td>{{contactUs.phoneNumber}}</td>
+                    <td>{{contactUs.message}}</td>
+                    <td>{{contactUs.createdOn | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="contact-us-detail({id:contactUs.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contact-us.edit({id:contactUs.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contact-us.delete({id:contactUs.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
