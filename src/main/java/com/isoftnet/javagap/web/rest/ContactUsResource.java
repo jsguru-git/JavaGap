@@ -34,13 +34,13 @@ public class ContactUsResource {
     private ContactUsService contactUsService;
 
     /**
-     * POST  /contactus : Create a new contactUs.
+     * POST  /contactuses : Create a new contactUs.
      *
      * @param contactUsDTO the contactUsDTO to create
      * @return the ResponseEntity with status 201 (Created) and with body the new contactUsDTO, or with status 400 (Bad Request) if the contactUs has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/contactus")
+    @PostMapping("/contactuses")
     @Timed
     public ResponseEntity<ContactUsDTO> createContactUs(@Valid @RequestBody ContactUsDTO contactUsDTO) throws URISyntaxException {
         log.debug("REST request to save ContactUs : {}", contactUsDTO);
@@ -48,13 +48,13 @@ public class ContactUsResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("contactUs", "idexists", "A new contactUs cannot already have an ID")).body(null);
         }
         ContactUsDTO result = contactUsService.save(contactUsDTO);
-        return ResponseEntity.created(new URI("/api/contactus/" + result.getId()))
+        return ResponseEntity.created(new URI("/api/contactuses/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("contactUs", result.getId().toString()))
             .body(result);
     }
 
     /**
-     * PUT  /contactus : Updates an existing contactUs.
+     * PUT  /contactuses : Updates an existing contactUs.
      *
      * @param contactUsDTO the contactUsDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated contactUsDTO,
@@ -62,7 +62,7 @@ public class ContactUsResource {
      * or with status 500 (Internal Server Error) if the contactUsDTO couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PutMapping("/contactus")
+    @PutMapping("/contactuses")
     @Timed
     public ResponseEntity<ContactUsDTO> updateContactUs(@Valid @RequestBody ContactUsDTO contactUsDTO) throws URISyntaxException {
         log.debug("REST request to update ContactUs : {}", contactUsDTO);
@@ -76,24 +76,24 @@ public class ContactUsResource {
     }
 
     /**
-     * GET  /contactus : get all the contactus.
+     * GET  /contactuses : get all the contactuses.
      *
-     * @return the ResponseEntity with status 200 (OK) and the list of contactus in body
+     * @return the ResponseEntity with status 200 (OK) and the list of contactuses in body
      */
-    @GetMapping("/contactus")
+    @GetMapping("/contactuses")
     @Timed
-    public List<ContactUsDTO> getAllcontactus() {
-        log.debug("REST request to get all contactus");
+    public List<ContactUsDTO> getAllContactuses() {
+        log.debug("REST request to get all Contactuses");
         return contactUsService.findAll();
     }
 
     /**
-     * GET  /contactus/:id : get the "id" contactUs.
+     * GET  /contactuses/:id : get the "id" contactUs.
      *
      * @param id the id of the contactUsDTO to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the contactUsDTO, or with status 404 (Not Found)
      */
-    @GetMapping("/contactus/{id}")
+    @GetMapping("/contactuses/{id}")
     @Timed
     public ResponseEntity<ContactUsDTO> getContactUs(@PathVariable Long id) {
         log.debug("REST request to get ContactUs : {}", id);
@@ -106,12 +106,12 @@ public class ContactUsResource {
     }
 
     /**
-     * DELETE  /contactus/:id : delete the "id" contactUs.
+     * DELETE  /contactuses/:id : delete the "id" contactUs.
      *
      * @param id the id of the contactUsDTO to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/contactus/{id}")
+    @DeleteMapping("/contactuses/{id}")
     @Timed
     public ResponseEntity<Void> deleteContactUs(@PathVariable Long id) {
         log.debug("REST request to delete ContactUs : {}", id);

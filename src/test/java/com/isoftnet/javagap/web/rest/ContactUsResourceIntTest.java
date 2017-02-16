@@ -121,7 +121,7 @@ public class ContactUsResourceIntTest {
         // Create the ContactUs
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
 
-        restContactUsMockMvc.perform(post("/api/contactus")
+        restContactUsMockMvc.perform(post("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isCreated());
@@ -148,7 +148,7 @@ public class ContactUsResourceIntTest {
         ContactUsDTO existingContactUsDTO = contactUsMapper.contactUsToContactUsDTO(existingContactUs);
 
         // An entity with an existing ID cannot be created, so this API call must fail
-        restContactUsMockMvc.perform(post("/api/contactus")
+        restContactUsMockMvc.perform(post("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(existingContactUsDTO)))
             .andExpect(status().isBadRequest());
@@ -168,7 +168,7 @@ public class ContactUsResourceIntTest {
         // Create the ContactUs, which fails.
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
 
-        restContactUsMockMvc.perform(post("/api/contactus")
+        restContactUsMockMvc.perform(post("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isBadRequest());
@@ -187,7 +187,7 @@ public class ContactUsResourceIntTest {
         // Create the ContactUs, which fails.
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
 
-        restContactUsMockMvc.perform(post("/api/contactus")
+        restContactUsMockMvc.perform(post("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isBadRequest());
@@ -206,7 +206,7 @@ public class ContactUsResourceIntTest {
         // Create the ContactUs, which fails.
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
 
-        restContactUsMockMvc.perform(post("/api/contactus")
+        restContactUsMockMvc.perform(post("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isBadRequest());
@@ -217,12 +217,12 @@ public class ContactUsResourceIntTest {
 
     @Test
     @Transactional
-    public void getAllcontactus() throws Exception {
+    public void getAllContactuses() throws Exception {
         // Initialize the database
         contactUsRepository.saveAndFlush(contactUs);
 
         // Get all the contactUsList
-        restContactUsMockMvc.perform(get("/api/contactus?sort=id,desc"))
+        restContactUsMockMvc.perform(get("/api/contactuses?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(contactUs.getId().intValue())))
@@ -240,7 +240,7 @@ public class ContactUsResourceIntTest {
         contactUsRepository.saveAndFlush(contactUs);
 
         // Get the contactUs
-        restContactUsMockMvc.perform(get("/api/contactus/{id}", contactUs.getId()))
+        restContactUsMockMvc.perform(get("/api/contactuses/{id}", contactUs.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(contactUs.getId().intValue()))
@@ -255,7 +255,7 @@ public class ContactUsResourceIntTest {
     @Transactional
     public void getNonExistingContactUs() throws Exception {
         // Get the contactUs
-        restContactUsMockMvc.perform(get("/api/contactus/{id}", Long.MAX_VALUE))
+        restContactUsMockMvc.perform(get("/api/contactuses/{id}", Long.MAX_VALUE))
             .andExpect(status().isNotFound());
     }
 
@@ -276,7 +276,7 @@ public class ContactUsResourceIntTest {
                 .createdOn(UPDATED_CREATED_ON);
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(updatedContactUs);
 
-        restContactUsMockMvc.perform(put("/api/contactus")
+        restContactUsMockMvc.perform(put("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isOk());
@@ -301,7 +301,7 @@ public class ContactUsResourceIntTest {
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
 
         // If the entity doesn't have an ID, it will be created instead of just being updated
-        restContactUsMockMvc.perform(put("/api/contactus")
+        restContactUsMockMvc.perform(put("/api/contactuses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(contactUsDTO)))
             .andExpect(status().isCreated());
@@ -319,7 +319,7 @@ public class ContactUsResourceIntTest {
         int databaseSizeBeforeDelete = contactUsRepository.findAll().size();
 
         // Get the contactUs
-        restContactUsMockMvc.perform(delete("/api/contactus/{id}", contactUs.getId())
+        restContactUsMockMvc.perform(delete("/api/contactuses/{id}", contactUs.getId())
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isOk());
 

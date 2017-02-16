@@ -2,9 +2,6 @@ package com.isoftnet.javagap.service.dto;
 
 import java.time.ZonedDateTime;
 import javax.validation.constraints.*;
-
-import org.hibernate.validator.constraints.Email;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -21,7 +18,6 @@ public class ContactUsDTO implements Serializable {
     private String name;
 
     @NotNull
-    @Email
     private String email;
 
     private String phoneNumber;

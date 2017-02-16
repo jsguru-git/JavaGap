@@ -17,7 +17,7 @@ public interface ContactUsService {
     ContactUsDTO save(ContactUsDTO contactUsDTO);
 
     /**
-     *  Get all the contactus.
+     *  Get all the contactuses.
      *  
      *  @return the list of entities
      */

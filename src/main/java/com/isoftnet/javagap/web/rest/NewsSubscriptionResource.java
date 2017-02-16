@@ -34,13 +34,13 @@ public class NewsSubscriptionResource {
     private NewsSubscriptionService newsSubscriptionService;
 
     /**
-     * POST  /newssubscriptions : Create a new newsSubscription.
+     * POST  /news-subscriptions : Create a new newsSubscription.
      *
      * @param newsSubscriptionDTO the newsSubscriptionDTO to create
      * @return the ResponseEntity with status 201 (Created) and with body the new newsSubscriptionDTO, or with status 400 (Bad Request) if the newsSubscription has already an ID
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PostMapping("/newssubscriptions")
+    @PostMapping("/news-subscriptions")
     @Timed
     public ResponseEntity<NewsSubscriptionDTO> createNewsSubscription(@Valid @RequestBody NewsSubscriptionDTO newsSubscriptionDTO) throws URISyntaxException {
         log.debug("REST request to save NewsSubscription : {}", newsSubscriptionDTO);
@@ -48,13 +48,13 @@ public class NewsSubscriptionResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("newsSubscription", "idexists", "A new newsSubscription cannot already have an ID")).body(null);
         }
         NewsSubscriptionDTO result = newsSubscriptionService.save(newsSubscriptionDTO);
-        return ResponseEntity.created(new URI("/api/newssubscriptions/" + result.getId()))
+        return ResponseEntity.created(new URI("/api/news-subscriptions/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("newsSubscription", result.getId().toString()))
             .body(result);
     }
 
     /**
-     * PUT  /newssubscriptions : Updates an existing newsSubscription.
+     * PUT  /news-subscriptions : Updates an existing newsSubscription.
      *
      * @param newsSubscriptionDTO the newsSubscriptionDTO to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated newsSubscriptionDTO,
@@ -62,7 +62,7 @@ public class NewsSubscriptionResource {
      * or with status 500 (Internal Server Error) if the newsSubscriptionDTO couldnt be updated
      * @throws URISyntaxException if the Location URI syntax is incorrect
      */
-    @PutMapping("/newssubscriptions")
+    @PutMapping("/news-subscriptions")
     @Timed
     public ResponseEntity<NewsSubscriptionDTO> updateNewsSubscription(@Valid @RequestBody NewsSubscriptionDTO newsSubscriptionDTO) throws URISyntaxException {
         log.debug("REST request to update NewsSubscription : {}", newsSubscriptionDTO);
@@ -76,11 +76,11 @@ public class NewsSubscriptionResource {
     }
 
     /**
-     * GET  /newssubscriptions : get all the newsSubscriptions.
+     * GET  /news-subscriptions : get all the newsSubscriptions.
      *
      * @return the ResponseEntity with status 200 (OK) and the list of newsSubscriptions in body
      */
-    @GetMapping("/newssubscriptions")
+    @GetMapping("/news-subscriptions")
     @Timed
     public List<NewsSubscriptionDTO> getAllNewsSubscriptions() {
         log.debug("REST request to get all NewsSubscriptions");
@@ -88,12 +88,12 @@ public class NewsSubscriptionResource {
     }
 
     /**
-     * GET  /newssubscriptions/:id : get the "id" newsSubscription.
+     * GET  /news-subscriptions/:id : get the "id" newsSubscription.
      *
      * @param id the id of the newsSubscriptionDTO to retrieve
      * @return the ResponseEntity with status 200 (OK) and with body the newsSubscriptionDTO, or with status 404 (Not Found)
      */
-    @GetMapping("/newssubscriptions/{id}")
+    @GetMapping("/news-subscriptions/{id}")
     @Timed
     public ResponseEntity<NewsSubscriptionDTO> getNewsSubscription(@PathVariable Long id) {
         log.debug("REST request to get NewsSubscription : {}", id);
@@ -106,12 +106,12 @@ public class NewsSubscriptionResource {
     }
 
     /**
-     * DELETE  /newssubscriptions/:id : delete the "id" newsSubscription.
+     * DELETE  /news-subscriptions/:id : delete the "id" newsSubscription.
      *
      * @param id the id of the newsSubscriptionDTO to delete
      * @return the ResponseEntity with status 200 (OK)
      */
-    @DeleteMapping("/newssubscriptions/{id}")
+    @DeleteMapping("/news-subscriptions/{id}")
     @Timed
     public ResponseEntity<Void> deleteNewsSubscription(@PathVariable Long id) {
         log.debug("REST request to delete NewsSubscription : {}", id);

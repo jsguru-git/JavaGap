@@ -113,7 +113,7 @@ public class NewsSubscriptionResourceIntTest {
         // Create the NewsSubscription
         NewsSubscriptionDTO newsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(newsSubscription);
 
-        restNewsSubscriptionMockMvc.perform(post("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(post("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(newsSubscriptionDTO)))
             .andExpect(status().isCreated());
@@ -138,7 +138,7 @@ public class NewsSubscriptionResourceIntTest {
         NewsSubscriptionDTO existingNewsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(existingNewsSubscription);
 
         // An entity with an existing ID cannot be created, so this API call must fail
-        restNewsSubscriptionMockMvc.perform(post("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(post("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(existingNewsSubscriptionDTO)))
             .andExpect(status().isBadRequest());
@@ -158,7 +158,7 @@ public class NewsSubscriptionResourceIntTest {
         // Create the NewsSubscription, which fails.
         NewsSubscriptionDTO newsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(newsSubscription);
 
-        restNewsSubscriptionMockMvc.perform(post("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(post("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(newsSubscriptionDTO)))
             .andExpect(status().isBadRequest());
@@ -177,7 +177,7 @@ public class NewsSubscriptionResourceIntTest {
         // Create the NewsSubscription, which fails.
         NewsSubscriptionDTO newsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(newsSubscription);
 
-        restNewsSubscriptionMockMvc.perform(post("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(post("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(newsSubscriptionDTO)))
             .andExpect(status().isBadRequest());
@@ -193,7 +193,7 @@ public class NewsSubscriptionResourceIntTest {
         newsSubscriptionRepository.saveAndFlush(newsSubscription);
 
         // Get all the newsSubscriptionList
-        restNewsSubscriptionMockMvc.perform(get("/api/newssubscriptions?sort=id,desc"))
+        restNewsSubscriptionMockMvc.perform(get("/api/news-subscriptions?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(newsSubscription.getId().intValue())))
@@ -209,7 +209,7 @@ public class NewsSubscriptionResourceIntTest {
         newsSubscriptionRepository.saveAndFlush(newsSubscription);
 
         // Get the newsSubscription
-        restNewsSubscriptionMockMvc.perform(get("/api/newssubscriptions/{id}", newsSubscription.getId()))
+        restNewsSubscriptionMockMvc.perform(get("/api/news-subscriptions/{id}", newsSubscription.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(newsSubscription.getId().intValue()))
@@ -222,7 +222,7 @@ public class NewsSubscriptionResourceIntTest {
     @Transactional
     public void getNonExistingNewsSubscription() throws Exception {
         // Get the newsSubscription
-        restNewsSubscriptionMockMvc.perform(get("/api/newssubscriptions/{id}", Long.MAX_VALUE))
+        restNewsSubscriptionMockMvc.perform(get("/api/news-subscriptions/{id}", Long.MAX_VALUE))
             .andExpect(status().isNotFound());
     }
 
@@ -241,7 +241,7 @@ public class NewsSubscriptionResourceIntTest {
                 .createdOn(UPDATED_CREATED_ON);
         NewsSubscriptionDTO newsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(updatedNewsSubscription);
 
-        restNewsSubscriptionMockMvc.perform(put("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(put("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(newsSubscriptionDTO)))
             .andExpect(status().isOk());
@@ -264,7 +264,7 @@ public class NewsSubscriptionResourceIntTest {
         NewsSubscriptionDTO newsSubscriptionDTO = newsSubscriptionMapper.newsSubscriptionToNewsSubscriptionDTO(newsSubscription);
 
         // If the entity doesn't have an ID, it will be created instead of just being updated
-        restNewsSubscriptionMockMvc.perform(put("/api/newssubscriptions")
+        restNewsSubscriptionMockMvc.perform(put("/api/news-subscriptions")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(newsSubscriptionDTO)))
             .andExpect(status().isCreated());
@@ -282,7 +282,7 @@ public class NewsSubscriptionResourceIntTest {
         int databaseSizeBeforeDelete = newsSubscriptionRepository.findAll().size();
 
         // Get the newsSubscription
-        restNewsSubscriptionMockMvc.perform(delete("/api/newssubscriptions/{id}", newsSubscription.getId())
+        restNewsSubscriptionMockMvc.perform(delete("/api/news-subscriptions/{id}", newsSubscription.getId())
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isOk());
 

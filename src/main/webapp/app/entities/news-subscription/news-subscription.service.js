@@ -7,7 +7,7 @@
     NewsSubscription.$inject = ['$resource', 'DateUtils'];
 
     function NewsSubscription ($resource, DateUtils) {
-        var resourceUrl =  'api/newssubscriptions/:id';
+        var resourceUrl =  'api/news-subscriptions/:id';
 
         return $resource(resourceUrl, {}, {
             'query': { method: 'GET', isArray: true},

@@ -45,13 +45,13 @@ public class ContactUsServiceImpl implements ContactUsService{
     }
 
     /**
-     *  Get all the contactus.
+     *  Get all the contactuses.
      *  
      *  @return the list of entities
      */
     @Transactional(readOnly = true) 
     public List<ContactUsDTO> findAll() {
-        log.debug("Request to get all contactus");
+        log.debug("Request to get all Contactuses");
         List<ContactUsDTO> result = contactUsRepository.findAll().stream()
             .map(contactUsMapper::contactUsToContactUsDTO)
             .collect(Collectors.toCollection(LinkedList::new));
