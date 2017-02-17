@@ -17,7 +17,7 @@
                 pageTitle: 'NewsSubscriptions'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/news-subscription/news-subscriptions.html',
                     controller: 'NewsSubscriptionController',
                     controllerAs: 'vm'
@@ -34,7 +34,7 @@
                 pageTitle: 'NewsSubscription'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/news-subscription/news-subscription-detail.html',
                     controller: 'NewsSubscriptionDetailController',
                     controllerAs: 'vm'

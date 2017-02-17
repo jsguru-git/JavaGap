@@ -3,34 +3,26 @@
 
     angular
         .module('javagapApp')
-        .factory('Contact', Contact)
         .controller('ContactController', ContactController);
 
-    Contact.$inject = ['$resource'];
+    ContactController.$inject = ['$scope', 'ContactUs'];
 
-    function Contact ($resource) {
-        return $resource('api/contactus/:id');
-    }
-
-    ContactController.$inject = ['Contact'];
-
-    function ContactController (Contact) {
+    function ContactController ($scope, ContactUs) {
         var vm = this;
-
         vm.save = save;
 
-        vm.contactInfo = new Contact();
+        vm.contactInfo = new ContactUs();
 
         function onSaveSuccess (result) {
-            alert('contact success');
+            $scope.$emit('javagapApp:contactUsUpdate', result);
         }
 
         function onSaveError () {
-            alert('contact failure');
         }
 
         function save () {
-            Contact.save(vm.contactInfo, onSaveSuccess, onSaveError);
+
+            ContactUs.save(vm.contactInfo, onSaveSuccess, onSaveError);
         }
 
     }

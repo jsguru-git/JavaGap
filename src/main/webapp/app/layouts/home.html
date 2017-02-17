@@ -6,14 +6,15 @@
         <!-- Angular views -->
     </div>
     <a href="#services" class="more">Learn More</a>
-    <!-- <video autoplay loop>
-        <source src="content/videos/hero.m4v" type="video/mp4"></source>
-        <source src="content/videos/hero.webm" type="video/webm"></source>
-        <source src="content/videos/hero.ogv" type="video/ogg"></source>
-        <source src="content/videos/hero.mp4"></source>
-    </video> -->
+    <img src='../content/images/home-bg.jpg' id="home-background"/>
+    <video autoplay loop>
+        <source src="content/videos/home-bg-video.m4v" type="video/mp4"></source>
+        <source src="content/videos/home-bg-video.webm" type="video/webm"></source>
+        <source src="content/videos/home-bg-video.ogv" type="video/ogg"></source>
+        <source src="content/videos/home-bg-video.mp4"></source>
+    </video>
     
-    <iframe id="video" allowfullscreen="1" src="https://www.youtube.com/embed/-7v0OMZDyGE?playlist=-7v0OMZDyGE&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&origin=http%3A%2F%2Fhighgradelab.com&widgetid=1" style="max-width: 1000%; margin-left: 0px; margin-top: -100px;" frameborder="0"></iframe>
+    <!--<iframe id="video" allowfullscreen="1" src="https://www.youtube.com/embed/-7v0OMZDyGE?playlist=-7v0OMZDyGE&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&origin=http%3A%2F%2Fhighgradelab.com&widgetid=1" style="max-width: 1000%; margin-left: 0px; margin-top: -100px;" frameborder="0"></iframe>-->
 </section>
 <div class="wrapper">
     <!--<section id="course">
@@ -71,23 +72,23 @@
         }
         $('.scrolly').scrolly(); 
 
-        var setVideoSize = function() {
-            var video_width = $(window).innerWidth();
-            var video_height = $(window).innerHeight();
-            var ratio = 450/800;
-            if(video_height/video_width > ratio) {
-                video_width = video_height / ratio;
-            } else {
-                video_height = video_width * ratio;
-            }
-            $('#video').css({ width: video_width + 'px', height: video_height + 'px' });
-        }
+        // var setVideoSize = function() {
+        //     var video_width = $(window).innerWidth();
+        //     var video_height = $(window).innerHeight();
+        //     var ratio = 450/800;
+        //     if(video_height/video_width > ratio) {
+        //         video_width = video_height / ratio;
+        //     } else {
+        //         video_height = video_width * ratio;
+        //     }
+        //     $('#video').css({ width: video_width + 'px', height: video_height + 'px' });
+        // }
 
-        setVideoSize();
+        // setVideoSize();
 
-        // If you want to keep full screen on window resize
-        $(window).resize(function(){
-            setVideoSize();
-        });
+        // // If you want to keep full screen on window resize
+        // $(window).resize(function(){
+        //     setVideoSize();
+        // });
     });
 </script>

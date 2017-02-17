@@ -3,33 +3,25 @@
 
     angular
         .module('javagapApp')
-        .factory('Join', Join)
         .controller('JoinController', JoinController);
 
-    Join.$inject = ['$resource'];
+    JoinController.$inject = ['$scope', 'NewsSubscription'];
 
-    function Join ($resource) {
-        return $resource('api/join/:id');
-    }
-
-    JoinController.$inject = ['Join'];
-
-    function JoinController (Join) {
+    function JoinController ($scope, NewsSubscription) {
         var vm = this;
         vm.save = save;
         
-        vm.joinInfo = new Join();
+        vm.joinInfo = new NewsSubscription();
 
         function onSaveSuccess (result) {
-            alert('join success');
+            $scope.$emit('javagapApp:newsSubscriptionUpdate', result);  
         }
 
         function onSaveError () {
-            alert('join failure');
         }
 
         function save () {
-            Join.save(vm.joinInfo, onSaveSuccess, onSaveError);
+            NewsSubscription.save(vm.joinInfo, onSaveSuccess, onSaveError);
         }
     }
 })();

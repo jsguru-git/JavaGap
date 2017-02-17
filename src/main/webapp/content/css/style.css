@@ -251,7 +251,7 @@ ul.actions.vertical li > * {
     font-size: 14px;
 }
 
-#banner > video, iframe {
+#banner > video, #banner > iframe, #banner > img {
     bottom: 50%;
     height: auto;
     min-height: 100%;
@@ -259,7 +259,7 @@ ul.actions.vertical li > * {
     overflow: hidden;
     position: absolute;
     right: 50%;
-    transform: translateX(50%) translateY(50%);
+    transform: translate(50%, 50%) scale(1.2);
     width: auto;
 }
 
@@ -966,12 +966,52 @@ nav.mobile .navbar-collapse {
     bottom: 10%;
 }
 
+/*.form-group button {
+    padding: 17px 10px;
+}*/
+
+ul.datetime-picker-dropdown {
+    width: 100%;
+}
+
+.form-group button.left-btn {
+    width: 45%;
+}
+
+.form-group button.right-btn {
+    float: right;
+    width: 45%;
+}
+
+.btn-default:hover, .btn-default:focus {
+    background-color: #fff;
+    color: #12b7ea;
+}
+
+table.uib-daypicker th,
+table.uib-daypicker td {
+    padding: 0;
+} 
+
+.inner h2 {
+    padding-bottom: 50px;
+}
+
+.jh-entity-details > dt {
+    margin-top: 0;
+}
+
+dl.jh-entity-details > dt > span {
+    font-weight: bold;
+}
+
 @media (max-width: 767px) {
-    .dropdown-menu {
+    .dropdown-menu:not(.datetime-picker-dropdown) {
         position: relative;
         top: inherit; 
         float: none;
     }
+
     .normalmenu {
         width: 80%;
         left: 10%;
