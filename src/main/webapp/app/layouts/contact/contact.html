@@ -1,4 +1,3 @@
-<jhi-alert></jhi-alert>
 <div class="vc_column-inner vc_col-sm-6">
 	<div class="wpb_wrapper">
 		<div style='overflow:hidden;height:600px;width:100%;'>
@@ -68,7 +67,7 @@
 									<form ng-submit="vm.save()" method="post" class="wpcf7-form" name="form" role="form" novalidate show-validation>
 										<p>
 											<div class="form-group">
-												<input name="name" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF120 Name" type="text" ng-model = "vm.contactInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
+												<input name="name" id="contact_info_name" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF120 Name" type="text" ng-model = "vm.contactInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
 												<div ng-show="form.name.$dirty && form.name.$invalid">
 								                    <p class="help-block"
 								                           ng-show="form.name.$error.required">
@@ -84,12 +83,12 @@
 								                    </p>
 								                    <p class="help-block"
 								                           ng-show="form.name.$error.pattern">
-								                        Your username can only contain lower-case letters and digits.
+								                        Your username can only contain letters and digits.
 								                    </p>
 								                </div>
 											</div>
 											<div class="form-group">
-												<input name="email" class="input wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email iconified empty" placeholder="&#xF0E0 Email" type="email" ng-model = "vm.contactInfo.email" ng-minlength=5 ng-maxlength=100 required>
+												<input name="email" id="contact_info_email" class="input wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email iconified empty" placeholder="&#xF0E0 Email" type="email" ng-model = "vm.contactInfo.email" ng-minlength=5 ng-maxlength=100 required>
 												<div ng-show="form.email.$dirty && form.email.$invalid">
 								                    <p class="help-block"
 								                           ng-show="form.email.$error.required">
@@ -110,7 +109,7 @@
 								                </div>
 											</div>
 											<div class="form-group">
-												<input name="phone" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF095 Phone" type="text" ng-model="vm.contactInfo.phoneNumber" ng-pattern="/^[0-9]{10,10}$/" ng-maxlength=10 required>
+												<input name="phone" id="contact_info_phone" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF095 Phone" type="text" ng-model="vm.contactInfo.phoneNumber" ng-pattern="/^[0-9]{10,10}$/" ng-maxlength=10 required>
 												<div ng-show="form.phone.$dirty && form.phone.$invalid">
 								                    <p class="help-block"
 								                           ng-show="form.phone.$error.required">
@@ -127,7 +126,7 @@
 								                </div>
 											</div>
 											<div class="form-group">
-												<textarea name="message" rows="4" cols="50" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF03C Your Message" type="text" style="resize: none" ng-model = "vm.contactInfo.message" ng-minlength=50 ng-maxlength=255 required></textarea>
+												<textarea name="message" id="contact_info_message" rows="4" cols="50" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF03C Your Message" type="text" style="resize: none" ng-model = "vm.contactInfo.message" ng-minlength=50 ng-maxlength=1000 required></textarea>
 												<div ng-show="form.message.$dirty && form.message.$invalid">
 								                    <p class="help-block"
 								                           ng-show="form.message.$error.required">
@@ -143,13 +142,12 @@
 								                    </p>
 								                </div>
 											</div>
-											<button class="wpcf7-form-control wpcf7-submit form-button special big" ng-disabled="form.$invalid" type="submit">
+											<button id="contact_info_btn" class="wpcf7-form-control wpcf7-submit form-button special big" ng-disabled="form.$invalid" type="submit">
 												SUBMIT
 											</button>
 											<img class="ajax-loader" src="../content/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
 										</p>
 										<div class="wpcf7-response-output wpcf7-display-none">
-											
 										</div>
 									</form>
 								</div>
@@ -163,11 +161,17 @@
 </div>
 <script>
 	$('.iconified').on('keyup', function() {
-    var input = $(this);
-    if(input.val().length === 0) {
-        input.addClass('empty');
-    } else {
-        input.removeClass('empty');
-    }
-});
+	    var input = $(this);
+	    if(input.val().length === 0) {
+	        input.addClass('empty');
+	    } else {
+	        input.removeClass('empty');
+	    }
+	});
+	$('#contact_info_btn').on('click', function() {
+    	$('#contact_info_name').val('').addClass('empty');
+    	$('#contact_info_email').val('').addClass('empty');
+    	$('#contact_info_phone').val('').addClass('empty');
+    	$('#contact_info_message').val('').addClass('empty');
+    });
 </script>

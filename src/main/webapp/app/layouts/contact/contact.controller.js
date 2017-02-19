@@ -14,14 +14,14 @@
         vm.contactInfo = new ContactUs();
 
         function onSaveSuccess (result) {
-            $scope.$emit('javagapApp:contactUsUpdate', result);
+            alertify.notify('New Contact is created', 'success', 5, function(){  console.log('dismissed'); });
         }
 
         function onSaveError () {
+            alertify.notify('New Contact failed. Try again after login', 'error', 5, function(){  console.log('dismissed'); });
         }
 
         function save () {
-
             ContactUs.save(vm.contactInfo, onSaveSuccess, onSaveError);
         }
 

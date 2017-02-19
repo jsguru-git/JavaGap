@@ -2,7 +2,6 @@
 	<div class=" wpb_column vc_column_container vc_col-sm-12 ">
 		<div class="vc_column-inner ">
 			<div class="wpb_wrapper">
-				<jhi-alert></jhi-alert>
 				<div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_none none wpb_start_animation animated">
 					<div class="wpb_wrapper">
 						<h2 style="text-align: center;">
@@ -13,15 +12,14 @@
 				<div class="wpb_text_column wpb_content_element  wpb_animate_when_almost_visible wpb_none none vc_custom_1479814516103 wpb_start_animation animated">
 					<div class="wpb_wrapper">
 						<p style="text-align: center;"><span style="color: #ffffff;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, pulvinar dapibus leo.</span></p>
-
 					</div>
 				</div>
 				<!-- Begin MailChimp Signup Form -->
 				<div class="hgr_mc_collector has-error">
 					<form id="hgr_mc_signup_3eb5176b5a" novalidate ng-submit="vm.save()" show-validation method="post" name="form" role="form">	
-						<input name="name" id="hgr_mc_name" class="hgr_mc_name" placeholder="Your name" type="text" ng-model="vm.joinInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
+						<input name="name" id="hgr_mc_name" class="hgr_mc_name" placeholder="Your name" type="text" ng-model="vm.joinInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
 						<input name="email" id="hgr_mc_email" class="hgr_mc_email" placeholder="Email Address" type="email" ng-model="vm.joinInfo.email" ng-minlength=5 ng-maxlength=100 required>
-						<input name="submit" value="Join" class="hgr_mc_btn" style=" background-color:#1974d2;  color:#ffffff; " type="submit" ng-disabled="form.$invalid">
+						<input name="submit" id="hgr_mc_btn" value="Join" class="hgr_mc_btn" style=" background-color:#1974d2;  color:#ffffff; " type="submit" ng-disabled="form.$invalid">
 						<div ng-show="form.name.$dirty && form.name.$invalid">
 		                    <p class="help-block"
 		                           ng-show="form.name.$error.required">
@@ -37,7 +35,7 @@
 		                    </p>
 		                    <p class="help-block"
 		                           ng-show="form.name.$error.pattern">
-		                        Your username can only contain lower-case letters and digits.
+		                        Your username can only contain letters and digits.
 		                    </p>
 		                </div>
 						<div ng-show="form.email.$dirty && form.email.$invalid">
@@ -67,3 +65,9 @@
 	</div>
 	<div class="vc_parallax-inner skrollable skrollable-between waiting-list-background" data-bottom-top="top: -50%;" data-top-bottom="top: 0%;"></div>
 </div>
+<script>
+	$("#hgr_mc_btn").on('click', function() {
+		$("#hgr_mc_name").val("");
+		$("#hgr_mc_email").val("");
+	});
+</script>

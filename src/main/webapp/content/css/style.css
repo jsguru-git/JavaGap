@@ -251,16 +251,17 @@ ul.actions.vertical li > * {
     font-size: 14px;
 }
 
-#banner > video, #banner > iframe, #banner > img {
+#banner > video, #banner > iframe {
     bottom: 50%;
+    right: 50%;
     height: auto;
+    width: auto;
     min-height: 100%;
     min-width: 100%;
     overflow: hidden;
     position: absolute;
-    right: 50%;
-    transform: translate(50%, 50%) scale(1.2);
-    width: auto;
+    object-fit: cover;
+    transform: translate(50%, 50%);
 }
 
 .wrapper > * {
@@ -426,6 +427,7 @@ body {
 #banner {
     align-items: center;
     background-color: #333333;
+    background-image: url('/content/images/home-bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
