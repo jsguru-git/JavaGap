@@ -1,0 +1,162 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCourseLabel">Create or edit a Course</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.course.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.course.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_duration">Duration</label>
+            <input type="number" class="form-control" name="duration" id="field_duration"
+                    ng-model="vm.course.duration"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_watchCount">Watch Count</label>
+            <input type="number" class="form-control" name="watchCount" id="field_watchCount"
+                    ng-model="vm.course.watchCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_publishedDate">Published Date</label>
+                <div class="input-group">
+                    <input id="field_publishedDate" type="text" class="form-control" name="publishedDate" datetime-picker="{{dateformat}}" ng-model="vm.course.publishedDate" is-open="vm.datePickerOpenStatus.publishedDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('publishedDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastUpdatedDate">Last Updated Date</label>
+                <div class="input-group">
+                    <input id="field_lastUpdatedDate" type="text" class="form-control" name="lastUpdatedDate" datetime-picker="{{dateformat}}" ng-model="vm.course.lastUpdatedDate" is-open="vm.datePickerOpenStatus.lastUpdatedDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastUpdatedDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_about">About</label>
+            <input type="text" class="form-control" name="about" id="field_about"
+                    ng-model="vm.course.about"
+                    required ng-maxlength="1000" />
+            <div ng-show="editForm.about.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.about.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.about.$error.maxlength">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_prerequisite">Prerequisite</label>
+            <input type="text" class="form-control" name="prerequisite" id="field_prerequisite"
+                    ng-model="vm.course.prerequisite"
+                    required ng-maxlength="1000" />
+            <div ng-show="editForm.prerequisite.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.prerequisite.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.prerequisite.$error.maxlength">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_systemRequirement">System Requirement</label>
+            <input type="text" class="form-control" name="systemRequirement" id="field_systemRequirement"
+                    ng-model="vm.course.systemRequirement"
+                    required ng-maxlength="1000" />
+            <div ng-show="editForm.systemRequirement.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.systemRequirement.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.systemRequirement.$error.maxlength">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_repository">Repository</label>
+            <input type="text" class="form-control" name="repository" id="field_repository"
+                    ng-model="vm.course.repository"
+                    required ng-maxlength="500" />
+            <div ng-show="editForm.repository.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.repository.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.repository.$error.maxlength">
+                    This field cannot be longer than 500 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_curriculum">Curriculum</label>
+            <input type="text" class="form-control" name="curriculum" id="field_curriculum"
+                    ng-model="vm.course.curriculum"
+                    required ng-maxlength="1000" />
+            <div ng-show="editForm.curriculum.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.curriculum.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.curriculum.$error.maxlength">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_expectations">Expectations</label>
+            <input type="text" class="form-control" name="expectations" id="field_expectations"
+                    ng-model="vm.course.expectations"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_specialization">Specialization</label>
+            <input type="text" class="form-control" name="specialization" id="field_specialization"
+                    ng-model="vm.course.specialization"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rating">Rating</label>
+            <input type="number" class="form-control" name="rating" id="field_rating"
+                    ng-model="vm.course.rating"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_videoLink">Video Link</label>
+            <input type="text" class="form-control" name="videoLink" id="field_videoLink"
+                    ng-model="vm.course.videoLink"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

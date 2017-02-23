@@ -1,0 +1,80 @@
+<div>
+    <h2>Courses</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="course.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Course
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Duration</span></th>
+                    <th><span>Watch Count</span></th>
+                    <th><span>Published Date</span></th>
+                    <th><span>Last Updated Date</span></th>
+                    <th><span>About</span></th>
+                    <th><span>Prerequisite</span></th>
+                    <th><span>System Requirement</span></th>
+                    <th><span>Repository</span></th>
+                    <th><span>Curriculum</span></th>
+                    <th><span>Expectations</span></th>
+                    <th><span>Specialization</span></th>
+                    <th><span>Rating</span></th>
+                    <th><span>Video Link</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="course in vm.courses track by course.id">
+                    <td><a ui-sref="course-detail({id:course.id})">{{course.id}}</a></td>
+                    <td>{{course.duration}}</td>
+                    <td>{{course.watchCount}}</td>
+                    <td>{{course.publishedDate | date:'medium'}}</td>
+                    <td>{{course.lastUpdatedDate | date:'medium'}}</td>
+                    <td>{{course.about}}</td>
+                    <td>{{course.prerequisite}}</td>
+                    <td>{{course.systemRequirement}}</td>
+                    <td>{{course.repository}}</td>
+                    <td>{{course.curriculum}}</td>
+                    <td>{{course.expectations}}</td>
+                    <td>{{course.specialization}}</td>
+                    <td>{{course.rating}}</td>
+                    <td>{{course.videoLink}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="course-detail({id:course.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="course.edit({id:course.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="course.delete({id:course.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

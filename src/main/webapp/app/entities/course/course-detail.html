@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span>Course</span> {{vm.course.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Duration</span></dt>
+        <dd>
+            <span>{{vm.course.duration}}</span>
+        </dd>
+        <dt><span>Watch Count</span></dt>
+        <dd>
+            <span>{{vm.course.watchCount}}</span>
+        </dd>
+        <dt><span>Published Date</span></dt>
+        <dd>
+            <span>{{vm.course.publishedDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>Last Updated Date</span></dt>
+        <dd>
+            <span>{{vm.course.lastUpdatedDate | date:'medium'}}</span>
+        </dd>
+        <dt><span>About</span></dt>
+        <dd>
+            <span>{{vm.course.about}}</span>
+        </dd>
+        <dt><span>Prerequisite</span></dt>
+        <dd>
+            <span>{{vm.course.prerequisite}}</span>
+        </dd>
+        <dt><span>System Requirement</span></dt>
+        <dd>
+            <span>{{vm.course.systemRequirement}}</span>
+        </dd>
+        <dt><span>Repository</span></dt>
+        <dd>
+            <span>{{vm.course.repository}}</span>
+        </dd>
+        <dt><span>Curriculum</span></dt>
+        <dd>
+            <span>{{vm.course.curriculum}}</span>
+        </dd>
+        <dt><span>Expectations</span></dt>
+        <dd>
+            <span>{{vm.course.expectations}}</span>
+        </dd>
+        <dt><span>Specialization</span></dt>
+        <dd>
+            <span>{{vm.course.specialization}}</span>
+        </dd>
+        <dt><span>Rating</span></dt>
+        <dd>
+            <span>{{vm.course.rating}}</span>
+        </dd>
+        <dt><span>Video Link</span></dt>
+        <dd>
+            <span>{{vm.course.videoLink}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="course-detail.edit({id:vm.course.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

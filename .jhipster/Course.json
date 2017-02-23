@@ -1,0 +1,88 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "duration",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "watchCount",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "publishedDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdatedDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "about",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "prerequisite",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "systemRequirement",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "repository",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "500"
+        },
+        {
+            "fieldName": "curriculum",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "1000"
+        },
+        {
+            "fieldName": "expectations",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "specialization",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rating",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "videoLink",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170223150000",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "course",
+    "pagination": "no"
+}
