@@ -17,7 +17,7 @@
                 pageTitle: 'Courses'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/course/courses.html',
                     controller: 'CourseController',
                     controllerAs: 'vm'
@@ -34,7 +34,7 @@
                 pageTitle: 'Course'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/course/course-detail.html',
                     controller: 'CourseDetailController',
                     controllerAs: 'vm'

@@ -60,11 +60,11 @@
                     controller: 'JoinController',
                     controllerAs: 'vm'
                 },
-                'contact@app': {
+                /*'contact@app': {
                     templateUrl: 'app/layouts/contact/contact.html',
                     controller: 'ContactController',
                     controllerAs: 'vm'
-                },
+                },*/
                 'footer@app': {
                     templateUrl: 'app/layouts/footer/footer.html',
                     controller: 'NavbarController',
