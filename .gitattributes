@@ -20,3 +20,7 @@
 *.ai binary
 *.eps binary
 *.swf binary
+*.mp4 binary
+*.m4v binary
+*.ogv binary
+*.webm binary
