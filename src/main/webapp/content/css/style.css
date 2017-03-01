@@ -1007,6 +1007,35 @@ dl.jh-entity-details > dt > span {
     font-weight: bold;
 }
 
+.jg-side-nav {
+    width: 250px;
+    float: left;
+}
+.jg-layout-two-col .jg-content {
+    margin-left: 300px;
+    border-left: 2px solid #eaeaea;
+    padding-left: 5%;
+}
+#sideNavBar > ul > li > a {
+    width: 100%;
+    text-align: left;
+    color: rgb(53, 142, 215);
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin-bottom: -1px;
+}
+#sideNavBar > ul > li.active > a {
+    background-color: #358ed7;
+    border-color: rgb(53, 142, 215);
+    color: #ffffff;
+}
+#sideNavBar > ul > li:not(.active) > a:hover {
+    background-color: #e8e8e8;
+}
+.jg-content > * {
+    padding-top: 120px;
+}
+
 @media (max-width: 767px) {
     .dropdown-menu:not(.datetime-picker-dropdown) {
         position: relative;
@@ -1021,6 +1050,15 @@ dl.jh-entity-details > dt > span {
     .navbar-collapse {
         max-height: 100vh;
         overflow-y: scroll;  
+    }
+    .jg-side-nav {
+        visibility: hidden;
+        width: 0;
+    }
+    .jg-layout-two-col .jg-content {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 0;
     }
 }
 
@@ -1039,6 +1077,34 @@ dl.jh-entity-details > dt > span {
         background-color: inherit;
     }
 }
+
+/* sir-accordion customize */
+.full-height{
+    height: 100%;
+}
+
+.scrollable{
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.drop-icon-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 18px;
+}
+
+.drop-icon-wrapper i{
+    transition: 0.3s transform;
+    transform: rotate(0deg);
+}
+
+.active-header .drop-icon-wrapper i{
+    transform: rotate(180deg); 
+}
+
 /* jqwidget customize */
 .jqx-fill-state-normal {
     border: 1px solid #fe7e17;

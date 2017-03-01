@@ -1,0 +1,108 @@
+<style>
+	/*.jg-side-nav {
+		width: 250px;
+		float: left;
+	}
+	.jg-layout-two-col .jg-content {
+		margin-left: 300px;
+		border-left: 2px solid #eaeaea;
+		padding-left: 5%;
+	}
+	#sideNavBar > ul > li > a {
+		width: 100%;
+		text-align: left;
+		color: rgb(53, 142, 215);
+		background-color: #ffffff;
+		border: 1px solid #ddd;
+		margin-bottom: -1px;
+	}
+	#sideNavBar > ul > li.active > a {
+		background-color: #358ed7;
+		border-color: rgb(53, 142, 215);
+		color: #ffffff;
+	}
+	#sideNavBar > ul > li:not(.active) > a:hover {
+		background-color: #e8e8e8;
+	}
+	#legalContent > * {
+		padding-top: 120px;
+	}
+	@media (max-width: 767px) {
+		.jg-side-nav {
+			visibility: hidden;
+			width: 0;
+		}
+		.jg-layout-two-col .jg-content {
+			margin-left: 0;
+			border-left: none;
+			padding-left: 0;
+		}
+	}*/
+</style>
+<div class="container jg-layout-two-col">
+	<div class="row">
+		<div id="sideNavBar" class="jg-side-nav">
+			<ul>
+				<li ng-class="{'active': vm.target == 'copyright'}"><a class="vc_general vc_btn3 scrolly" href="#copyright">COPYRIGHT</a></li>
+				<li ng-class="{'active': vm.target == 'termsAndConds'}"><a class="vc_general vc_btn3 scrolly" href="#termsAndConds">TERMS AND CONDITIONS</a></li>
+				<li ng-class="{'active': vm.target == 'privacy'}"><a class="vc_general vc_btn3 scrolly" href="#privacy">PRIVACY</a></li>
+				<li ng-class="{'active': vm.target == 'policy'}"><a class="vc_general vc_btn3 scrolly" href="#policy">POLICY</a></li>
+			</ul>
+		</div>
+		<div id="legalContent" class="jg-content">
+			<div id="copyright">
+				<header class="major">
+					<h1>Copyright</h1>
+				</header>
+				<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+			</div>
+			<div id="termsAndConds">
+				<header class="major">
+					<h1>TERMS AND CONDITIONS</h1>
+				</header>
+				<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+			</div>
+			<div id="privacy">
+				<header class="major">
+					<h1>PRIVACY</h1>
+				</header>
+				<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+			</div>
+			<div id="policy">
+				<header class="major">
+					<h1>POLICY</h1>
+				</header>
+				<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	$(document).ready(function() {
+		$('#sideNavBar').on('click', 'li > a', function() {
+			$('#sideNavBar li > a').parent().removeClass('active');
+			$(this).parent().addClass('active');
+		});
+		$(window).scroll(function() {
+			var scrollTop = $(window).scrollTop();
+			var scrollMaximun = $('#legalContent').height() - $('#sideNavBar').height();
+			var scrollMinimum = $('div.jg-layout-two-col').position().top;
+			
+			if(scrollTop < scrollMinimum - 30) {
+				$('#sideNavBar').css({
+					position: 'initial'
+				});
+			} else if (scrollTop >= scrollMaximun) {
+				$('#sideNavBar').css({
+					position: 'relative',
+					top: scrollMaximun
+				});
+			} else {
+				$('#sideNavBar').css({
+					position: 'fixed',
+					top: scrollMinimum
+				});
+			}
+		});
+	});
+</script>

@@ -1,0 +1,52 @@
+{  
+  "name":"sir-accordion",
+  "description":"AngularJs directive that builds a vertical accodion menu from a JSON object, with an optional config scope for personalization. No jQuery dependency",
+  "version":"1.2.6",
+  "keywords":[
+    "angular",  
+    "angularjs",
+    "javascript",
+    "directive",
+    "accordion",
+    "menu",
+    "json",
+    "velocity",
+    "velocityjs",
+    "responsive",
+    "collapsable"
+  ],
+  "main":[  
+    "dist/scripts/sir-accordion.js",
+    "dist/styles/sir-accordion.css"
+  ],
+  "authors":[  
+    "Axel salmeron",
+    "axel.salmeron@gmail.com"
+  ],
+  "repository":{  
+    "type":"git",
+    "url":"https://github.com/SirIdeas/sirAccordion"
+  },
+  "ignore":[  
+    "source",
+    "spec",
+    "docs",
+    "example",
+    ".bowerrc",
+    ".gitignore",
+    ".jshintignore",
+    ".jshintrc",
+    "bower.json",
+    "gruntfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies":{  
+    "angular":"~1.2",
+    "velocity":"1.2.3"
+  },
+  "devDependencies":{  
+    "bootstrap":"~3.3",
+    "fastclick":"~1.0"
+  }
+}
