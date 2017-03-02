@@ -12,8 +12,8 @@
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">added-->
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
+    <link rel="stylesheet" href="bower_components/sir-accordion/dist/styles/sir-accordion.css"/>
     <!-- endinject -->
     <link rel="stylesheet" href="content/css/jqwidgets/jqx.base.css" /><!--added-->
     <!-- endbuild -->
@@ -84,6 +84,8 @@
     <script src="bower_components/bootstrap-ui-datetime-picker/dist/datetime-picker.js"></script>
     <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
     <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
+    <script src="bower_components/velocity/velocity.min.js"></script>
+    <script src="bower_components/sir-accordion/dist/scripts/sir-accordion.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
@@ -148,18 +150,14 @@
 
     <script src="app/pages/pages.state.js"></script>
     <script src="app/pages/help/help.state.js"></script>
+    <script src="app/pages/help/help.controller.js"></script>
     <script src="app/pages/work/work.state.js"></script>
     <script src="app/pages/work/work.controller.js"></script>
     <script src="app/pages/services/services.state.js"></script>
-    <script src="app/pages/help/help.controller.js"></script>
-    <script src="app/pages/copyright/copyright.state.js"></script>
-    <script src="app/pages/copyright/copyright.controller.js"></script>
-    <script src="app/pages/privacy/privacy.state.js"></script>
-    <script src="app/pages/privacy/privacy.controller.js"></script>
-    <script src="app/pages/TAC/tac.state.js"></script>
-    <script src="app/pages/TAC/tac.controller.js"></script>
-    <script src="app/pages/policy/policy.state.js"></script>
-    <script src="app/pages/policy/policy.controller.js"></script>
+    
+    <script src="app/legal/legal.state.js"></script>
+    <script src="app/legal/legal.controller.js"></script>
+
     <script src="app/pages/report/report.state.js"></script>
     <script src="app/pages/report/report.controller.js"></script>
     <script src="app/pages/FAC/fac.state.js"></script>
@@ -286,7 +284,7 @@
     <!-- endbuild -->
     <script type="text/javascript">
         var global = {"is_front_page":"true"};
-        (function(e){var t="click.scrolly";e.fn.scrolly=function(r,i){var s=e(this);return r||(r=1e3),i||(i=0),s.off(t).on(t,function(t){if(global.is_front_page === 'false'){r=15;}var n,s,o,u=e(this),a=u.attr("href");a.charAt(0)=="#"&&a.length>1&&(n=e(a)).length>0&&(s=n.offset().top,u.hasClass("scrolly-centered")?o=s-(e(window).height()-n.outerHeight())/2:(o=Math.max(s,0),i&&(typeof i=="function"?o-=i():o-=i)),t.preventDefault(),e("body,html").stop().animate({scrollTop:o},r,"swing"))}),s}})(jQuery);
+        (function(e){var t="click.scrolly";e.fn.scrolly=function(r,i){var s=e(this);return r||(r=1e3),i||(i=0),s.off(t).on(t,function(t){var n,s,o,u=e(this),a=u.attr("href");a.charAt(0)=="#"&&a.length>1&&(n=e(a)).length>0&&(s=n.offset().top,u.hasClass("scrolly-centered")?o=s-(e(window).height()-n.outerHeight())/2:(o=Math.max(s,0),i&&(typeof i=="function"?o-=i():o-=i)),t.preventDefault(),e("body,html").stop().animate({scrollTop:o},r,"swing"))}),s}})(jQuery);
         (function($) {
             $(function() {
                 var $window = $(window),$body = $('body');

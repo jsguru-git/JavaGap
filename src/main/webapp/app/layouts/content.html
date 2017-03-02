@@ -12,13 +12,15 @@
     <!-- Angular views -->
 </footer>
 <script type="text/javascript">
-	$(function() {
-        global.is_front_page = 'false';
-		var $header = $('#header');
-		if($header.hasClass('with-banner'))
-			$header.removeClass('with-banner');
-		if($header.hasClass('alt'))
-			$header.removeClass('alt');
-        $('.scrolly').scrolly(); 
-	});
+    (function($) {
+        $(function() {
+            global.is_front_page = 'false';
+            var $header = $('#header');
+            if($header.hasClass('with-banner'))
+                $header.removeClass('with-banner');
+            if($header.hasClass('alt'))
+                $header.removeClass('alt');
+            $('.scrolly').scrolly();
+        });    
+    })(jQuery);
 </script>

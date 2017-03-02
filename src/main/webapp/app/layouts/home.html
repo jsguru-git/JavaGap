@@ -51,43 +51,26 @@
     <!-- Angular views -->
 </footer>
 <script type="text/javascript">
-    $(function() {
-        global.is_front_page = 'true';
-        var $banner = $('#banner'),$header = $('#header');
-        if ($banner.length > 0) {
-            $banner.find('.more').addClass('scrolly');
-            $header.addClass('with-banner').addClass('alt');
-            $banner.scrollex({
-                mode: 'top',
-                top: '-100vh',
-                bottom: 10,
-                enter: function() { 
-                    $header.addClass('alt');
-                },
-                leave: function() { 
-                    $header.removeClass('alt'); 
-                }
-            });
-        }
-        $('.scrolly').scrolly(); 
-
-        // var setVideoSize = function() {
-        //     var video_width = $(window).innerWidth();
-        //     var video_height = $(window).innerHeight();
-        //     var ratio = 450/800;
-        //     if(video_height/video_width > ratio) {
-        //         video_width = video_height / ratio;
-        //     } else {
-        //         video_height = video_width * ratio;
-        //     }
-        //     $('#video').css({ width: video_width + 'px', height: video_height + 'px' });
-        // }
-
-        // setVideoSize();
-
-        // // If you want to keep full screen on window resize
-        // $(window).resize(function(){
-        //     setVideoSize();
-        // });
-    });
+    (function($) {
+        $(function() {
+            global.is_front_page = 'true';
+            var $banner = $('#banner'),$header = $('#header');
+            if ($banner.length > 0) {
+                $banner.find('.more').addClass('scrolly');
+                $header.addClass('with-banner').addClass('alt');
+                $banner.scrollex({
+                    mode: 'top',
+                    top: '-100vh',
+                    bottom: 10,
+                    enter: function() {
+                        $header.addClass('alt');
+                    },
+                    leave: function() {
+                        $header.removeClass('alt');
+                    }
+                });
+            }
+            $('.scrolly').scrolly();
+        });    
+    })(jQuery);
 </script>

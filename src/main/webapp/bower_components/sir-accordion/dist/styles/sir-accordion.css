@@ -1,0 +1,65 @@
+.sir-accordion-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.sir-accordion-wrapper>div+div {
+  border-top: 1px solid #EEE;
+}
+
+.sir-accordion-group{
+  overflow: hidden;
+  width: 100%;
+  padding-left: 15px;
+  border-left: 2px dotted #d3d3d3;
+}
+
+.sir-accordion-group>div+div {
+  border-top: 1px solid #EEE;
+}
+
+.sir-accordion-header{
+  height: 54px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 2px;
+  color: #18507b;;
+  position: relative;
+  z-index: 1;
+}
+
+.sir-accordion-header.active-header{
+  font-weight: bold;
+}
+
+.sir-accordion-content{
+  overflow: hidden;
+  padding-left: 15px;
+}
+
+.sir-accordion-content > div{
+  height: 0px;
+}
+
+.sir-accordion-content > div > div{
+  overflow: auto;
+}
+
+.sir-accordion-vertical-align{
+  height: 100%;
+}
+
+.sir-accordion-vertical-align:before{
+  content: '';
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.sir-accordion-vertical-align > * {
+  margin: 0;        
+  vertical-align: middle;
+  display: inline-block;
+}
