@@ -26,5 +26,7 @@
 
     <cache alias="com.isoftnet.javagap.domain.Course" uses-template="simple"/>
 
+    <cache alias="com.isoftnet.javagap.domain.Help" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

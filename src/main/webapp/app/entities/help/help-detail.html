@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span>Help</span> {{vm.help.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Question</span></dt>
+        <dd>
+            <span>{{vm.help.question}}</span>
+        </dd>
+        <dt><span>Answer</span></dt>
+        <dd>
+            <span>{{vm.help.answer}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="help-detail.edit({id:vm.help.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>
