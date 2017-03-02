@@ -20,10 +20,6 @@
             vm.swaggerEnabled = response.swaggerEnabled;
         });
 
-        /*Principal.identity().then(function(account) {
-            vm.currentAccount = account;
-        });*/
-
         vm.home = home;
         vm.login = login;
         vm.logout = logout;
@@ -48,7 +44,6 @@
         function logout() {
             collapseNavbar();
             Auth.logout();
-            //$state.go('app');
             $window.location.href = '';
         }
 

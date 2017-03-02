@@ -3,11 +3,11 @@
 
     angular
         .module('javagapApp')
-        .controller('HelpController', HelpController);
+        .controller('HowHelpController', HowHelpController);
 
-    HelpController.$inject = ['Principal', '$scope', '$compile'];
+    HowHelpController.$inject = ['Principal', '$scope', '$compile'];
 
-    function HelpController (Principal, $scope, $compile) {
+    function HowHelpController (Principal, $scope, $compile) {
       $scope.activeArray = 1;
 	  $scope.coord = '';
 	  $scope.accordionConfig = {

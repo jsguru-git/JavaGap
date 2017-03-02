@@ -17,7 +17,7 @@
                 pageTitle: 'Helps'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/help/helps.html',
                     controller: 'HelpController',
                     controllerAs: 'vm'
@@ -34,7 +34,7 @@
                 pageTitle: 'Help'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/help/help-detail.html',
                     controller: 'HelpDetailController',
                     controllerAs: 'vm'

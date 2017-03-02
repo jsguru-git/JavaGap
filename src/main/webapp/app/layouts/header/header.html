@@ -9,10 +9,10 @@
         </div>
         <div class="navbar-collapse collapse" style="float: right;">
       <ul class="nav navbar-nav">
-      <li><a href="#" ng-click="vm.home()">HOME</a></li>
+      <li><a ng-click="vm.home()">HOME</a></li>
       
       <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
             <li ui-sref-active="active">
               <a ui-sref="settings" ng-click="vm.collapseNavbar()">Settings</a>
@@ -23,7 +23,7 @@
         </ul>
       </li>
       <li class="dropdown menu-large">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>       
+        <a class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>       
         <ul class="dropdown-menu megamenu row">
           <li class="col-sm-3">
             <ul>
@@ -93,29 +93,30 @@
         </ul>
       </li>
       <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">entities <b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">entities <b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
           <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
           <li><a ui-sref="contact-us" ng-click="vm.collapseNavbar()">Contact Us</a></li>
           <li><a ui-sref="news-subscription" ng-click="vm.collapseNavbar()">News subscription</a></li>
           <li><a ui-sref="course" ng-click="vm.collapseNavbar()">Course</a></li>
+          <li><a ui-sref="help" ng-click="vm.collapseNavbar()">Help</a></li>
         </ul>
       </li> 
       <li class="dropdown menu-large">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
             <li><a ui-sref="consulting" ng-click="vm.collapseNavbar()">CONSULTING</a></li>
             <li><a ui-sref="training" ng-click="vm.collapseNavbar()">TRAINING</a></li>
             <li><a ui-sref="blog" ng-click="vm.collapseNavbar()">BLOG</a></li>
             <li><a ui-sref="why_javagap" ng-click="vm.collapseNavbar()">WHY JAVAGAP?</a></li>
             <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
-            <li><a ui-sref="help" ng-click="vm.collapseNavbar()">HELP</a></li>
+            <li><a ui-sref="how-help" ng-click="vm.collapseNavbar()">HOW WE HELP?</a></li>
             <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">CONTACT US</a></li>
         </ul>
       </li>
       
       <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
             <li ui-sref-active="active">
                 <a ui-sref="user-management" ng-click="vm.collapseNavbar()">User management</a>

@@ -270,11 +270,11 @@ ul.actions.vertical li > * {
     /*padding: 5em 0 3em;*/
 }
 
-.wrapper > * > .inner {
+/*.wrapper > * > .inner {
     margin: 0 auto;
-    /*max-width: calc(100% - 4em);
-    width: 90em;*/
-}
+    max-width: calc(100% - 4em);
+    width: 90em;
+}*/
 
 ul.actions.vertical li {
     display: block;
