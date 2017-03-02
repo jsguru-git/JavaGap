@@ -1,0 +1,37 @@
+{
+  "name": "angular-rating",
+  "homepage": "https://github.com/MedhatDawoud/angular-rating",
+  "description": "a rating component",
+  "main": "",
+  "keywords": [
+    "angular",
+    "rating",
+    "bootstrap"
+  ],
+  "authors": [
+    "MedhatDawoud"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6"
+  },
+  "version": "3.1.0",
+  "_release": "3.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.1.0",
+    "commit": "69a19cfd6ae6c65ae42f4fe7d6ce51bfa9ed4f63"
+  },
+  "_source": "https://github.com/MedhatDawoud/angular-rating.git",
+  "_target": "^3.1.0",
+  "_originalSource": "angular-rating",
+  "_direct": true
+}

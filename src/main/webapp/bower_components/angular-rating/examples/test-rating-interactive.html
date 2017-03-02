@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testRating">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Rating Tests</title>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../src/angular-rating.js"></script>
+    <script src="test-rating.js"></script>
+</head>
+
+<body ng-controller="ItemController">
+    <h2>Unsorted List:</h2>
+    <p>please rate the items below to sort them</p>
+    <div class="item" ng-repeat="item in items">
+        <div class="name">
+            {{item.name}}
+        </div>
+        <div class="rating">
+            <rating value="item.rate" max="5" size="18px" color="#3DC31E" interactive="true"></rating>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <h2>Sorted List:</h2>
+    <div class="item" ng-repeat="sitem in items | orderBy: 'rate'">
+        <div class="name">
+            {{sitem.name}} ({{sitem.rate}})
+        </div>
+        <div class="rating">
+            <rating value="sitem.rate" max="5" size="18px" color="#3DC31E" ></rating>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</body>
+<style type="text/css">
+    body {
+        padding: 20px;
+    }
+    .item {
+        border: solid 1px gray;
+        width: 90%;
+        margin: 10px;
+        padding: 10px;
+        line-height: 30px;
+    }    
+    .item .name {
+        float: left;
+        width: 50%;
+    }
+    .item .rating {
+        float: left;
+        width: 50%;
+    }
+    .clear{
+        clear: both;
+    }
+</style>
+
+</html>

@@ -1,0 +1,53 @@
+<div id="ratings-modal" class="modal-body">
+	<div id="ratings-modal-header">
+		<img src="content/images/pythonlearn_thumbnail_1x1.jpg"></img>
+		<div>
+			<div class="header-title">
+				<span>University of Michigan</span>
+			</div>
+			<span class="header-content">Programming for Everybody (Getting Started with Python)</span>
+		</div>
+		<md-divider></md-divider>
+	</div>
+    <div id="ratings-modal-content">
+        <h1 class="ratings-title">Ratings</h1>
+        <div class="ratings-learner-select">
+        	<div layout="row">
+	        	<md-select placeholder="Assign to learner" ng-model="vm.learner" md-on-open="vm.loadLearners()" style="min-width: 200px;">
+					<md-option ng-value="learner" ng-repeat="learner in vm.learners">{{learner.name}}</md-option>
+			    </md-select>
+			</div>
+        </div>
+        <div class="ratings-value-select">
+        	<div layout="row">
+	        	<md-select placeholder="Assign to reviews" ng-model="vm.review" md-on-open="vm.loadReviews()" style="min-width: 200px;">
+					<md-option ng-value="review" ng-repeat="review in vm.reviews">{{review.name}}</md-option>
+			    </md-select>
+			</div>
+        </div>
+        <div class="ratings-review-count-container">
+        	<div class="count-value">
+        		<span>5,428</span>
+        	</div>
+        	<span>Reviews</span>
+        	<md-divider></md-divider>
+        </div>
+        <div class="ratings-reviews-container">
+        	<md-list-item class="md-3-line" ng-repeat="courseReview in vm.courseReviews">
+				<div class="md-list-item-text" layout="column">
+					<div class="review-header">
+						<div class="review-stars">
+							<rating value="5" max="5" color="#d49261"></rating>
+							<!-- <rating ng-value="courseReview.value" max="5"></rating> -->
+						</div>
+						<div class="review-date">{{ courseReview.when }}</div>
+					</div>
+					<div class="review-content">{{ courseReview.notes }}</div>
+					<md-divider></md-divider>
+				</div>
+	        </md-list-item>
+        </div>
+    </div>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+	            ng-click="vm.cancel()">&times;</button>
+</div>

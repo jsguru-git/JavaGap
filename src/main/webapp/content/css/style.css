@@ -272,8 +272,8 @@ ul.actions.vertical li > * {
 
 .wrapper > * > .inner {
     margin: 0 auto;
-    max-width: calc(100% - 4em);
-    width: 90em;
+    /*max-width: calc(100% - 4em);
+    width: 90em;*/
 }
 
 ul.actions.vertical li {
@@ -998,7 +998,7 @@ table.uib-daypicker td {
 .inner h2 {
     padding-bottom: 50px;
 }
-
+/*********** Courses and Legal Widget CSS ***********/
 .jh-entity-details > dt {
     margin-top: 0;
 }
@@ -1032,8 +1032,149 @@ dl.jh-entity-details > dt > span {
 #sideNavBar > ul > li:not(.active) > a:hover {
     background-color: #e8e8e8;
 }
-.jg-content > * {
+.jg-content > *:not(#media) {
     padding-top: 120px;
+}
+.jg-col-lg-1,.jg-col-lg-2,.jg-col-lg-3,
+.jg-col-lg-4,.jg-col-lg-5,.jg-col-lg-6,
+.jg-col-lg-7,.jg-col-lg-8,.jg-col-lg-9,
+.jg-col-lg-10,.jg-col-lg-11,.jg-col-lg-12 {
+    position: relative;
+    min-height: 1px;
+}
+
+/*************** Courses Widget CSS ****************/
+#ratings-modal > button {
+    color: #999;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 25px;
+    font-weight: bold;
+}
+#ratings-modal-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 9px 15px;
+    margin-bottom: 32px;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+    font-family: inherit;
+}
+#ratings-modal-header img {
+    vertical-align: middle;
+    margin-right: 15px;
+    max-width: 200px;
+}
+.header-title {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: bold;
+    color: #373a3c;
+}
+.header-content {
+    font-size: 32px;
+    line-height: 36px;
+}
+.md-select-menu-container {
+    z-index: 10000;
+}
+.count-value {
+    font-size: 30px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    display: inline-block;
+    color: #616161;
+    font-family: inherit;
+}
+#ratings-modal {
+    max-height: 70vh;
+    padding: 28px;
+    overflow-y: auto;
+    background-color: #fff;
+    font-family: 'OpenSans-Light',Arial,sans-serif;
+}
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.ratings-reviews-container {
+    background-color: #fafafa;
+}
+.ratings-reviews-container > * {
+    padding: 0 40px!important;
+}
+.ratings-reviews-container > * > * {
+    position: relative;
+    padding: 25px 0!important;
+}
+.ratings-title {
+    color: #424242;
+    font-size: 26px;
+    line-height: 21px;
+    text-transform: none;
+    font-family: inherit;
+}
+#media #course_video,
+#media #course_info {
+    margin-bottom: 20px;
+}
+#media #course_video video {
+    min-height: 0;
+}
+#course_info {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+}
+.list {
+    font-size: 13px;
+    font-family: fontawesome;
+}
+.list .list-item {
+    margin-bottom: 5px;
+    display: flex;
+}
+.list .list-left {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 150px;
+    width: 150px;
+    display: inline-block;
+}
+.list .list-right {
+    font-weight: bold;
+}
+/***************************************************/
+@media (max-width: 981px) {
+    .jg-side-nav {
+        visibility: hidden;
+        width: 0;
+    }
+    .jg-layout-two-col .jg-content {
+        margin-left: 0;
+        border-left: none;
+        padding-left: 0;
+    }   
+}
+
+@media (min-width: 1275px) {
+    .jg-col-lg-8 {
+        width: 66.66666667%;
+    }
+    .jg-col-lg-4 {
+        width: 33.33333333%;
+    }
+    .jg-col-lg-1,.jg-col-lg-2,.jg-col-lg-3,
+    .jg-col-lg-4,.jg-col-lg-5,.jg-col-lg-6,
+    .jg-col-lg-7,.jg-col-lg-8,.jg-col-lg-9,
+    .jg-col-lg-10,.jg-col-lg-11,.jg-col-lg-12 {
+        float: left;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1051,14 +1192,10 @@ dl.jh-entity-details > dt > span {
         max-height: 100vh;
         overflow-y: scroll;  
     }
-    .jg-side-nav {
-        visibility: hidden;
-        width: 0;
-    }
-    .jg-layout-two-col .jg-content {
+
+    #ratings-modal {
         margin-left: 0;
-        border-left: none;
-        padding-left: 0;
+        margin-right: 0;
     }
 }
 
@@ -1075,6 +1212,10 @@ dl.jh-entity-details > dt > span {
     }
     .alt nav.mobile .navbar-collapse {
         background-color: inherit;
+    }
+    #ratings-modal {
+        margin-left: -184px;
+        margin-right: -184px;
     }
 }
 

@@ -18,7 +18,14 @@
             // jhipster-needle-angularjs-add-module JHipster will add new module here
             'angular-loading-bar',
             'jqwidgets',
-            'sir-accordion'
+            'sir-accordion',
+            'ngSanitize',
+            'com.2fdevs.videogular',
+            'com.2fdevs.videogular.plugins.controls',
+            'com.2fdevs.videogular.plugins.overlayplay',
+            'com.2fdevs.videogular.plugins.poster',
+            'ngMaterial',
+            'angular-rating'
         ])
         .run(run);
 

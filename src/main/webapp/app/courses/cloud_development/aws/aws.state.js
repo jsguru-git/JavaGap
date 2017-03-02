@@ -16,7 +16,9 @@
             },
             views: {
                 'content': {
-                    templateUrl: 'app/courses/cloud_development/aws/aws.html'
+                    templateUrl: 'app/courses/cloud_development/aws/aws.html',
+                    controller: 'AwsController',
+                    controllerAs: 'vm'
                 }
             }
         });

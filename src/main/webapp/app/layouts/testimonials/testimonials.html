@@ -11,45 +11,20 @@
                 </div>
             </div>
         </div>
-        <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" id="photoGallery">
-            <div>
-                <div class="photo">
-                    <div class="testimonial_text">
-                        <p>{{vm.contents[0].text}}</p>
-                    </div>
-                    <div class="testimonial_title">
-                        <p>{{vm.contents[0].title}}</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="photo">
-                    <div class="testimonial_text">
-                        <p>{{vm.contents[1].text}}</p>
-                    </div>
-                    <div class="testimonial_title">
-                        <p>{{vm.contents[1].title}}</p>
+        <div ng-if = "vm.contents">
+            <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="5000" id="photoGallery">
+                <div ng-repeat="content in vm.contents">
+                    <div class="photo">
+                        <div class="testimonial_text">
+                            <p>{{content.text}}</p>
+                        </div>
+                        <div class="testimonial_title">
+                            <p>{{content.title}}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <div class="photo">
-                    <div class="testimonial_text">
-                        <p>{{vm.contents[2].text}}</p>
-                    </div>
-                    <div class="testimonial_title">
-                        <p>{{vm.contents[2].title}}</p>
-                    </div>
-                </div>
-            </div>
-        </jqx-scroll-view>
-        <!--<div style='margin-top: 20px;'>
-            <br />
-            <div>
-                <jqx-button jqx-on-click="vm.start()">Start Slideshow</jqx-button>
-                <jqx-button jqx-on-click="vm.stop()">Stop Slideshow</jqx-button>
-            </div>
-        </div>-->
+            </jqx-scroll-view>
+        </div>
     </div>
     <div class="vc_parallax-inner parallax testimonials-background"></div>
 </div>

@@ -1,44 +1,3 @@
-<style>
-	/*.jg-side-nav {
-		width: 250px;
-		float: left;
-	}
-	.jg-layout-two-col .jg-content {
-		margin-left: 300px;
-		border-left: 2px solid #eaeaea;
-		padding-left: 5%;
-	}
-	#sideNavBar > ul > li > a {
-		width: 100%;
-		text-align: left;
-		color: rgb(53, 142, 215);
-		background-color: #ffffff;
-		border: 1px solid #ddd;
-		margin-bottom: -1px;
-	}
-	#sideNavBar > ul > li.active > a {
-		background-color: #358ed7;
-		border-color: rgb(53, 142, 215);
-		color: #ffffff;
-	}
-	#sideNavBar > ul > li:not(.active) > a:hover {
-		background-color: #e8e8e8;
-	}
-	#legalContent > * {
-		padding-top: 120px;
-	}
-	@media (max-width: 767px) {
-		.jg-side-nav {
-			visibility: hidden;
-			width: 0;
-		}
-		.jg-layout-two-col .jg-content {
-			margin-left: 0;
-			border-left: none;
-			padding-left: 0;
-		}
-	}*/
-</style>
 <div class="container jg-layout-two-col">
 	<div class="row">
 		<div id="sideNavBar" class="jg-side-nav">
@@ -83,24 +42,30 @@
 			$('#sideNavBar li > a').parent().removeClass('active');
 			$(this).parent().addClass('active');
 		});
+
 		$(window).scroll(function() {
 			var scrollTop = $(window).scrollTop();
-			var scrollMaximun = $('#legalContent').height() - $('#sideNavBar').height();
-			var scrollMinimum = $('div.jg-layout-two-col').position().top;
+			var container = $('div.jg-layout-two-col');
 			
-			if(scrollTop < scrollMinimum - 30) {
+			var minFixedHeight = container.position().top;
+			var maxFixedHeight = container.height() - $('#sideNavBar').height();
+
+			var scrollMinimum = container.offset().top - minFixedHeight;
+			var scrollMaximun = maxFixedHeight + scrollMinimum;
+			
+			if(scrollTop < scrollMinimum) {
 				$('#sideNavBar').css({
 					position: 'initial'
 				});
 			} else if (scrollTop >= scrollMaximun) {
 				$('#sideNavBar').css({
 					position: 'relative',
-					top: scrollMaximun
+					top: maxFixedHeight
 				});
 			} else {
 				$('#sideNavBar').css({
 					position: 'fixed',
-					top: scrollMinimum
+					top: minFixedHeight
 				});
 			}
 		});
