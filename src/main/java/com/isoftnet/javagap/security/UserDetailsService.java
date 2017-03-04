@@ -31,7 +31,8 @@ public class UserDetailsService implements org.springframework.security.core.use
     public UserDetails loadUserByUsername(final String login) {
         log.debug("Authenticating {}", login);
         String lowercaseLogin = login.toLowerCase(Locale.ENGLISH);
-        Optional<User> userFromDatabase = userRepository.findOneByLogin(lowercaseLogin);
+        //Optional<User> userFromDatabase = userRepository.findOneByLogin(lowercaseLogin);
+        Optional<User> userFromDatabase = userRepository.findOneByEmail(login);
         return userFromDatabase.map(user -> {
             if (!user.getActivated()) {
                 throw new UserNotActivatedException("User " + lowercaseLogin + " was not activated");
@@ -39,7 +40,8 @@ public class UserDetailsService implements org.springframework.security.core.use
             List<GrantedAuthority> grantedAuthorities = user.getAuthorities().stream()
                     .map(authority -> new SimpleGrantedAuthority(authority.getName()))
                 .collect(Collectors.toList());
-            return new org.springframework.security.core.userdetails.User(lowercaseLogin,
+            //return new org.springframework.security.core.userdetails.User(lowercaseLogin,
+            return new org.springframework.security.core.userdetails.User(user.getLogin(),
                 user.getPassword(),
                 grantedAuthorities);
         }).orElseThrow(() -> new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the " +

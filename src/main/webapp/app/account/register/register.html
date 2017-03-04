@@ -28,7 +28,7 @@
     <div class="">
         <form ng-show="!vm.success" name="form" role="form" novalidate ng-submit="vm.register()" show-validation>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label" for="login" data-translate="global.form.username">Username</label>
                 <input type="text" class="input" id="login" name="login" 
                        ng-model="vm.registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z0-9-]*$/" required>
@@ -50,7 +50,56 @@
                         Your username can only contain lower-case letters and digits.
                     </p>
                 </div>
+            </div> -->
+
+            <div class="form-group">
+                <label class="control-label" for="firstName" data-translate="global.form.firstname">First Name</label>
+                <input type="text" class="input" id="firstName" name="firstName"
+                       ng-model="vm.registerAccount.firstName"  ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z]*$/" required>
+
+                <div ng-show="form.firstName.$dirty && form.firstName.$invalid">
+                    <p class="help-block"
+                           ng-show="form.firstName.$error.required" data-translate="global.messages.validate.firstname.required">
+                        Your firstname is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.firstName.$error.minlength" data-translate="global.messages.validate.firstname.minlength">
+                        Your firstname is required to be at least 1 character.
+                    </p>
+                    <p class="help-block"
+                            ng-show="form.firstName.$error.maxlength" data-translate="global.messages.validate.firstname.maxlength">
+                        Your firstname cannot be longer than 50 characters.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.firstName.$error.pattern" data-translate="global.messages.validate.firstname.pattern">
+                        Your firstname can only contain letters.
+                    </p>
+                </div>
             </div>
+            <div class="form-group">
+                <label class="control-label" for="lastName" data-translate="global.form.lastname">Last Name</label>
+                <input type="text" class="input" name="lastName"
+                       ng-model="vm.registerAccount.lastName" ng-maxlength="50" ng-pattern="/^[_'.@A-Za-z]*$/" required>
+
+                <div ng-show="form.lastName.$dirty && form.lastName.$invalid">
+                    <p class="help-block"
+                           ng-show="form.lastName.$error.required" data-translate="global.messages.validate.lastname.required">
+                        Your lastname is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.lastName.$error.minlength" data-translate="global.messages.validate.lastname.minlength">
+                        Your lastname is required to be at least 1 character.
+                    </p>
+                    <p class="help-block"
+                            ng-show="form.lastName.$error.maxlength" data-translate="global.messages.validate.lastname.maxlength">
+                        Your lastname cannot be longer than 50 characters.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.lastName.$error.pattern" data-translate="global.messages.validate.lastname.pattern">
+                        Your lastname can only contain letters.
+                    </p>
+                </div>
+            </div>            
             <div class="form-group">
                 <label class="control-label" for="email" data-translate="global.form.email">E-mail</label>
                 <input type="email" class="input" id="email" name="email" 

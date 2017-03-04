@@ -5,9 +5,10 @@
         .module('javagapApp')
         .controller('HowHelpController', HowHelpController);
 
-    HowHelpController.$inject = ['Principal', '$scope', '$compile'];
+    HowHelpController.$inject = ['Principal', '$scope', '$compile', 'Help'];
 
-    function HowHelpController (Principal, $scope, $compile) {
+    function HowHelpController (Principal, $scope, $compile, Help) {
+      var vm = this;
       $scope.activeArray = 1;
 	  $scope.coord = '';
 	  $scope.accordionConfig = {
@@ -26,54 +27,14 @@
 	    beforeBottomContent: '',
 	    afterBottomContent: ''
 	  };
-
-	  $scope.accordionArray = 
-	  [
-	    {	
-	    	"title":"How do I install the theme?",
-	    	"topContent":"DIY kinfolk etsy, drinking vinegar put a bird on it taxidermy chicharrones humblebrag kombucha "
-	    				+ "wolf beard swag tofu vegan try-hard.Celiac thundercats yr tote bag, "
-	    				+ "pickled small batch lo-fi dreamcatcher occupy chicharrones pop-up chambray letterpress.",
-	    	"bottomContent":"Hammock PBR&B crucifix, green juice vinyl neutra tacos cold-pressed. Next level meggings "
-	    				+ "try-hard chicharrones, sustainable mustache franzen. Flannel yr brooklyn skateboard literally "
-	    				+ "neutra scenester, VHS authentic listicle green juice."
-	    },
-	    {	
-	    	"title":"How can I import the demo content?",
-	    	"topContent":"DIY kinfolk etsy, drinking vinegar put a bird on it taxidermy chicharrones humblebrag kombucha "
-	    				+ "wolf beard swag tofu vegan try-hard.Celiac thundercats yr tote bag, "
-	    				+ "pickled small batch lo-fi dreamcatcher occupy chicharrones pop-up chambray letterpress.",
-	    	"bottomContent":"Hammock PBR&B crucifix, green juice vinyl neutra tacos cold-pressed. Next level meggings "
-	    				+ "try-hard chicharrones, sustainable mustache franzen. Flannel yr brooklyn skateboard literally "
-	    				+ "neutra scenester, VHS authentic listicle green juice."
-	    },
-	    {	
-	    	"title":"Do I need to activate the plugins?",
-	    	"topContent":"DIY kinfolk etsy, drinking vinegar put a bird on it taxidermy chicharrones humblebrag kombucha "
-	    				+ "wolf beard swag tofu vegan try-hard.Celiac thundercats yr tote bag, "
-	    				+ "pickled small batch lo-fi dreamcatcher occupy chicharrones pop-up chambray letterpress.",
-	    	"bottomContent":"Hammock PBR&B crucifix, green juice vinyl neutra tacos cold-pressed. Next level meggings "
-	    				+ "try-hard chicharrones, sustainable mustache franzen. Flannel yr brooklyn skateboard literally "
-	    				+ "neutra scenester, VHS authentic listicle green juice."
-	    },
-	    {	
-	    	"title":"Where can I change the colours?",
-	    	"topContent":"DIY kinfolk etsy, drinking vinegar put a bird on it taxidermy chicharrones humblebrag kombucha "
-	    				+ "wolf beard swag tofu vegan try-hard.Celiac thundercats yr tote bag, "
-	    				+ "pickled small batch lo-fi dreamcatcher occupy chicharrones pop-up chambray letterpress.",
-	    	"bottomContent":"Hammock PBR&B crucifix, green juice vinyl neutra tacos cold-pressed. Next level meggings "
-	    				+ "try-hard chicharrones, sustainable mustache franzen. Flannel yr brooklyn skateboard literally "
-	    				+ "neutra scenester, VHS authentic listicle green juice."
-	    },
-	    {	
-	    	"title":"How can I get support?",
-	    	"topContent":"DIY kinfolk etsy, drinking vinegar put a bird on it taxidermy chicharrones humblebrag kombucha "
-	    				+ "wolf beard swag tofu vegan try-hard.Celiac thundercats yr tote bag, "
-	    				+ "pickled small batch lo-fi dreamcatcher occupy chicharrones pop-up chambray letterpress.",
-	    	"bottomContent":"Hammock PBR&B crucifix, green juice vinyl neutra tacos cold-pressed. Next level meggings "
-	    				+ "try-hard chicharrones, sustainable mustache franzen. Flannel yr brooklyn skateboard literally "
-	    				+ "neutra scenester, VHS authentic listicle green juice."
-	    }
-	  ];
-    }
+	   $scope.accordionArray = [];    
+	    loadAll();
+        function loadAll() {        	        	
+            Help.query(function(result)  {                    
+                angular.forEach(result, function(value, key) {            
+                	$scope.accordionArray.push({"title": value.question, "topContent": value.answer});
+                });
+            });
+        }
+ 	}
 })();

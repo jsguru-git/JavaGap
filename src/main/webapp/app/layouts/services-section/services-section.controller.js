@@ -3,11 +3,11 @@
 
     angular
         .module('javagapApp')
-        .controller('ServicesController', ServicesController);
+        .controller('ServicesSectionController', ServicesSectionController);
 
-    ServicesController.$inject = ['$scope'];
+    ServicesSectionController.$inject = ['$scope'];
 
-    function ServicesController ($scope) {
+    function ServicesSectionController ($scope) {
     	var vm = this;
         var icons = ["icon outline outline-archery-target", "icon outline outline-search", "icon outline outline-padlock-closed"];
     	var titles = ["Consulting", "Training", "Education"];

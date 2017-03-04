@@ -3,11 +3,11 @@
 
     angular
         .module('javagapApp')
-        .controller('JoinController', JoinController);
+        .controller('JoinSectionController', JoinSectionController);
 
-    JoinController.$inject = ['$scope', 'NewsSubscription'];
+    JoinSectionController.$inject = ['$scope', 'NewsSubscription'];
 
-    function JoinController ($scope, NewsSubscription) {
+    function JoinSectionController ($scope, NewsSubscription) {
         var vm = this;
         vm.save = save;
         

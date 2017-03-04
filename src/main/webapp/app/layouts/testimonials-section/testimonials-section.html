@@ -11,15 +11,15 @@
                 </div>
             </div>
         </div>
-        <div ng-if = "vm.contents">
-            <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="5000" id="photoGallery">
-                <div ng-repeat="content in vm.contents">
+        <div ng-if = "vm.testimonials">
+            <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="10000" id="photoGallery">
+                <div ng-repeat="testimonial in vm.testimonials">
                     <div class="photo">
                         <div class="testimonial_text">
-                            <p>{{content.text}}</p>
+                            <p>{{testimonial.text}}</p>
                         </div>
                         <div class="testimonial_title">
-                            <p>{{content.title}}</p>
+                            <p>{{testimonial.title}}</p>
                         </div>
                     </div>
                 </div>

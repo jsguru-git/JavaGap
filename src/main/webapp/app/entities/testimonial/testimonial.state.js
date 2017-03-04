@@ -17,7 +17,7 @@
                 pageTitle: 'Testimonials'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/testimonial/testimonials.html',
                     controller: 'TestimonialController',
                     controllerAs: 'vm'
@@ -34,7 +34,7 @@
                 pageTitle: 'Testimonial'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/entities/testimonial/testimonial-detail.html',
                     controller: 'TestimonialDetailController',
                     controllerAs: 'vm'

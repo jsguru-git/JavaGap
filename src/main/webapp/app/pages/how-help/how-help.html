@@ -1,6 +1,8 @@
 <span class="image main">
 	<img src="content/images/help.jpg" alt="">
 </span>
-<div id="scroller" class="full-height scrollable">
-	<div id="SAC1" sir-accordion collection="accordionArray" config="accordionConfig"></div>
+<div ng-if="accordionArray.length > 0">
+	<div id="scroller" class="full-height scrollable">
+		<div id="SAC1" sir-accordion collection="accordionArray" config="accordionConfig"></div>
+	</div>
 </div>

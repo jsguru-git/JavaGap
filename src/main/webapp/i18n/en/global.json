@@ -36,6 +36,10 @@
         "form": {
             "username": "Username",
             "username.placeholder": "Your username",
+            "firstname": "First name",
+            "firstname.placeholder": "First name",
+            "lastname": "Last name",
+            "lastname.placeholder": "Last name",
             "newpassword": "New password",
             "newpassword.placeholder": "New password",
             "confirmpassword": "New password confirmation",
@@ -52,6 +56,18 @@
                 "dontmatch": "The password and its confirmation do not match!"
             },
             "validate": {
+                "firstname": {
+                    "required": "Your firstname is required.",
+                    "minlength": "Your firstname is required to be at least 1 character.",
+                    "maxlength": "Your firstname cannot be longer than 50 characters.",
+                    "pattern": "Your firstname can only contain letters."
+                },
+                "lastname": {
+                    "required": "Your lastname is required.",
+                    "minlength": "Your lastname is required to be at least 1 character.",
+                    "maxlength": "Your lastname cannot be longer than 50 characters.",
+                    "pattern": "Your lastname can only contain letters."
+                },
                 "newpassword": {
                     "required": "Your password is required.",
                     "minlength": "Your password is required to be at least 4 characters.",

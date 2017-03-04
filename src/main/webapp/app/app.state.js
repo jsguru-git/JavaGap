@@ -28,26 +28,26 @@
                     controllerAs: 'vm'
                 },
                 'services@app': {
-                    templateUrl: 'app/layouts/services/services.html',
-                    controller: 'ServicesController',
+                    templateUrl: 'app/layouts/services-section/services-section.html',
+                    controller: 'ServicesSectionController',
                     controllerAs: 'vm'
                 },
                 'testimonials@app': {
-                    templateUrl: 'app/layouts/testimonials/testimonials.html',
-                    controller: 'TestimonialsController',
+                    templateUrl: 'app/layouts/testimonials-section/testimonials-section.html',
+                    controller: 'TestimonialController',
                     controllerAs: 'vm'
                 },
-                'aboutUs@app': {
-                    templateUrl: 'app/layouts/aboutUs/aboutUs.html'
+                'about-us@app': {
+                    templateUrl: 'app/layouts/about-us-section/about-us-section.html'
                 },
                 'join@app': {
-                    templateUrl: 'app/layouts/join/join.html',
-                    controller: 'JoinController',
+                    templateUrl: 'app/layouts/join-section/join-section.html',
+                    controller: 'JoinSectionController',
                     controllerAs: 'vm'
                 },
                 'contact@app': {
-                    templateUrl: 'app/layouts/contact/contact.html',
-                    controller: 'ContactController',
+                    templateUrl: 'app/layouts/contact-section/contact-section.html',
+                    controller: 'ContactSectionController',
                     controllerAs: 'vm'
                 },
                 'footer@app': {

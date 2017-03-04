@@ -3,11 +3,11 @@
 
     angular
         .module('javagapApp')
-        .controller('ContactController', ContactController);
+        .controller('ContactSectionController', ContactSectionController);
 
-    ContactController.$inject = ['$scope', 'ContactUs'];
+    ContactSectionController.$inject = ['$scope', 'ContactUs'];
 
-    function ContactController ($scope, ContactUs) {
+    function ContactSectionController ($scope, ContactUs) {
         var vm = this;
         vm.save = save;
 

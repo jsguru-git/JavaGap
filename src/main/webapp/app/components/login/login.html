@@ -11,9 +11,13 @@
     </div>
     <div class="">
         <form class="form" role="form" ng-submit="vm.login($event)">
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="username" data-translate="global.form.username">Login</label>
                 <input type="text" class="input" id="username" ng-model="vm.username">
+            </div> -->
+            <div class="form-group">
+                <label for="email" data-translate="global.form.email">E-mail</label>
+                <input type="email" class="input" id="email" ng-model="vm.username">
             </div>
             <div class="form-group">
                 <label for="password" data-translate="login.form.password">Password</label>

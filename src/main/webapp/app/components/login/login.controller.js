@@ -14,6 +14,7 @@
         vm.cancel = cancel;
         vm.credentials = {};
         vm.login = login;
+        vm.email = null;
         vm.password = null;
         vm.register = register;
         vm.rememberMe = true;
@@ -25,6 +26,7 @@
         function cancel () {
             vm.credentials = {
                 username: null,
+                //email: null,
                 password: null,
                 rememberMe: true
             };
@@ -36,6 +38,7 @@
             event.preventDefault();
             Auth.login({
                 username: vm.username,
+                email: vm.email,
                 password: vm.password,
                 rememberMe: vm.rememberMe
             }).then(function () {
