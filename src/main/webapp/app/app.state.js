@@ -34,7 +34,7 @@
                 },
                 'testimonials@app': {
                     templateUrl: 'app/layouts/testimonials-section/testimonials-section.html',
-                    controller: 'TestimonialController',
+                    controller: 'TestimonialsSectionController',
                     controllerAs: 'vm'
                 },
                 'about-us@app': {

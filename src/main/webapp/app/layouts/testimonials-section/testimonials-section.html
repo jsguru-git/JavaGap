@@ -11,19 +11,21 @@
                 </div>
             </div>
         </div>
-        <div ng-if = "vm.testimonials">
-            <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="10000" id="photoGallery">
-                <div ng-repeat="testimonial in vm.testimonials">
-                    <div class="photo">
-                        <div class="testimonial_text">
-                            <p>{{testimonial.text}}</p>
-                        </div>
-                        <div class="testimonial_title">
-                            <p>{{testimonial.title}}</p>
+        <div style = "height: 320px">
+            <div ng-if = "vm.testimonials.length > 0">
+                <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="10000" id="photoGallery">
+                    <div ng-repeat="testimonial in vm.testimonials">
+                        <div class="photo">
+                            <div class="testimonial_text">
+                                <p>{{testimonial.text}}</p>
+                            </div>
+                            <div class="testimonial_title">
+                                <p>{{testimonial.title}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </jqx-scroll-view>
+                </jqx-scroll-view>
+            </div>
         </div>
     </div>
     <div class="vc_parallax-inner parallax testimonials-background"></div>

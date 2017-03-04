@@ -30,7 +30,14 @@
 
         function loadAll() {
             Testimonial.query(function(result) {
-                vm.testimonials = result;
+                if(result.length > 3) {
+                    var i;
+                    for(i = 0; i < 3; i++) {
+                        vm.testimonials.push(result[i]);
+                    }
+                } else {
+                    vm.testimonials = result;    
+                }
             });
         }
     }
