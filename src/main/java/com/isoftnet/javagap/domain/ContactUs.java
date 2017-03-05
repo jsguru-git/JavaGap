@@ -9,6 +9,8 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
+import com.isoftnet.javagap.domain.enumeration.ContactType;
+
 /**
  * A ContactUs.
  */
@@ -42,6 +44,10 @@ public class ContactUs implements Serializable {
 
     @Column(name = "created_on")
     private ZonedDateTime createdOn;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "type")
+    private ContactType type;
 
     public Long getId() {
         return id;
@@ -116,6 +122,19 @@ public class ContactUs implements Serializable {
         this.createdOn = createdOn;
     }
 
+    public ContactType getType() {
+        return type;
+    }
+
+    public ContactUs type(ContactType type) {
+        this.type = type;
+        return this;
+    }
+
+    public void setType(ContactType type) {
+        this.type = type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -145,6 +164,7 @@ public class ContactUs implements Serializable {
             ", phoneNumber='" + phoneNumber + "'" +
             ", message='" + message + "'" +
             ", createdOn='" + createdOn + "'" +
+            ", type='" + type + "'" +
             '}';
     }
 }

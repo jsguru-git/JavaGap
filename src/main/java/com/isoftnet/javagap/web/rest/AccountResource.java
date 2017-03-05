@@ -207,9 +207,9 @@ public class AccountResource {
     
     @PostMapping(path = "/account/delete", produces = MediaType.TEXT_PLAIN_VALUE)
     @Timed
-    public ResponseEntity<?> deleteAccount() {
-        userService.deleteUserAccount();
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<String> deleteAccount() {
+        boolean retval = userService.deleteUserAccount();
+        return (retval) ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>("User NOT Found", HttpStatus.BAD_REQUEST);
     }
 
     private boolean checkPasswordLength(String password) {

@@ -17,7 +17,7 @@
                 pageTitle: 'Contactuses'
             },
             views: {
-                'content': {
+                'content@': {
                     templateUrl: 'app/entities/contact-us/contactuses.html',
                     controller: 'ContactUsController',
                     controllerAs: 'vm'
@@ -34,7 +34,7 @@
                 pageTitle: 'ContactUs'
             },
             views: {
-                'content': {
+                'content@': {
                     templateUrl: 'app/entities/contact-us/contact-us-detail.html',
                     controller: 'ContactUsDetailController',
                     controllerAs: 'vm'
@@ -100,6 +100,7 @@
                                 phoneNumber: null,
                                 message: null,
                                 createdOn: null,
+                                type: null,
                                 id: null
                             };
                         }

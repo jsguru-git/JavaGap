@@ -36,6 +36,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+import com.isoftnet.javagap.domain.enumeration.ContactType;
 /**
  * Test class for the ContactUsResource REST controller.
  *
@@ -59,6 +60,9 @@ public class ContactUsResourceIntTest {
 
     private static final ZonedDateTime DEFAULT_CREATED_ON = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_CREATED_ON = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final ContactType DEFAULT_TYPE = ContactType.SUPPORT;
+    private static final ContactType UPDATED_TYPE = ContactType.INFORMATION;
 
     @Inject
     private ContactUsRepository contactUsRepository;
@@ -104,7 +108,8 @@ public class ContactUsResourceIntTest {
                 .email(DEFAULT_EMAIL)
                 .phoneNumber(DEFAULT_PHONE_NUMBER)
                 .message(DEFAULT_MESSAGE)
-                .createdOn(DEFAULT_CREATED_ON);
+                .createdOn(DEFAULT_CREATED_ON)
+                .type(DEFAULT_TYPE);
         return contactUs;
     }
 
@@ -135,6 +140,7 @@ public class ContactUsResourceIntTest {
         assertThat(testContactUs.getPhoneNumber()).isEqualTo(DEFAULT_PHONE_NUMBER);
         assertThat(testContactUs.getMessage()).isEqualTo(DEFAULT_MESSAGE);
         assertThat(testContactUs.getCreatedOn()).isEqualTo(DEFAULT_CREATED_ON);
+        assertThat(testContactUs.getType()).isEqualTo(DEFAULT_TYPE);
     }
 
     @Test
@@ -230,7 +236,8 @@ public class ContactUsResourceIntTest {
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())))
             .andExpect(jsonPath("$.[*].message").value(hasItem(DEFAULT_MESSAGE.toString())))
-            .andExpect(jsonPath("$.[*].createdOn").value(hasItem(sameInstant(DEFAULT_CREATED_ON))));
+            .andExpect(jsonPath("$.[*].createdOn").value(hasItem(sameInstant(DEFAULT_CREATED_ON))))
+            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())));
     }
 
     @Test
@@ -248,7 +255,8 @@ public class ContactUsResourceIntTest {
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
             .andExpect(jsonPath("$.phoneNumber").value(DEFAULT_PHONE_NUMBER.toString()))
             .andExpect(jsonPath("$.message").value(DEFAULT_MESSAGE.toString()))
-            .andExpect(jsonPath("$.createdOn").value(sameInstant(DEFAULT_CREATED_ON)));
+            .andExpect(jsonPath("$.createdOn").value(sameInstant(DEFAULT_CREATED_ON)))
+            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()));
     }
 
     @Test
@@ -273,7 +281,8 @@ public class ContactUsResourceIntTest {
                 .email(UPDATED_EMAIL)
                 .phoneNumber(UPDATED_PHONE_NUMBER)
                 .message(UPDATED_MESSAGE)
-                .createdOn(UPDATED_CREATED_ON);
+                .createdOn(UPDATED_CREATED_ON)
+                .type(UPDATED_TYPE);
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(updatedContactUs);
 
         restContactUsMockMvc.perform(put("/api/contactuses")
@@ -290,6 +299,7 @@ public class ContactUsResourceIntTest {
         assertThat(testContactUs.getPhoneNumber()).isEqualTo(UPDATED_PHONE_NUMBER);
         assertThat(testContactUs.getMessage()).isEqualTo(UPDATED_MESSAGE);
         assertThat(testContactUs.getCreatedOn()).isEqualTo(UPDATED_CREATED_ON);
+        assertThat(testContactUs.getType()).isEqualTo(UPDATED_TYPE);
     }
 
     @Test

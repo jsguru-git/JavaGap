@@ -34,6 +34,11 @@
         {
             "fieldName": "createdOn",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ContactType",
+            "fieldValues": "SUPPORT,INFORMATION,REQUEST,GENERAL"
         }
     ],
     "changelogDate": "20170215122315",

@@ -28,11 +28,11 @@
                 <constraints nullable="false" />
             </column>
             
-            <column name="email" type="varchar(255)">
+            <column name="email" type="varchar(50)">
                 <constraints nullable="false" />
             </column>
             
-            <column name="phone_number" type="varchar(255)">
+            <column name="phone_number" type="varchar(25)">
                 <constraints nullable="true" />
             </column>
             
@@ -41,6 +41,10 @@
             </column>
             
             <column name="created_on" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="type" type="varchar(25)">
                 <constraints nullable="true" />
             </column>
             

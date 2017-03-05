@@ -203,11 +203,13 @@ public class UserService {
     }
     
     @Transactional(readOnly = true)
-    public void deleteUserAccount() {
+    public boolean deleteUserAccount() {
         
     	User user = getUserWithAuthorities();
+    	if(user == null) return false;
         user.setActivated(false);
         userRepository.save(user);
+        return true;
     }
 
 

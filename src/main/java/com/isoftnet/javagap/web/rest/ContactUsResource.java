@@ -1,6 +1,7 @@
 package com.isoftnet.javagap.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import com.isoftnet.javagap.domain.enumeration.ContactType;
 import com.isoftnet.javagap.service.ContactUsService;
 import com.isoftnet.javagap.web.rest.util.HeaderUtil;
 import com.isoftnet.javagap.service.dto.ContactUsDTO;
@@ -47,10 +48,27 @@ public class ContactUsResource {
         if (contactUsDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("contactUs", "idexists", "A new contactUs cannot already have an ID")).body(null);
         }
+        if(contactUsDTO.getType() == null) contactUsDTO.setType(ContactType.INFORMATION);
         ContactUsDTO result = contactUsService.save(contactUsDTO);
         return ResponseEntity.created(new URI("/api/contactuses/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("contactUs", result.getId().toString()))
             .body(result);
+    }
+    
+    @PostMapping("/reportIssue")
+    @Timed
+    public ResponseEntity<ContactUsDTO> reportIssue(@Valid @RequestBody ContactUsDTO contactUsDTO) throws URISyntaxException {
+        log.debug("REST request to save reportIssue : {}", contactUsDTO);
+        contactUsDTO.setType(ContactType.SUPPORT);
+        return createContactUs(contactUsDTO);
+    }
+    
+    @PostMapping("/requestCourse")
+    @Timed
+    public ResponseEntity<ContactUsDTO> requestCourse(@Valid @RequestBody ContactUsDTO contactUsDTO) throws URISyntaxException {
+        log.debug("REST request to save requestCourse : {}", contactUsDTO);
+        contactUsDTO.setType(ContactType.REQUEST);
+        return createContactUs(contactUsDTO);
     }
 
     /**
