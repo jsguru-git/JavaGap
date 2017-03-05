@@ -9,19 +9,10 @@
         </div>
         <div class="navbar-collapse collapse" style="float: right;">
       <ul class="nav navbar-nav">
-      <li><a ng-click="vm.home()">HOME</a></li>
       
-      <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
-        <a class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
-        <ul class="dropdown-menu normalmenu row">
-            <li ui-sref-active="active">
-              <a ui-sref="settings" ng-click="vm.collapseNavbar()">Settings</a>
-            </li>
-            <li ui-sref-active="active">
-              <a ui-sref="password" ng-click="vm.collapseNavbar()">Password</a>
-            </li>
-        </ul>
-      </li>
+      <li><a ng-click="vm.home()">HOME</a></li>
+      <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
+            
       <li class="dropdown menu-large">
         <a class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>       
         <ul class="dropdown-menu megamenu row">
@@ -104,18 +95,17 @@
         </ul>
       </li> 
       <li class="dropdown menu-large">
-        <a class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
             <li><a ui-sref="consulting" ng-click="vm.collapseNavbar()">CONSULTING</a></li>
             <li><a ui-sref="training" ng-click="vm.collapseNavbar()">TRAINING</a></li>
+            <li><a ui-sref="education" ng-click="vm.collapseNavbar()">EDUCATION</a></li>
             <li><a ui-sref="blog" ng-click="vm.collapseNavbar()">BLOG</a></li>
-            <li><a ui-sref="why_javagap" ng-click="vm.collapseNavbar()">WHY JAVAGAP?</a></li>
-            <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
-            <li><a ui-sref="how-help" ng-click="vm.collapseNavbar()">HOW WE HELP?</a></li>
+            <li><a ui-sref="how-help" ng-click="vm.collapseNavbar()">HELP & FAQ</a></li>
             <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">CONTACT US</a></li>
         </ul>
       </li>
-      
+            
       <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_ADMIN">
         <a class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
@@ -142,6 +132,19 @@
             </li>
         </ul>
       </li>
+      
+      <li class="dropdown menu-large" ng-switch-when="true" has-authority="ROLE_USER">
+        <a class="dropdown-toggle" data-toggle="dropdown">ACCOUNT <b class="caret"></b></a>
+        <ul class="dropdown-menu normalmenu row">
+            <li ui-sref-active="active">
+              <a ui-sref="settings" ng-click="vm.collapseNavbar()">Settings</a>
+            </li>
+            <li ui-sref-active="active">
+              <a ui-sref="password" ng-click="vm.collapseNavbar()">Password</a>
+            </li>
+        </ul>
+      </li>
+      
     <li ui-sref-active="active" ng-switch-when="true">
         <a ng-click="vm.logout()">Sign out</a>
     </li>

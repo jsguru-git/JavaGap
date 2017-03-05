@@ -57,7 +57,21 @@ public class AccountResource {
 
         HttpHeaders textPlainHeaders = new HttpHeaders();
         textPlainHeaders.setContentType(MediaType.TEXT_PLAIN);
+        
+        return userRepository.findOneByEmail(managedUserVM.getEmail())
+                .map(user -> new ResponseEntity<>("e-mail address already in use", textPlainHeaders, HttpStatus.BAD_REQUEST))
+                .orElseGet(() -> {
+                		User user = userService
+                            .createUser(managedUserVM.getEmail().toLowerCase(), managedUserVM.getPassword(),
+                                managedUserVM.getFirstName(), managedUserVM.getLastName(),
+                                managedUserVM.getEmail().toLowerCase(), managedUserVM.getLangKey());
 
+                        mailService.sendActivationEmail(user);
+                        return new ResponseEntity<>(HttpStatus.CREATED);
+                    }
+            );
+        
+        /*
         return userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase())
             .map(user -> new ResponseEntity<>("login already in use", textPlainHeaders, HttpStatus.BAD_REQUEST))
             .orElseGet(() -> userRepository.findOneByEmail(managedUserVM.getEmail())
@@ -72,6 +86,7 @@ public class AccountResource {
                     return new ResponseEntity<>(HttpStatus.CREATED);
                 })
         );
+        */
     }
 
     /**
@@ -188,6 +203,13 @@ public class AccountResource {
         return userService.completePasswordReset(keyAndPassword.getNewPassword(), keyAndPassword.getKey())
               .map(user -> new ResponseEntity<String>(HttpStatus.OK))
               .orElse(new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR));
+    }
+    
+    @PostMapping(path = "/account/delete", produces = MediaType.TEXT_PLAIN_VALUE)
+    @Timed
+    public ResponseEntity<?> deleteAccount() {
+        userService.deleteUserAccount();
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     private boolean checkPasswordLength(String password) {
