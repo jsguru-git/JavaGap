@@ -108,8 +108,7 @@ public class ContactUsResourceIntTest {
                 .email(DEFAULT_EMAIL)
                 .phoneNumber(DEFAULT_PHONE_NUMBER)
                 .message(DEFAULT_MESSAGE)
-                .createdOn(DEFAULT_CREATED_ON)
-                .type(DEFAULT_TYPE);
+                .createdOn(DEFAULT_CREATED_ON);
         return contactUs;
     }
 
@@ -281,8 +280,7 @@ public class ContactUsResourceIntTest {
                 .email(UPDATED_EMAIL)
                 .phoneNumber(UPDATED_PHONE_NUMBER)
                 .message(UPDATED_MESSAGE)
-                .createdOn(UPDATED_CREATED_ON)
-                .type(UPDATED_TYPE);
+                .createdOn(UPDATED_CREATED_ON);
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(updatedContactUs);
 
         restContactUsMockMvc.perform(put("/api/contactuses")

@@ -45,9 +45,13 @@ public class ContactUs implements Serializable {
     @Column(name = "created_on")
     private ZonedDateTime createdOn;
 
-    @Enumerated(EnumType.STRING)
+    //@Enumerated(EnumType.STRING)
+    //@Column(name = "type")
+    //private ContactType type;
+    
+    //@Enumerated(EnumType.STRING)
     @Column(name = "type")
-    private ContactType type;
+    private String type;
 
     public Long getId() {
         return id;
@@ -122,6 +126,7 @@ public class ContactUs implements Serializable {
         this.createdOn = createdOn;
     }
 
+    /*
     public ContactType getType() {
         return type;
     }
@@ -134,6 +139,9 @@ public class ContactUs implements Serializable {
     public void setType(ContactType type) {
         this.type = type;
     }
+    */
+    
+    
 
     @Override
     public boolean equals(Object o) {
@@ -150,7 +158,17 @@ public class ContactUs implements Serializable {
         return Objects.equals(id, contactUs.id);
     }
 
-    @Override
+    public String getType()
+	{
+		return this.type;
+	}
+
+	public void setType(String type)
+	{
+		this.type = type;
+	}
+
+	@Override
     public int hashCode() {
         return Objects.hashCode(id);
     }
