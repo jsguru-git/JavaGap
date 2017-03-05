@@ -10,6 +10,7 @@
     <include file="classpath:config/liquibase/changelog/20170223150000_added_entity_Course.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170302020616_added_entity_Help.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170303120106_added_entity_Testimonial.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170305184113_added_entity_News.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
