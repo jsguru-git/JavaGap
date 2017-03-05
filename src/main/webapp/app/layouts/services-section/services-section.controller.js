@@ -12,9 +12,9 @@
         var icons = ["icon outline outline-archery-target", "icon outline outline-search", "icon outline outline-padlock-closed"];
     	var titles = ["Consulting", "Training", "Education"];
         var hrefs = ["consulting", "training", "education"];
-    	var contents = ["Powerfull theme ready for your online shop to rock the online market place.",
-    					"Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.",
-    					"Short loading time for best user experience and includes everything you need to build something exceptional"];
+    	var contents = ["We provide Java Stack Consulting Services for your business.",
+    					"Customized in-person or online training available for your business.",
+    					"Suitbale for Universities, Colleges and Businesses. "];
     	vm.navTop = navTop;
         vm.tiles = buildGridModel({
     		icon: "",
