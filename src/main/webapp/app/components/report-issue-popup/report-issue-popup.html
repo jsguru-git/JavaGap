@@ -1,0 +1,99 @@
+<div class="">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+            ng-click="vm.cancel()">&times;</button>
+    <h4 class="modal-title">Report Issue</h4>
+</div>
+<div class="modal-body">
+    <div class="">
+        <div class="alert alert-danger-custom" ng-show="vm.submitError">
+            <strong>Failed to submit</strong>
+        </div>
+    </div>
+    <div class="">
+        <form class="form" role="form" name="form" ng-submit="vm.save()" novalidate show-validation>
+            <div class="form-group">
+                <label for="fullName">Full name</label>
+                <input name="fullName" type="text" class="input" id="fullName" ng-model="vm.reportIssueInfo.fullName" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
+                <div ng-show="form.fullName.$dirty && form.fullName.$invalid">
+                    <p class="help-block"
+                           ng-show="form.fullName.$error.required">
+                        Your fullname is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.fullName.$error.minlength">
+                        Your fullname is required to be at least 1 character.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.fullName.$error.maxlength">
+                        Your fullname cannot be longer than 50 characters.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.fullName.$error.pattern">
+                        Your fullname can only contain letters and digits.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input name="email" type="email" class="input" id="email" ng-model="vm.reportIssueInfo.email" ng-minlength=5 ng-maxlength=100 required>
+                <div ng-show="form.email.$dirty && form.email.$invalid">
+                    <p class="help-block"
+                           ng-show="form.email.$error.required">
+                        Your e-mail is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.email.$error.email">
+                        Your e-mail is invalid.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.email.$error.minlength">
+                        Your e-mail is required to be at least 5 characters.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.email.$error.maxlength">
+                        Your e-mail cannot be longer than 100 characters.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone</label>
+                <input name="phoneNumber" type="text" class="input" id="phoneNumber" 
+                       ng-model="vm.reportIssueInfo.phoneNumber" ng-pattern="/^[0-9]{10,10}$/" ng-maxlength=10 required>
+                <div ng-show="form.phoneNumber.$dirty && form.phoneNumber.$invalid">
+                    <p class="help-block"
+                           ng-show="form.phoneNumber.$error.required">
+                        Your phone number is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.phoneNumber.$error.pattern">
+                        Your phone number is required to be matched pattern.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.phoneNumber.$error.maxlength">
+                        Your phone number cannot be longer than 10 characters.
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" type="text" class="input" id="message" rows="4"ng-model="vm.reportIssueInfo.message" ng-minlength=50 ng-maxlength=1000 required></textarea>
+                <div ng-show="form.message.$dirty && form.message.$invalid">
+                    <p class="help-block"
+                           ng-show="form.message.$error.required">
+                        Your message is required.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.message.$error.minlength">
+                        Your message is required to be at least 50 character.
+                    </p>
+                    <p class="help-block"
+                           ng-show="form.message.$error.maxlength">
+                        Your message cannot be longer than 1000 characters.
+                    </p>
+                </div>
+            </div>
+            <button type="submit" class="form-button special big" ng-disabled="form.$invalid">Save</button>
+        </form>
+        <div class="hr"></div>
+    </div>
+</div>

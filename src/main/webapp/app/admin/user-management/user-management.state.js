@@ -55,7 +55,7 @@
                 pageTitle: 'user-management.detail.title'
             },
             views: {
-                'content@': {
+                'content': {
                     templateUrl: 'app/admin/user-management/user-management-detail.html',
                     controller: 'UserManagementDetailController',
                     controllerAs: 'vm'
@@ -128,6 +128,7 @@
             url: '/{login}/delete',
             data: {
                 authorities: ['ROLE_ADMIN']
+                //authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

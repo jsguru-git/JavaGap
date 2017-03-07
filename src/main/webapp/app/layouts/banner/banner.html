@@ -4,8 +4,11 @@
         Sed efficitur nisi ac turpis venenatis varius. Suspendisse sed dictum leo veroeros<br>  sed ipsum amet pellentesque venenatis magna hendrerit blandit veroeros.
     </p>
 </header>
-<ul class="actions">
-    <li>
+<ul class="actions" ng-switch="vm.isAuthenticated()">
+    <li ng-switch-when="false">
         <button class="special big" style="cursor: pointer;" ng-click="vm.register()">Get Started</button>
+    </li>
+    <li ng-switch-when="true">
+        <a class="button special big scrolly" href="#services" style="cursor: pointer;">Get Started</a>
     </li>
 </ul>

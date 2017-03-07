@@ -5,15 +5,19 @@
         .module('javagapApp')
         .controller('BannerController', BannerController);
 
-    BannerController.$inject = ['RegisterformService'];
+    BannerController.$inject = ['RegisterformService', 'Principal'];
 
-    function BannerController (RegisterformService) {
+    function BannerController (RegisterformService, Principal) {
         var vm = this;
 
         vm.register = register;
+        vm.isAuthenticated = Principal.isAuthenticated;
         
         function register() {
-            RegisterformService.open();
+            var isAuthenticated = vm.isAuthenticated();
+            if(!isAuthenticated) {
+                RegisterformService.open();    
+            }
         }
     }
 })();

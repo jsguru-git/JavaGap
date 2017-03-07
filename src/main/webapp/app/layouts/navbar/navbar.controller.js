@@ -15,6 +15,11 @@
         vm.identity = Principal.identity;
         vm.currentAccount = null;
         
+        Principal.identity().then(function(account) {
+            vm.currentAccount = account;
+        });
+
+
         ProfileService.getProfileInfo().then(function(response) {
             vm.inProduction = response.inProduction;
             vm.swaggerEnabled = response.swaggerEnabled;

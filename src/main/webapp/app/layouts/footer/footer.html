@@ -1,3 +1,8 @@
+<style>
+	#footer .wpb_wrapper > .wpb_content_element:not(:first-child) {
+		margin-top: -20px !important;
+	}
+</style>
 <div class="dark_scheme hgr_megafooter two">
 	<div class="vc_row wpb_row vc_row-fluid vc_custom_1464183921581 vc_row-has-fill vc_general vc_parallax vc_parallax-content-moving">
 		<div class="wpb_column vc_column_container vc_col-sm-12">
@@ -12,24 +17,24 @@
 											<h5><span style="color: #808080;">Legal</span></h5>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180138360">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'copyright'})" ng-click="vm.collapseNavbar()">Copyright</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'copyright'})" ng-click="vm.gotoTop()">Copyright</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180245741">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'termsAndConds'})" ng-click="vm.collapseNavbar()">Terms and Conditions</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'termsAndConds'})" ng-click="vm.gotoTop()">Terms and Conditions</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180637179">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'privacy'})" ng-click="vm.collapseNavbar()">Privacy</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'privacy'})" ng-click="vm.gotoTop()">Privacy</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180254189">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'policy'})" ng-click="vm.collapseNavbar()">Policy</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="legal({scrollTo: 'policy'})" ng-click="vm.gotoTop()">Policy</a></h6>
 										</div>
 									</div>
 								</div>
@@ -44,19 +49,24 @@
 											<h5><span style="color: #808080;">Support</span></h5>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180629357">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="report" ng-click="vm.collapseNavbar()">Report Issue</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ng-click="vm.reportIssue()">Report Issue</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180623216">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="how-help" ng-click="vm.collapseNavbar()">Help & FAQ</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ng-click="vm.requestCourse()">Request A Course</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180653084">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="cs" ng-click="vm.collapseNavbar()">Contact Support</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="how-help" ng-click="vm.gotoTop()">Help & FAQ</a></h6>
+										</div>
+									</div>
+									<div class="wpb_text_column wpb_content_element">
+										<div class="wpb_wrapper">
+											<h6><a class="underline after first scrolly" style="color: #f5f5f5;" href="#contact">Contact Support</a></h6>
 										</div>
 									</div>
 								</div>
@@ -71,24 +81,24 @@
 											<h5><span style="color: #808080;">Information</span></h5>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180138360">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="fac" ng-click="vm.collapseNavbar()">Feedback A Course</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="fac" ng-click="vm.gotoTop()">Feedback A Course</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180138360">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="careers" ng-click="vm.collapseNavbar()">Careers</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="careers" ng-click="vm.gotoTop()">Careers</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180138360">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
 											<h6><a class="underline after first scrolly" style="color: #f5f5f5;" href="#about-us" ng-click="vm.aboutUs()">About Us</a></h6>
 										</div>
 									</div>
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180138360">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
-											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="news" ng-click="vm.collapseNavbar()">News</a></h6>
+											<h6><a class="underline after first" style="color: #f5f5f5;" ui-sref="news" ng-click="vm.gotoTop()">News</a></h6>
 										</div>
 									</div>
 								</div>
@@ -105,20 +115,20 @@
 										</div>
 									</div>
 
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180629357">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
 											<h6><a href="#"><i class="icon fa fa-facebook" style=" font-size:21px!important; "></i></a></h6>
 										</div>
 									</div>
 
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180623216">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
 											<h6><a href="#"><i class="icon fa fa-linkedin" style=" font-size:21px!important; "></i></a></h6>
 
 										</div>
 									</div>
 
-									<div class="wpb_text_column wpb_content_element  vc_custom_1464180653084">
+									<div class="wpb_text_column wpb_content_element">
 										<div class="wpb_wrapper">
 											<h6><a href="#"><i class="icon fa fa-twitter" style=" font-size:21px!important; "></i></a></h6>
 
@@ -128,7 +138,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_custom_1464180913588  vc_custom_1464180913588">
+					<div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_100 vc_sep_pos_align_center vc_separator_no_text vc_custom_1464180913588">
 						<span class="vc_sep_holder vc_sep_holder_l">
 							<span style="border-color:#3a3a3a;" class="vc_sep_line"></span>
 						</span>

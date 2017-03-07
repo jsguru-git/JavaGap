@@ -22,7 +22,7 @@
 	    afterHeader: '<div class="drop-icon-wrapper sir-accordion-vertical-align"><i class="glyphicon glyphicon-chevron-down"></i></div>',
 	    topContentClass: '',
 	    beforeTopContent: '',
-	    afterTopContent: '<div><p><small>I repeat through all accordion</small></p></div>',
+	    //afterTopContent: '<div><p><small>I repeat through all accordion</small></p></div>',
 	    bottomContentClass: '',
 	    beforeBottomContent: '',
 	    afterBottomContent: ''
