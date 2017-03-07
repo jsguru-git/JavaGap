@@ -17,26 +17,14 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
 
     <!--
-        Added the entity ContactUs.
+        Added the entity News.
     -->
-    <changeSet id="20170215122315-1" author="jhipster">
-        <createTable tableName="contact_us">
+    <changeSet id="20170305184113-1" author="jhipster">
+        <createTable tableName="news">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(100)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="email" type="varchar(255)">
-                <constraints nullable="false" />
-            </column>
-            
-            <column name="phone_number" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
-            
-            <column name="message" type="varchar(1000)">
+            <column name="news" type="varchar(1000)">
                 <constraints nullable="false" />
             </column>
             
@@ -44,13 +32,17 @@
                 <constraints nullable="true" />
             </column>
             
-            <column name="type" type="varchar(255)">
+            <column name="title" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="created_by" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
-        <dropDefaultValue tableName="contact_us" columnName="created_on" columnDataType="datetime"/>
+        <dropDefaultValue tableName="news" columnName="created_on" columnDataType="datetime"/>
         
     </changeSet>
 </databaseChangeLog>

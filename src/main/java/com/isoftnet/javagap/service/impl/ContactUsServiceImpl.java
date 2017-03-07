@@ -2,6 +2,7 @@ package com.isoftnet.javagap.service.impl;
 
 import com.isoftnet.javagap.service.ContactUsService;
 import com.isoftnet.javagap.domain.ContactUs;
+import com.isoftnet.javagap.domain.enumeration.ContactType;
 import com.isoftnet.javagap.repository.ContactUsRepository;
 import com.isoftnet.javagap.service.dto.ContactUsDTO;
 import com.isoftnet.javagap.service.mapper.ContactUsMapper;
@@ -39,6 +40,8 @@ public class ContactUsServiceImpl implements ContactUsService{
     public ContactUsDTO save(ContactUsDTO contactUsDTO) {
         log.debug("Request to save ContactUs : {}", contactUsDTO);
         ContactUs contactUs = contactUsMapper.contactUsDTOToContactUs(contactUsDTO);
+        
+        contactUs.setType(contactUsDTO.getType().toString());
         contactUs = contactUsRepository.save(contactUs);
         ContactUsDTO result = contactUsMapper.contactUsToContactUsDTO(contactUs);
         return result;
@@ -70,6 +73,7 @@ public class ContactUsServiceImpl implements ContactUsService{
         log.debug("Request to get ContactUs : {}", id);
         ContactUs contactUs = contactUsRepository.findOne(id);
         ContactUsDTO contactUsDTO = contactUsMapper.contactUsToContactUsDTO(contactUs);
+        contactUsDTO.setType(ContactType.valueOf(contactUs.getType()));
         return contactUsDTO;
     }
 

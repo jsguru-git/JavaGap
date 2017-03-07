@@ -89,8 +89,10 @@ public class UserService {
         newUser.setLastName(lastName);
         newUser.setEmail(email);
         newUser.setLangKey(langKey);
+        
         // new user is not active
-        newUser.setActivated(false);
+        newUser.setActivated(true);
+        
         // new user gets registration key
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
@@ -194,10 +196,20 @@ public class UserService {
         Optional<User> optionalUser = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin());
         User user = null;
         if (optionalUser.isPresent()) {
-          user = optionalUser.get();
+        	user = optionalUser.get();
             user.getAuthorities().size(); // eagerly load the association
          }
          return user;
+    }
+    
+    @Transactional(readOnly = true)
+    public boolean deleteUserAccount() {
+        
+    	User user = getUserWithAuthorities();
+    	if(user == null) return false;
+        user.setActivated(false);
+        userRepository.save(user);
+        return true;
     }
 
 

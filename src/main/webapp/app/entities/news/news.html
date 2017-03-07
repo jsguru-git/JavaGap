@@ -1,13 +1,13 @@
 <div>
-    <h2>Contactuses</h2>
+    <h2>News</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="contact-us.new" >
+                <button class="btn btn-primary" ui-sref="news.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span >
-                        Create new Contact Us
+                        Create new News
                     </span>
                 </button>
             </div>
@@ -19,40 +19,36 @@
             <thead>
                 <tr>
                     <th><span>ID</span></th>
-                    <th><span>Name</span></th>
-                    <th><span>Email</span></th>
-                    <th><span>Phone Number</span></th>
-                    <th><span>Message</span></th>
+                    <th><span>News</span></th>
                     <th><span>Created On</span></th>
-                    <th><span>Type</span></th>
+                    <th><span>Title</span></th>
+                    <th><span>Created By</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="contactUs in vm.contactuses track by contactUs.id">
-                    <td><a ui-sref="contact-us-detail({id:contactUs.id})">{{contactUs.id}}</a></td>
-                    <td>{{contactUs.name}}</td>
-                    <td>{{contactUs.email}}</td>
-                    <td>{{contactUs.phoneNumber}}</td>
-                    <td>{{contactUs.message}}</td>
-                    <td>{{contactUs.createdOn | date:'medium'}}</td>
-                    <td>{{contactUs.type}}</td>
+                <tr ng-repeat="news in vm.news track by news.id">
+                    <td><a ui-sref="news-detail({id:news.id})">{{news.id}}</a></td>
+                    <td>{{news.news}}</td>
+                    <td>{{news.createdOn | date:'medium'}}</td>
+                    <td>{{news.title}}</td>
+                    <td>{{news.createdBy}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"
-                                    ui-sref="contact-us-detail({id:contactUs.id})"
+                                    ui-sref="news-detail({id:news.id})"
                                     class="btn btn-info btn-sm">
                                 <span class="glyphicon glyphicon-eye-open"></span>
                                 <span class="hidden-xs hidden-sm"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="contact-us.edit({id:contactUs.id})"
+                                    ui-sref="news.edit({id:news.id})"
                                     class="btn btn-primary btn-sm">
                                 <span class="glyphicon glyphicon-pencil"></span>
                                 <span class="hidden-xs hidden-sm"></span>
                             </button>
                             <button type="submit"
-                                    ui-sref="contact-us.delete({id:contactUs.id})"
+                                    ui-sref="news.delete({id:news.id})"
                                     class="btn btn-danger btn-sm">
                                 <span class="glyphicon glyphicon-remove-circle"></span>
                                 <span class="hidden-xs hidden-sm"></span>

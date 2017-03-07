@@ -30,5 +30,7 @@
 
     <cache alias="com.isoftnet.javagap.domain.Testimonial" uses-template="simple"/>
 
+    <cache alias="com.isoftnet.javagap.domain.News" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

@@ -5,6 +5,7 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+import com.isoftnet.javagap.domain.enumeration.ContactType;
 
 /**
  * A DTO for the ContactUs entity.
@@ -27,6 +28,8 @@ public class ContactUsDTO implements Serializable {
     private String message;
 
     private ZonedDateTime createdOn;
+
+    private ContactType type;
 
 
     public Long getId() {
@@ -71,6 +74,13 @@ public class ContactUsDTO implements Serializable {
     public void setCreatedOn(ZonedDateTime createdOn) {
         this.createdOn = createdOn;
     }
+    public ContactType getType() {
+        return type;
+    }
+
+    public void setType(ContactType type) {
+        this.type = type;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -102,6 +112,7 @@ public class ContactUsDTO implements Serializable {
             ", phoneNumber='" + phoneNumber + "'" +
             ", message='" + message + "'" +
             ", createdOn='" + createdOn + "'" +
+            ", type='" + type + "'" +
             '}';
     }
 }
