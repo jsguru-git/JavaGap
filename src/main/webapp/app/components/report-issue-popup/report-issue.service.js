@@ -7,21 +7,8 @@
     ReportIssue.$inject = ['$resource', 'DateUtils'];
 
     function ReportIssue ($resource, DateUtils) {
-        var resourceUrl =  'api/reportIssue/:id';
+        var resourceUrl =  'api/reportIssue';
 
-        return $resource(resourceUrl, {}, {
-            'query': { method: 'GET', isArray: true},
-            'get': {
-                method: 'GET',
-                transformResponse: function (data) {
-                    if (data) {
-                        data = angular.fromJson(data);
-                        data.createdOn = DateUtils.convertDateTimeFromServer(data.createdOn);
-                    }
-                    return data;
-                }
-            },
-            'update': { method:'PUT' }
-        });
+        return $resource(resourceUrl, {}, {});
     }
 })();

@@ -5,9 +5,9 @@
         .module('javagapApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', '$window', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RegisterformService'];
+    NavbarController.$inject = ['$state', '$window', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RegisterformService', 'DisableLoggedUserPopupService'];
 
-    function NavbarController ($state, $window, Auth, Principal, ProfileService, LoginService, RegisterformService) {
+    function NavbarController ($state, $window, Auth, Principal, ProfileService, LoginService, RegisterformService, DisableLoggedUserPopupService) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
@@ -29,6 +29,7 @@
         vm.login = login;
         vm.logout = logout;
         vm.register = register;
+        vm.disableLoggedUser = disableLoggedUser;
         
         vm.contactUs = contactUs;
         vm.aboutUs = aboutUs;
@@ -54,6 +55,10 @@
 
         function register() {
             RegisterformService.open();
+        }
+
+        function disableLoggedUser() {
+            DisableLoggedUserPopupService.open();
         }
 
         function contactUs() {

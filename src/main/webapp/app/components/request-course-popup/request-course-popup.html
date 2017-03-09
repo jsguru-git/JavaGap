@@ -1,7 +1,7 @@
 <div class="">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
             ng-click="vm.cancel()">&times;</button>
-    <h4 class="modal-title">Request Course</h4>
+    <h4 class="modal-title">Request A Course</h4>
 </div>
 <div class="modal-body">
     <div class="">
@@ -13,7 +13,7 @@
         <form class="form" role="form" name="form" ng-submit="vm.save()" novalidate show-validation>
             <div class="form-group">
                 <label for="fullName">Full name</label>
-                <input name="fullName" type="text" class="input" id="fullName" ng-model="vm.requestCourseInfo.fullName" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
+                <input name="fullName" type="text" class="input" id="fullName" ng-model="vm.requestCourseInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
                 <div ng-show="form.fullName.$dirty && form.fullName.$invalid">
                     <p class="help-block"
                            ng-show="form.fullName.$error.required">

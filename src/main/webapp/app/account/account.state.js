@@ -22,7 +22,7 @@
                 },
                 'footer@account': {
                     templateUrl: 'app/layouts/footer/footer.html',
-                    controller: 'NavbarController',
+                    controller: 'FooterController',
                     controllerAs: 'vm'
                 }
             }

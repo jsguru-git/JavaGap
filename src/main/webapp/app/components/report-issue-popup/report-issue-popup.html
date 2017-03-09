@@ -13,7 +13,7 @@
         <form class="form" role="form" name="form" ng-submit="vm.save()" novalidate show-validation>
             <div class="form-group">
                 <label for="fullName">Full name</label>
-                <input name="fullName" type="text" class="input" id="fullName" ng-model="vm.reportIssueInfo.fullName" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
+                <input name="fullName" type="text" class="input" id="fullName" ng-model="vm.reportIssueInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
                 <div ng-show="form.fullName.$dirty && form.fullName.$invalid">
                     <p class="help-block"
                            ng-show="form.fullName.$error.required">

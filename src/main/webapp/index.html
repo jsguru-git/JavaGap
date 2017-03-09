@@ -6,7 +6,7 @@
     <title>javagap</title>
     <meta name="description" content="">
     <meta name="google" value="notranslate">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     
     <!-- build:css content/css/vendor.css -->
@@ -182,17 +182,7 @@
     
     <script src="app/legal/legal.state.js"></script>
     <script src="app/legal/legal.controller.js"></script>
-
-    <!--<script src="app/pages/report/report.state.js"></script>
-    <script src="app/pages/report/report.controller.js"></script>-->
-    <script src="app/components/report-issue-popup/report-issue.service.js"></script>
-    <script src="app/components/report-issue-popup/report-issue-popup.service.js"></script>
-    <script src="app/components/report-issue-popup/report-issue-popup.controller.js"></script>
-
-    <script src="app/components/request-course-popup/request-course.service.js"></script>
-    <script src="app/components/request-course-popup/request-course-popup.service.js"></script>
-    <script src="app/components/request-course-popup/request-course-popup.controller.js"></script>
-
+    
     <script src="app/pages/FAC/fac.state.js"></script>
     <script src="app/pages/FAC/fac.controller.js"></script>
     <script src="app/pages/careers/careers.state.js"></script>
@@ -241,9 +231,19 @@
     <script src="app/components/util/base64.service.js"></script>
     <script src="app/components/login/login.service.js"></script>
     <script src="app/components/login/login.controller.js"></script>
-
     <script src="app/components/ratings/ratings.service.js"></script>
     <script src="app/components/ratings/ratings.controller.js"></script>
+    <script src="app/components/report-issue-popup/report-issue.service.js"></script>
+    <script src="app/components/report-issue-popup/report-issue-popup.service.js"></script>
+    <script src="app/components/report-issue-popup/report-issue-popup.controller.js"></script>
+    
+    <script src="app/components/request-course-popup/request-course.service.js"></script>
+    <script src="app/components/request-course-popup/request-course-popup.service.js"></script>
+    <script src="app/components/request-course-popup/request-course-popup.controller.js"></script>
+
+    <script src="app/components/disable-logged-user-popup/disable-logged-user.service.js"></script>
+    <script src="app/components/disable-logged-user-popup/disable-logged-user-popup.service.js"></script>
+    <script src="app/components/disable-logged-user-popup/disable-logged-user-popup.controller.js"></script>
     
     <script src="app/components/language/language.service.js"></script>
     <script src="app/components/language/language.filter.js"></script>
@@ -326,10 +326,15 @@
         (function($) {
             $(function() {
                 var $window = $(window),$body = $('body');
-                $window.on('load', function() {
-                    window.setTimeout(function() {
+                // $window.on('load', function() {
+                //     window.setTimeout(function() {
+                //         $body.removeClass('is-loading');
+                //         }, 100);
+                // });
+                $(document).ready(function() {
+                   setTimeout(function() {
                         $body.removeClass('is-loading');
-                        }, 100);
+                        }, 200); 
                 });
             });
         })(jQuery);

@@ -147,6 +147,31 @@
                     $state.go('^');
                 });
             }]
+        })
+        .state('account.delete', {
+            //parent: 'user-management',
+            url: '/currentUser/{login}/delete',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/admin/user-management/user-management-delete-dialog.html',
+                    controller: 'UserManagementDeleteController',
+                    controllerAs: 'vm',
+                    size: 'md',
+                    resolve: {
+                        entity: ['User', function(User) {
+                            return User.get({login : $stateParams.login});
+                        }]
+                    }
+                }).result.then(function() {
+                    //$state.go('user-management', null, { reload: true });
+                    $state.go('^');
+                }, function() {
+                    $state.go('^');
+                });
+            }]
         });
     }
 })();

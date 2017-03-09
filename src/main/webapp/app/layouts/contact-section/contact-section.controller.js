@@ -11,14 +11,14 @@
         var vm = this;
         vm.save = save;
 
-        vm.contactInfo = new ContactUs();
+        vm.contactInfo = null;
 
         function onSaveSuccess (result) {
-            alertify.notify('New Contact is created', 'success', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New Contact is created', 'success', 5, function(){  console.log('success'); });
         }
 
         function onSaveError () {
-            alertify.notify('New Contact failed. Try again after login', 'error', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New Contact failed. Try again later', 'error', 5, function(){  console.log('failed'); });
         }
 
         function save () {

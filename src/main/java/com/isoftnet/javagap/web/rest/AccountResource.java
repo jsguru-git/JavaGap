@@ -208,6 +208,7 @@ public class AccountResource {
     @PostMapping(path = "/account/delete", produces = MediaType.TEXT_PLAIN_VALUE)
     @Timed
     public ResponseEntity<String> deleteAccount() {
+        Log.d("MyTagGoesHere", "This is my log message at the debug level here");
         boolean retval = userService.deleteUserAccount();
         return (retval) ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>("User NOT Found", HttpStatus.BAD_REQUEST);
     }

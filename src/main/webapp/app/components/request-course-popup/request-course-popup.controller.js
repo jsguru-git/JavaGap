@@ -13,7 +13,7 @@
         vm.submitError = false;
         vm.save = save;
         vm.cancel = cancel;
-        vm.requestCourseInfo = new RequestCourse();
+        vm.requestCourseInfo = null;
 
         $timeout(function (){angular.element('#fullName').focus();});
 
@@ -23,12 +23,13 @@
 
         function onSaveSuccess (result) {
             vm.submitError = false;
-            alertify.notify('New report is created', 'success', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New subscription is created', 'success', 5, function(){  console.log('success'); });
+            $uibModalInstance.close(true);
         }
 
         function onSaveError () {
             vm.submitError = true;
-            alertify.notify('New report failed. Try again after login', 'error', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New subscription failed. Try again later', 'error', 5, function(){  console.log('failed'); });
         }
 
         function save () {

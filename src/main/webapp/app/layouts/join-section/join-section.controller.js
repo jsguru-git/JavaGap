@@ -11,14 +11,14 @@
         var vm = this;
         vm.save = save;
         
-        vm.joinInfo = new NewsSubscription();
+        vm.joinInfo = null;
 
         function onSaveSuccess (result) {
-            alertify.notify('New Subscription is created', 'success', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New Subscription is created', 'success', 5, function(){  console.log('success'); });
         }
 
         function onSaveError () {
-            alertify.notify('New Subscription failed. Try again after login', 'error', 5, function(){  console.log('dismissed'); });
+            alertify.notify('New Subscription failed. Try again later', 'error', 5, function(){  console.log('failed'); });
         }
 
         function save () {

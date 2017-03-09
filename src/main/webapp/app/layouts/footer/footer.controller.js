@@ -11,7 +11,8 @@
     	var vm = this;
     	vm.reportIssue = reportIssue;
     	vm.requestCourse = requestCourse;
-    	vm.aboutUs = aboutUs;
+    	vm.contactUs = contactUs;
+        vm.aboutUs = aboutUs;
     	vm.gotoTop = gotoTop;
     	
     	function reportIssue() {
@@ -21,6 +22,12 @@
     	function requestCourse() {
     		RequestCoursePopupService.open();
     	}
+
+        function contactUs() {
+            if(global.is_front_page === 'false') {
+                $window.location.href = '#contact';
+            }
+        }
 
     	function aboutUs() {
             if(global.is_front_page === 'false') {

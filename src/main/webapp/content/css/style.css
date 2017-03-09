@@ -892,7 +892,7 @@ section header.major {
 .testimonials-background {
     height: 100%;
     background-image: url('../images/testimonials-bg.jpg') !important;
-    background-attachment: fixed !important;
+    /*background-attachment: fixed !important;*/
     background-position: 0 40% !important;
     
 }
@@ -1177,6 +1177,7 @@ dl.jh-entity-details > dt > span {
     left: 0;
     background-color: #00044e;
     height: 200px;
+    width: 100%;
 }
 
 /***************************************************/
