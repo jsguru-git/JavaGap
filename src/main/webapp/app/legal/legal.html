@@ -1,6 +1,6 @@
 <div class="container jg-layout-two-col">
 	<div class="row">
-		<div id="sideNavBar" class="jg-side-nav">
+		<div id="sideNavBar" class="jg-side-nav element-fix">
 			<ul>
 				<li ng-class="{'active': vm.target == 'copyright'}"><a class="vc_general vc_btn3 scrolly" href="#copyright">COPYRIGHT</a></li>
 				<li ng-class="{'active': vm.target == 'termsAndConds'}"><a class="vc_general vc_btn3 scrolly" href="#termsAndConds">TERMS AND CONDITIONS</a></li>
@@ -9,6 +9,15 @@
 			</ul>
 		</div>
 		<div id="legalContent" class="jg-content">
+			<div id="menuToggler" class="dropdown">
+				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<li><a class="vc_general vc_btn3 scrolly" href="#copyright">COPYRIGHT</a></li>
+					<li><a class="vc_general vc_btn3 scrolly" href="#termsAndConds">TERMS AND CONDITIONS</a></li>
+					<li><a class="vc_general vc_btn3 scrolly" href="#privacy">PRIVACY</a></li>
+					<li><a class="vc_general vc_btn3 scrolly" href="#policy">POLICY</a></li>
+				</ul>
+			</div>
 			<div id="copyright">
 				<header class="major">
 					<h1>Copyright</h1>
@@ -43,30 +52,44 @@
 			$(this).parent().addClass('active');
 		});
 
-		$(window).scroll(function() {
+		function stayOn(element) {
 			var scrollTop = $(window).scrollTop();
 			var container = $('div.jg-layout-two-col');
 			
+			if(typeof container.position() === 'undefined') return;
+			
 			var minFixedHeight = container.position().top;
-			var maxFixedHeight = container.height() - $('#sideNavBar').height();
+			var maxFixedHeight = container.height() - element.height();
 
 			var scrollMinimum = container.offset().top - minFixedHeight;
 			var scrollMaximun = maxFixedHeight + scrollMinimum;
 			
 			if(scrollTop < scrollMinimum) {
-				$('#sideNavBar').css({
+				element.css({
 					position: 'initial'
 				});
 			} else if (scrollTop >= scrollMaximun) {
-				$('#sideNavBar').css({
+				element.css({
 					position: 'relative',
 					top: maxFixedHeight
 				});
 			} else {
-				$('#sideNavBar').css({
+				element.css({
 					position: 'fixed',
 					top: minFixedHeight
 				});
+			}
+		}
+
+		$(window).scroll(function() {
+			stayOn($('#sideNavBar.element-fix'));
+		});
+		$(window).resize(function() {
+			var laptop_width = 982;
+			if($(this).width() < laptop_width) {
+				$('#sideNavBar.element-fix').removeClass('element-fix');
+			} else {
+				$('#sideNavBar').addClass('element-fix');
 			}
 		});
 	});
