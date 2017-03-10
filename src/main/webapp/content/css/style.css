@@ -774,8 +774,33 @@ section header.major {
 
 .footer-background {
     height: 150%;
-    background-image: url("../images/footer-bg.jpg") !important;
-    top: -36.2243%: !important;
+    /*top: -36.2243%: !important;*/
+    background: -moz-linear-gradient(top, rgb(0, 16, 38) 0%, rgba(0, 39, 92, 0.71) 31%, rgba(255, 255, 255, 0) 45%, rgba(0, 13, 24, 0.64) 60%, rgba(0, 29, 72, 0.91) 80%), url("../images/footer-bg.jpg") top/cover !important;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgb(0, 16, 38)), color-stop(31%, rgba(0, 39, 92, 0.71)), color-stop(45%, rgba(255, 255, 255, 0)), color-stop(60%, rgba(0, 13, 24, 0.64)), color-stop(80%, rgba(0, 29, 72, 0.91))), url("../images/footer-bg.jpg") top/cover !important;
+    background: -webkit-linear-gradient(top, rgb(0, 16, 38) 0%, rgba(0, 39, 92, 0.71) 31%, rgba(255, 255, 255, 0) 45%, rgba(0, 13, 24, 0.64) 60%, rgba(0, 29, 72, 0.91) 80%), url("../images/footer-bg.jpg") top/cover !important;
+    background: -o-linear-gradient(top, rgb(0, 16, 38) 0%, rgba(0, 39, 92, 0.71) 31%, rgba(255, 255, 255, 0) 45%, rgba(0, 13, 24, 0.64) 60%, rgba(0, 29, 72, 0.91) 80%), url("../images/footer-bg.jpg") top/cover !important;
+    background: -ms-linear-gradient(top, rgb(0, 16, 38) 0%, rgba(0, 39, 92, 0.71) 31%, rgba(255, 255, 255, 0) 45%, rgba(0, 13, 24, 0.64) 60%, rgba(0, 29, 72, 0.91) 80%), url("../images/footer-bg.jpg") top/cover !important;
+    background: linear-gradient(to bottom, rgb(0, 16, 38) 0%, rgba(0, 39, 92, 0.71) 31%, rgba(255, 255, 255, 0) 45%, rgba(0, 13, 24, 0.64) 60%, rgba(0, 29, 72, 0.91) 80%), url("../images/footer-bg.jpg") top/cover !important;
+}
+
+.scrollToTop{
+    width:50px; 
+    height:50px;
+    padding:10px; 
+    text-align:center; 
+    background: whiteSmoke;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    position:fixed;
+    bottom:30px;
+    right:20px;
+    display:none;
+    z-index: 1000;
+    background: url('../images/top.png') no-repeat center/cover;
+}
+.scrollToTop:hover{
+    text-decoration:none;
 }
 
 .inner header {
@@ -1043,7 +1068,8 @@ dl.jh-entity-details > dt > span {
     min-width: 250px;
 }
 
-#section-container > * {
+#section-container > *:not(:first-child),
+#legalContent > *:not(:first-child) {
     padding-top: 120px;
 }
 .jg-col-lg-1,.jg-col-lg-2,.jg-col-lg-3,
@@ -1129,6 +1155,7 @@ dl.jh-entity-details > dt > span {
 }
 #media {
     padding: 5px;
+    width: 250px;
     border: 1px solid rgb(221, 221, 221);
     background-color: rgb(234, 234, 234);
 }
@@ -1180,17 +1207,33 @@ dl.jh-entity-details > dt > span {
     width: 100%;
 }
 
+#menuToggler {
+    display: none;
+} 
+#menuToggler a {
+    width: 100%;
+    color: #000;
+}
+#menuToggler .dropdown-menu {
+    position: absolute;
+    left: 0;
+    width: 100%
+}
 /***************************************************/
 @media (max-width: 981px) {
     .jg-side-nav {
-        visibility: hidden;
-        width: 0;
+        /*visibility: hidden;*/
+        /*width: 0;*/
+        display: none;
     }
     .jg-layout-two-col .jg-content {
         margin-left: 0;
         border-left: none;
         padding-left: 0;
-    }   
+    }
+    #menuToggler {
+        display: block;
+    } 
 }
 
 @media (min-width: 1275px) {
@@ -1229,6 +1272,21 @@ dl.jh-entity-details > dt > span {
     #ratings-modal {
         margin-left: 0;
         margin-right: 0;
+    }
+
+    #media-container {
+        position: inherit;
+        width: inherit;
+    }
+
+    #section-container {
+        margin-right: 0;
+    }
+
+    #media {
+        width: inherit;
+        position: inherit !important;
+        top: 0 !important;
     }
 }
 

@@ -53,13 +53,14 @@
 
 
 </head>
-<body class="is-loading" ng-app="javagapApp" ng-strict-di>
+<body id="body" class="is-loading" ng-app="javagapApp" ng-strict-di>
     <div id="page-wrapper" ui-view>
         <!-- Angular views -->
     </div>
     <!-- <div class="menu-wrapper" ui-view="navbar" ng-cloak> -->
         <!-- Angular views -->
     <!-- </div> -->
+    <a href="#body" class="scrollToTop scrolly"></a>
 </body>
     <!-- build:js app/vendor.js -->
     <!-- bower:js -->
@@ -334,7 +335,16 @@
                 $(document).ready(function() {
                    setTimeout(function() {
                         $body.removeClass('is-loading');
-                        }, 200); 
+                        }, 200);
+
+                    //Check to see if the window is top if not then display button
+                    $(window).scroll(function(){
+                        if ($(this).scrollTop() > $(this).height()/2) {
+                            $('.scrollToTop').fadeIn();
+                        } else {
+                            $('.scrollToTop').fadeOut();
+                        }
+                    });
                 });
             });
         })(jQuery);
