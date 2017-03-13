@@ -16,7 +16,9 @@
             },
             views: {
                 'content': {
-                    templateUrl: 'app/pages/consulting/consulting.html'
+                    templateUrl: 'app/pages/consulting/consulting.html',
+                    controller: 'ConsultingController',
+                    controllerAs: 'vm'
                 }
             }
         });

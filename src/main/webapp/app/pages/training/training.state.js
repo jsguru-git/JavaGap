@@ -16,7 +16,9 @@
             },
             views: {
                 'content': {
-                    templateUrl: 'app/pages/training/training.html'
+                    templateUrl: 'app/pages/training/training.html',
+                    controller: 'TrainingController',
+                    controllerAs: 'vm'
                 }
             }
         });

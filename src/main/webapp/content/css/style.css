@@ -427,7 +427,7 @@ body {
 #banner {
     align-items: center;
     background-color: #333333;
-    background-image: url('/content/images/home-bg.jpg');
+    background-image: url('../images/home-bg.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1024,6 +1024,14 @@ table.uib-daypicker td {
 .inner h2 {
     padding-bottom: 50px;
 }
+
+.context-wrapper {
+    margin-bottom: 50px;
+}
+.form-wrapper {
+    width: 500px;
+    margin: 0 auto;
+}
 /*********** Courses and Legal Widget CSS ***********/
 .jh-entity-details > dt {
     margin-top: 0;
@@ -1287,6 +1295,12 @@ dl.jh-entity-details > dt > span {
         width: inherit;
         position: inherit !important;
         top: 0 !important;
+    }
+    .hidden-video-sm {
+        display: none !important;
+    }
+    .form-wrapper {
+        width: inherit;
     }
 }
 

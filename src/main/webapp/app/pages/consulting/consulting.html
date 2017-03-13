@@ -1,7 +1,129 @@
-<header class="major">
-	<h1>Consulting</h1>
-</header>
-<!-- <span class="image main">
-	<img src="content/images/help.jpg" alt="">
-</span> -->
-<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+<div class="context-wrapper">
+	<header class="major">
+		<h1>Consulting</h1>
+	</header>
+	<!-- <span class="image main">
+		<img src="content/images/help.jpg" alt="">
+	</span> -->
+	<div class="context">
+		<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p><p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis.</p>
+	</div>
+</div>
+<div class="form-wrapper">
+	<form ng-submit="vm.save()" method="post" class="wpcf7-form" name="form" role="form" novalidate show-validation>
+		<p>
+			<div class="form-group">
+				<input name="name" id="contact_info_name" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF120 Name" type="text" ng-model = "vm.contactInfo.name" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
+				<div ng-show="form.name.$dirty && form.name.$invalid">
+	                <p class="help-block"
+	                       ng-show="form.name.$error.required">
+	                    Your username is required.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.name.$error.minlength">
+	                    Your username is required to be at least 1 character.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.name.$error.maxlength">
+	                    Your username cannot be longer than 50 characters.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.name.$error.pattern">
+	                    Your username can only contain letters and digits.
+	                </p>
+	            </div>
+			</div>
+			<div class="form-group">
+				<input name="company" id="contact_info_company" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF120 company" type="text" ng-model = "vm.contactInfo.company" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[_'.@A-Za-z 0-9-]*$/" required>
+				<div ng-show="form.company.$dirty && form.company.$invalid">
+	                <p class="help-block"
+	                       ng-show="form.company.$error.required">
+	                    Your company is required.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.company.$error.minlength">
+	                    Your company is required to be at least 1 character.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.company.$error.maxlength">
+	                    Your company cannot be longer than 50 characters.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.company.$error.pattern">
+	                    Your company can only contain letters and digits.
+	                </p>
+	            </div>
+			</div>
+			<div class="form-group">
+				<input name="phone" id="contact_info_phone" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF095 Phone" type="text" ng-model="vm.contactInfo.phoneNumber" ng-pattern="/^[0-9]{10,10}$/" ng-maxlength=10 required>
+				<div ng-show="form.phone.$dirty && form.phone.$invalid">
+	                <p class="help-block"
+	                       ng-show="form.phone.$error.required">
+	                    Your phone number is required.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.phone.$error.pattern">
+	                    Your phone number is required to be matched pattern.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.phone.$error.maxlength">
+	                    Your phone number cannot be longer than 10 characters.
+	                </p>
+	            </div>
+			</div>
+			<div class="form-group">
+				<input name="email" id="contact_info_email" class="input wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email iconified empty" placeholder="&#xF0E0 Email" type="email" ng-model = "vm.contactInfo.email" ng-minlength=5 ng-maxlength=100 required>
+				<div ng-show="form.email.$dirty && form.email.$invalid">
+	                <p class="help-block"
+	                       ng-show="form.email.$error.required">
+	                    Your e-mail is required.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.email.$error.email">
+	                    Your e-mail is invalid.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.email.$error.minlength">
+	                    Your e-mail is required to be at least 5 characters.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.email.$error.maxlength">
+	                    Your e-mail cannot be longer than 100 characters.
+	                </p>
+	            </div>
+			</div>
+			<div class="form-group">
+				<textarea name="message" id="contact_info_message" rows="4" cols="50" class="input wpcf7-form-control wpcf7-text wpcf7-validates-as-required iconified empty" placeholder="&#xF03C Your Message" type="text" style="resize: none" ng-model = "vm.contactInfo.message" ng-minlength=50 ng-maxlength=1000 required></textarea>
+				<div ng-show="form.message.$dirty && form.message.$invalid">
+	                <p class="help-block"
+	                       ng-show="form.message.$error.required">
+	                    Your message is required.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.message.$error.minlength">
+	                    Your message is required to be at least 50 character.
+	                </p>
+	                <p class="help-block"
+	                       ng-show="form.message.$error.maxlength">
+	                    Your message cannot be longer than 1000 characters.
+	                </p>
+	            </div>
+			</div>
+			<button id="contact_info_btn" class="wpcf7-form-control wpcf7-submit form-button special big" ng-disabled="form.$invalid" type="submit">
+				SUBMIT
+			</button>
+			<img class="ajax-loader" src="../content/images/ajax-loader.gif" alt="Sending ..." style="visibility: hidden;">
+		</p>
+		<div class="wpcf7-response-output wpcf7-display-none">
+		</div>
+	</form>
+</div>
+<script>
+	$('#contact_info_btn').on('click', function() {
+		$('#contact_info_name').val('').addClass('empty');
+		$('#contact_info_company').val('').addClass('empty');
+		$('#contact_info_phone').val('').addClass('empty');
+		$('#contact_info_email').val('').addClass('empty');
+		$('#contact_info_message').val('').addClass('empty');
+	});
+</script>

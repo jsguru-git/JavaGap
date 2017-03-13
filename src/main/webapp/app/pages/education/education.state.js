@@ -16,7 +16,9 @@
             },
             views: {
                 'content': {
-                    templateUrl: 'app/pages/education/education.html'
+                    templateUrl: 'app/pages/education/education.html',
+                    controller: 'EducationController',
+                    controllerAs: 'vm'
                 }
             }
         });
