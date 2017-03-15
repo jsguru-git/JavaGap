@@ -11,9 +11,9 @@
                 </div>
             </div>
         </div>
-        <div style = "height: 320px">
+        <div class="container carousel-wrapper">
             <div ng-if = "vm.testimonials.length > 0">
-                <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="10000" id="photoGallery">
+                <jqx-scroll-view jqx-width="vm.slideWidth" jqx-height="320" jqx-buttons-offset="[0, 0]" jqx-slide-show="vm.slideShow" jqx-slide-duration="10000" id="testimonialGallery">
                     <div ng-repeat="testimonial in vm.testimonials">
                         <div class="photo">
                             <div class="testimonial_text">
@@ -25,8 +25,24 @@
                         </div>
                     </div>
                 </jqx-scroll-view>
+                <a class="left carousel-control">
+                    <span class="quote-left"></span>
+                </a>
+                <a class="right carousel-control">
+                    <span class="quote-right"></span>
+                </a>
             </div>
         </div>
     </div>
     <div class="vc_parallax-inner parallax testimonials-background"></div>
 </div>
+<script>
+    $(document).ready(function() {
+        $('.carousel-control.left').on('click', function() {
+            $('#testimonialGallery').jqxScrollView('back');
+        });
+        $('.carousel-control.right').on('click', function() {
+            $('#testimonialGallery').jqxScrollView('forward');
+        }); 
+    });
+</script>

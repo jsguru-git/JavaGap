@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans" />
     <link rel="stylesheet" href="content/fonts/font-awesome/css/font-awesome.min.css" /> 
     <link rel="stylesheet" href="content/fonts/outline/css/outline.min.css" />
+    <link rel="stylesheet" href="content/fonts/quote/css/quote.css" />
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />    
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css' />
     <!-- end fonts -->   
@@ -60,7 +61,7 @@
     <!-- <div class="menu-wrapper" ui-view="navbar" ng-cloak> -->
         <!-- Angular views -->
     <!-- </div> -->
-    <a href="#body" class="scrollToTop scrolly"></a>
+    <a href="#body" class="scrollToTop scrolly" scroll-top></a>
 </body>
     <!-- build:js app/vendor.js -->
     <!-- bower:js -->
@@ -132,12 +133,8 @@
     <script src="app/layouts/services-section/services-section.controller.js"></script>
     <script src="app/layouts/testimonials-section/testimonials-section.controller.js"></script>
     <script src="app/layouts/join-section/join-section.controller.js"></script>
-
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
-<!--
-    <script src="app/entities/services/services.controller.js"></script>
--->
     <script src="app/entities/entity.state.js"></script>
     <script src="app/entities/contact-us/contact-us-delete-dialog.controller.js"></script>
     <script src="app/entities/contact-us/contact-us-detail.controller.js"></script>
@@ -146,6 +143,10 @@
     <script src="app/entities/contact-us/contact-us.service.js"></script>
     <script src="app/entities/contact-us/contact-us.state.js"></script>
     
+    <script src="app/directives/dropdown-menu.directive.js"></script>
+    <script src="app/directives/side-navbar.directive.js"></script>
+    <script src="app/directives/scroll-top.directive.js"></script>
+
     <script src="app/entities/news-subscription/news-subscription-delete-dialog.controller.js"></script>
     <script src="app/entities/news-subscription/news-subscription-detail.controller.js"></script>
     <script src="app/entities/news-subscription/news-subscription-dialog.controller.js"></script>
@@ -209,25 +210,12 @@
     <script src="app/pages/why_javagap/why_javagap.state.js"></script>
 
     <script src="app/courses/courses.state.js"></script>
-    <script src="app/courses/database_programming/jpa/jpa.state.js"></script>
-    <script src="app/courses/database_programming/liquibase/liquibase.state.js"></script>
-    <script src="app/courses/database_programming/mysql/mysql.state.js"></script>
-    <script src="app/courses/database_programming/nosql/nosql.state.js"></script>
-    <script src="app/courses/database_programming/orm/orm.state.js"></script>
 
-    <script src="app/courses/messaging_middleware/jms/jms.state.js"></script>
-    <script src="app/courses/messaging_middleware/active_mq/active_mq.state.js"></script>
-    <script src="app/courses/messaging_middleware/tibco_ems/tibco_ems.state.js"></script>
-    <script src="app/courses/messaging_middleware/websphere_mq/websphere_mq.state.js"></script>
+    <script src="app/courses/course-view/course-view.state.js"></script>
+    <script src="app/courses/course-view/course-view.controller.js"></script>
 
-    <script src="app/courses/cloud_development/aws/aws.state.js"></script>
-    <script src="app/courses/cloud_development/aws/aws.controller.js"></script>
-    <script src="app/courses/cloud_development/azzure/azzure.state.js"></script>    
-    <script src="app/courses/cloud_development/gae/gae.state.js"></script>    
-
-    <script src="app/courses/devops/ansible/ansible.state.js"></script>
-    <script src="app/courses/devops/chef/chef.state.js"></script>
-    <script src="app/courses/devops/jenkins/jenkins.state.js"></script>
+    <script src="app/courses/courses-sub-category/courses-sub-category.state.js"></script>
+    <script src="app/courses/courses-sub-category/courses-sub-category.controller.js"></script>
 
     <script src="app/components/util/truncate-words.filter.js"></script>
     <script src="app/components/util/truncate-characters.filter.js"></script>
@@ -346,15 +334,6 @@
                    setTimeout(function() {
                         $body.removeClass('is-loading');
                         }, 200);
-
-                    //Check to see if the window is top if not then display button
-                    $(window).scroll(function(){
-                        if ($(this).scrollTop() > $(this).height()/2) {
-                            $('.scrollToTop').fadeIn();
-                        } else {
-                            $('.scrollToTop').fadeOut();
-                        }
-                    });
                 });
             });
         })(jQuery);

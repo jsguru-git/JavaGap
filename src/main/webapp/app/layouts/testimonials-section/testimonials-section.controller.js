@@ -18,10 +18,11 @@
         }
 
         var w = angular.element($window);
-        vm.slideWidth = w.width();
+        var ww = angular.element(document.querySelector('.carousel-wrapper'));
+        vm.slideWidth = ww.width();
         
         w.bind('resize', function () {
-            vm.slideWidth = w.width();
+            vm.slideWidth = ww.width();
             $scope.$apply();
         });
         vm.testimonials = [];

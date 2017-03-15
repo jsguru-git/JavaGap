@@ -1215,18 +1215,51 @@ dl.jh-entity-details > dt > span {
     width: 100%;
 }
 
-#menuToggler {
+.menuToggler {
     display: none;
 } 
-#menuToggler a {
+.menuToggler a {
     width: 100%;
     color: #000;
 }
-#menuToggler .dropdown-menu {
+.menuToggler .dropdown-menu {
     position: absolute;
     left: 0;
     width: 100%
 }
+
+.carousel-wrapper {
+    position: relative;
+    height: 320px;
+}
+.carousel-wrapper .carousel-control.left,
+.carousel-wrapper .carousel-control.right {
+    background-image: none !important;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+}
+
+.carousel-wrapper .carousel-control.right {
+    text-align: right !important;
+}
+
+.carousel-wrapper .carousel-control.left {
+    text-align: left !important;
+}
+
+.carousel-wrapper .carousel-control {
+    opacity: 1 !important;
+}
+
+.carousel-wrapper a.carousel-control:hover {
+    color: #fe7e17 !important;
+}
+
+.carousel-wrapper a.carousel-control:focus {
+    color: #fff !important;
+}
+
 /***************************************************/
 @media (max-width: 981px) {
     .jg-side-nav {
@@ -1239,7 +1272,7 @@ dl.jh-entity-details > dt > span {
         border-left: none;
         padding-left: 0;
     }
-    #menuToggler {
+    .menuToggler {
         display: block;
     } 
 }

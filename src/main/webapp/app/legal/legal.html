@@ -1,6 +1,6 @@
 <div class="container jg-layout-two-col">
 	<div class="row">
-		<div id="sideNavBar" class="jg-side-nav element-fix">
+		<div id="sideNavBar" class="jg-side-nav element-fix" side-navbar>
 			<ul>
 				<li ng-class="{'active': vm.target == 'copyright'}"><a class="vc_general vc_btn3 scrolly" href="#copyright">COPYRIGHT</a></li>
 				<li ng-class="{'active': vm.target == 'termsAndConds'}"><a class="vc_general vc_btn3 scrolly" href="#termsAndConds">TERMS AND CONDITIONS</a></li>
@@ -9,7 +9,7 @@
 			</ul>
 		</div>
 		<div id="legalContent" class="jg-content">
-			<div id="menuToggler" class="dropdown">
+			<div class="menuToggler dropdown" dropdown-menu>
 				<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
 				<ul class="dropdown-menu">
 					<li><a class="vc_general vc_btn3 scrolly" href="#copyright">COPYRIGHT</a></li>
@@ -47,10 +47,6 @@
 </div>
 <script>
 	$(document).ready(function() {
-		$('#sideNavBar').on('click', 'li > a', function() {
-			$('#sideNavBar li > a').parent().removeClass('active');
-			$(this).parent().addClass('active');
-		});
 
 		function stayOn(element) {
 			var scrollTop = $(window).scrollTop();

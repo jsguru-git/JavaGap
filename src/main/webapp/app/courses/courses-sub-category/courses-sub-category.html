@@ -1,0 +1,31 @@
+<md-content>
+    <div ng-repeat="j in [1,2,3]">
+        <div class="md-padding" layout-xs="column" layout="row">
+            <a ui-sref="courseView({title: 'Javagap-tutorial'})" ng-repeat="i in [1,2,3,4]" style="min-width: 216px;">
+                <md-card>
+                    <md-card-header>
+                        <md-card-avatar>
+                            <img class="md-user-avatar" src="/content/images/content.jpeg">
+                        </md-card-avatar>
+                        <md-card-header-text>
+                            <span class="md-title">Title</span>
+                            <span class="md-subhead">Sub header</span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <img ng-src="/content/images/content.jpeg" class="md-card-image" alt="image caption">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Card headline</span>
+                            <span class="md-subhead">Card subheader</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <p>
+                            Card content
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </a>
+        </div>
+    </div>
+</md-content>
