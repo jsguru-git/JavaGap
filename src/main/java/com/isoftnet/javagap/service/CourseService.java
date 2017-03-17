@@ -30,6 +30,7 @@ public interface CourseService {
      *  @return the entity
      */
     Course findOne(Long id);
+    Course findOneByName(String name);
 
     /**
      *  Delete the "id" course.

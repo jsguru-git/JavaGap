@@ -72,6 +72,16 @@ public class Course implements Serializable {
     @Column(name = "video_link")
     private String videoLink;
 
+    @NotNull
+    @Size(max = 50)
+    @Column(name = "name", length = 50, nullable = false)
+    private String name;
+
+    @NotNull
+    @Size(max = 1000)
+    @Column(name = "description", length = 1000, nullable = false)
+    private String description;
+
     public Long getId() {
         return id;
     }
@@ -249,6 +259,32 @@ public class Course implements Serializable {
         this.videoLink = videoLink;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Course name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Course description(String description) {
+        this.description = description;
+        return this;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -286,6 +322,8 @@ public class Course implements Serializable {
             ", specialization='" + specialization + "'" +
             ", rating='" + rating + "'" +
             ", videoLink='" + videoLink + "'" +
+            ", name='" + name + "'" +
+            ", description='" + description + "'" +
             '}';
     }
 }

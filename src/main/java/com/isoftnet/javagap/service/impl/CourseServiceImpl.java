@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service Implementation for managing Course.
@@ -70,4 +71,10 @@ public class CourseServiceImpl implements CourseService{
         log.debug("Request to delete Course : {}", id);
         courseRepository.delete(id);
     }
+
+	@Override
+	public Course findOneByName(String name)
+	{
+		return courseRepository.findByName(name.trim());
+	}
 }
