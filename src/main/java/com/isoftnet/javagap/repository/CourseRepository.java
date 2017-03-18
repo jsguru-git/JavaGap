@@ -1,9 +1,8 @@
 package com.isoftnet.javagap.repository;
 
 import com.isoftnet.javagap.domain.Course;
-
 import org.springframework.data.jpa.repository.*;
-
+import java.util.Optional;
 import java.util.List;
 
 /**
@@ -12,4 +11,5 @@ import java.util.List;
 @SuppressWarnings("unused")
 public interface CourseRepository extends JpaRepository<Course,Long> {
 
+	Course findByName(String name);
 }

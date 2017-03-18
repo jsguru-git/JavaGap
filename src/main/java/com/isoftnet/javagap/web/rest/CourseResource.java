@@ -4,14 +4,12 @@ import com.codahale.metrics.annotation.Timed;
 import com.isoftnet.javagap.domain.Course;
 import com.isoftnet.javagap.service.CourseService;
 import com.isoftnet.javagap.web.rest.util.HeaderUtil;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import javax.inject.Inject;
 import javax.validation.Valid;
 import java.net.URI;
@@ -115,6 +113,32 @@ public class CourseResource {
         log.debug("REST request to delete Course : {}", id);
         courseService.delete(id);
         return ResponseEntity.ok().headers(HeaderUtil.createEntityDeletionAlert("course", id.toString())).build();
+    }
+    
+    @GetMapping("/course/{name}")
+    @Timed
+    public ResponseEntity<Course> getCourseByName(@PathVariable String name) {
+        log.debug("REST request to get Course : {}", name);
+        Course course = courseService.findOneByName(name);
+        return Optional.ofNullable(course)
+            .map(result -> new ResponseEntity<>(
+                result,
+                HttpStatus.OK))
+            .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+    
+    @PostMapping("/course/count/{name}")
+    @Timed
+    public ResponseEntity<Course> updateCourseWatchCount(@PathVariable String name) throws URISyntaxException {
+        log.debug("REST request to updateCourseWatchedCount : {}", name);
+        
+        Course course = courseService.findOneByName(name);
+        course.setWatchCount(course.getWatchCount() + 1);
+        
+        Course result = courseService.save(course);
+        return ResponseEntity.ok()
+            .headers(HeaderUtil.createEntityUpdateAlert("course", result.getId().toString()))
+            .body(result);
     }
 
 }

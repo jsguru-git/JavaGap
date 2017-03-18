@@ -82,6 +82,12 @@ public class CourseResourceIntTest {
     private static final String DEFAULT_VIDEO_LINK = "AAAAAAAAAA";
     private static final String UPDATED_VIDEO_LINK = "BBBBBBBBBB";
 
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
+
     @Inject
     private CourseRepository courseRepository;
 
@@ -131,7 +137,9 @@ public class CourseResourceIntTest {
                 .expectations(DEFAULT_EXPECTATIONS)
                 .specialization(DEFAULT_SPECIALIZATION)
                 .rating(DEFAULT_RATING)
-                .videoLink(DEFAULT_VIDEO_LINK);
+                .videoLink(DEFAULT_VIDEO_LINK)
+                .name(DEFAULT_NAME)
+                .description(DEFAULT_DESCRIPTION);
         return course;
     }
 
@@ -169,6 +177,8 @@ public class CourseResourceIntTest {
         assertThat(testCourse.getSpecialization()).isEqualTo(DEFAULT_SPECIALIZATION);
         assertThat(testCourse.getRating()).isEqualTo(DEFAULT_RATING);
         assertThat(testCourse.getVideoLink()).isEqualTo(DEFAULT_VIDEO_LINK);
+        assertThat(testCourse.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testCourse.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
     }
 
     @Test
@@ -283,6 +293,42 @@ public class CourseResourceIntTest {
 
     @Test
     @Transactional
+    public void checkNameIsRequired() throws Exception {
+        int databaseSizeBeforeTest = courseRepository.findAll().size();
+        // set the field null
+        course.setName(null);
+
+        // Create the Course, which fails.
+
+        restCourseMockMvc.perform(post("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(course)))
+            .andExpect(status().isBadRequest());
+
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkDescriptionIsRequired() throws Exception {
+        int databaseSizeBeforeTest = courseRepository.findAll().size();
+        // set the field null
+        course.setDescription(null);
+
+        // Create the Course, which fails.
+
+        restCourseMockMvc.perform(post("/api/courses")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(course)))
+            .andExpect(status().isBadRequest());
+
+        List<Course> courseList = courseRepository.findAll();
+        assertThat(courseList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllCourses() throws Exception {
         // Initialize the database
         courseRepository.saveAndFlush(course);
@@ -304,7 +350,9 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.[*].expectations").value(hasItem(DEFAULT_EXPECTATIONS.toString())))
             .andExpect(jsonPath("$.[*].specialization").value(hasItem(DEFAULT_SPECIALIZATION.toString())))
             .andExpect(jsonPath("$.[*].rating").value(hasItem(DEFAULT_RATING.doubleValue())))
-            .andExpect(jsonPath("$.[*].videoLink").value(hasItem(DEFAULT_VIDEO_LINK.toString())));
+            .andExpect(jsonPath("$.[*].videoLink").value(hasItem(DEFAULT_VIDEO_LINK.toString())))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
     @Test
@@ -330,7 +378,9 @@ public class CourseResourceIntTest {
             .andExpect(jsonPath("$.expectations").value(DEFAULT_EXPECTATIONS.toString()))
             .andExpect(jsonPath("$.specialization").value(DEFAULT_SPECIALIZATION.toString()))
             .andExpect(jsonPath("$.rating").value(DEFAULT_RATING.doubleValue()))
-            .andExpect(jsonPath("$.videoLink").value(DEFAULT_VIDEO_LINK.toString()));
+            .andExpect(jsonPath("$.videoLink").value(DEFAULT_VIDEO_LINK.toString()))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
     }
 
     @Test
@@ -364,7 +414,9 @@ public class CourseResourceIntTest {
                 .expectations(UPDATED_EXPECTATIONS)
                 .specialization(UPDATED_SPECIALIZATION)
                 .rating(UPDATED_RATING)
-                .videoLink(UPDATED_VIDEO_LINK);
+                .videoLink(UPDATED_VIDEO_LINK)
+                .name(UPDATED_NAME)
+                .description(UPDATED_DESCRIPTION);
 
         restCourseMockMvc.perform(put("/api/courses")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -388,6 +440,8 @@ public class CourseResourceIntTest {
         assertThat(testCourse.getSpecialization()).isEqualTo(UPDATED_SPECIALIZATION);
         assertThat(testCourse.getRating()).isEqualTo(UPDATED_RATING);
         assertThat(testCourse.getVideoLink()).isEqualTo(UPDATED_VIDEO_LINK);
+        assertThat(testCourse.getName()).isEqualTo(UPDATED_NAME);
+        assertThat(testCourse.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
     }
 
     @Test
