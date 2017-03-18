@@ -5,15 +5,41 @@
         .module('javagapApp')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', '$window', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RegisterformService', 'DisableLoggedUserPopupService'];
+    NavbarController.$inject = ['$state', '$scope', '$window', 'Auth', 'Principal', 'ProfileService', 'LoginService', 'RegisterformService', 'DisableLoggedUserPopupService', 'Course'];
 
-    function NavbarController ($state, $window, Auth, Principal, ProfileService, LoginService, RegisterformService, DisableLoggedUserPopupService) {
+    function NavbarController ($state, $scope, $window, Auth, Principal, ProfileService, LoginService, RegisterformService, DisableLoggedUserPopupService, Course) {
         var vm = this;
 
         vm.isNavbarCollapsed = true;
         vm.isAuthenticated = Principal.isAuthenticated;
         vm.identity = Principal.identity;
         vm.currentAccount = null;
+
+        $scope.courses = [];
+
+        loadAll();
+        function loadAll() {
+            Course.query(function(result) {
+                $scope.courses = result;
+            });
+        }
+        $scope.selectedcourse = function($item) {
+            $state.go('courseView', {title: $item.title, courseEntity: $item.originalObject});
+        }
+        
+        // $scope.courseSearchFn = function(str) {
+        //     // var temp;
+        //     // Course.get({id : str} ,(data, headers) => {
+        //     //     var response = {}
+        //     //     response.data = {results: data};
+        //     //     response.headers = headers;
+        //     //     //alert(JSON.stringify(response.data));
+        //     //     //return response;
+        //     // });
+        //     return Course.get({id : str}).$promise;
+        // }
+
+        // $scope.remoteUrlRequestFn = function(str) { return {q: str}; }
         
         Principal.identity().then(function(account) {
             vm.currentAccount = account;

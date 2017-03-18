@@ -484,7 +484,8 @@ section header, article header {
     color: #ffffff;
 }
 
-section header > *:first-child, article header > *:first-child {
+/*section header > *:first-child,*/
+article header > *:first-child {
     border-bottom: 2px solid #eaeaea;
     display: inline-block;
     margin-bottom: 0.5em;
@@ -1071,7 +1072,8 @@ dl.jh-entity-details > dt > span {
 #sideNavBar > ul > li:not(.active) > a:hover {
     background-color: #e8e8e8;
 }
-#section-container {
+#section-container,
+#header-container {
     margin-right: 300px;
     min-width: 250px;
 }
@@ -1086,6 +1088,46 @@ dl.jh-entity-details > dt > span {
 .jg-col-lg-10,.jg-col-lg-11,.jg-col-lg-12 {
     position: relative;
     min-height: 1px;
+}
+
+.course-header {
+    background-color: #353535;
+    padding: 2em 1em;
+    color: #fff;
+}
+
+.course-header-title {
+    font-size: 30px;
+    line-height: 41px;
+    font-weight: 600;
+    color: inherit;
+}
+
+.course-header-headline {
+    font-size: 21px;
+    line-height: 27px;
+    color: inherit;
+}
+
+.course-header-element-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.course-header-item {
+    display: flex;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.course-header-item:last-child {
+    margin-right: 0;
+}
+
+.search-input {
+    padding: 10px 20px;
 }
 
 /*************** Courses Widget CSS ****************/
@@ -1320,7 +1362,8 @@ dl.jh-entity-details > dt > span {
         width: inherit;
     }
 
-    #section-container {
+    #section-container,
+    #header-container {
         margin-right: 0;
     }
 
@@ -1410,8 +1453,10 @@ nav {
 }
 
 .logo {
-    width: 6.5em;
-    padding: 10px 0 10px 1.5em;
+    /*width: 6.5em;
+    padding: 10px 0 10px 1.5em;*/
+    display: flex;
+    align-items: center;
 }
 
 #cssmenu > ul > li {

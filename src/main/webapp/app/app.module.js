@@ -25,7 +25,8 @@
             'com.2fdevs.videogular.plugins.overlayplay',
             'com.2fdevs.videogular.plugins.poster',
             'ngMaterial',
-            'angular-rating'
+            'angular-rating',
+            'angucomplete-alt'
         ])
         .run(run);
 

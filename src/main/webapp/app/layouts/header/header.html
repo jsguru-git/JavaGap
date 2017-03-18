@@ -1,14 +1,55 @@
 <nav class="navbar navbar-default navbar-static-top" ng-switch="vm.isAuthenticated()">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">JAVAGAP</a>
-        </div>
-        <div class="navbar-collapse collapse" style="float: right;">
-      <ul class="nav navbar-nav">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="logo">
+      <a class="navbar-brand" href="index.html">JAVAGAP</a>
+      <!-- <div angucomplete-alt
+        id="course-search"
+        placeholder="Search courses"
+        pause="500"
+        selected-object="selectedProject"
+        remote-url="https://api.github.com/search/repositories"
+        remote-url-request-formatter="remoteUrlRequestFn"
+        remote-url-data-field="items"
+        title-field="name"
+        description-field="description"
+        minlength="2"
+        input-class="form-control form-control-small"
+        match-class="highlight">
+      </div>
+      <div angucomplete-alt
+        id="course-search"
+        placeholder="Search courses"
+        pause="500"
+        selected-object="selectedProject"
+        remote-api-handler="courseSearchFn"
+        title-field="prerequisite"
+        description-field="about"
+        minlength="1"
+        input-class="form-control form-control-small"
+        match-class="highlight">
+      </div> -->
+      <div angucomplete-alt 
+        id="course-search" 
+        placeholder="Search courses" 
+        pause="300" 
+        selected-object="selectedcourse" 
+        local-data="courses"
+        search-fields="about" 
+        title-field="prerequisite"
+        minlength="1" 
+        input-class="search-input" 
+        match-class="highlight"
+        clear-selected="true">
+      </div>
+    </div>
+  </div>
+  <div class="navbar-collapse collapse" style="float: right;">
+    <ul class="nav navbar-nav">
       <li><a ng-click="vm.home()">HOME</a></li>
       <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
       <li class="dropdown menu-large" dropdown-menu>
@@ -144,18 +185,18 @@
             </li>
         </ul>
       </li>
-      
-    <li ui-sref-active="active" ng-switch-when="true">
-        <a ng-click="vm.logout()">Sign out</a>
-    </li>
-    <li ui-sref-active="active" ng-switch-when="false">
-        <a ng-click="vm.login()">SIGN IN</a>
-    </li>
-    <li ui-sref-active="active" ng-switch-when="false">
-        <a ng-click="vm.register()">SIGN UP</a></li>
+      <li ui-sref-active="active" ng-switch-when="true">
+          <a ng-click="vm.logout()">Sign out</a>
+      </li>
+      <li ui-sref-active="active" ng-switch-when="false">
+          <a ng-click="vm.login()">SIGN IN</a>
+      </li>
+      <li ui-sref-active="active" ng-switch-when="false">
+          <a ng-click="vm.register()">SIGN UP</a>
+      </li>
     </ul>
-    </div>
-    </nav>
+  </div>
+</nav>
 <script type="text/javascript">
 
     $(document).ready(function(){

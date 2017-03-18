@@ -11,6 +11,9 @@
         $stateProvider.state('courseView', {
             parent: 'courses',
             url: '/:title',
+            params: {
+                courseEntity: null
+            },
             data: {
                 
             },
