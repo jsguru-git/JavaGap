@@ -1032,6 +1032,19 @@ table.uib-daypicker td {
     width: 500px;
     margin: 0 auto;
 }
+
+.autocomplete {
+    position: relative;
+}
+
+.autocomplete > i {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    font-size: 30px !important;
+    line-height: 0 !important;
+    color: inherit;
+}
 /*********** Courses and Legal Widget CSS ***********/
 .jh-entity-details > dt {
     margin-top: 0;
@@ -1126,7 +1139,7 @@ dl.jh-entity-details > dt > span {
 }
 
 .search-input {
-    padding: 10px 20px;
+    padding: 10px 40px 10px 20px;
     width: 250px;
     background-color: transparent;
 }
@@ -1364,7 +1377,7 @@ dl.jh-entity-details > dt > span {
 }
 
 @media (max-width: 767px) {
-    .dropdown-menu:not(.datetime-picker-dropdown) {
+    .dropdown-menu:not(.datetime-picker-dropdown):not(.nav-dropdown) {
         position: relative;
         top: inherit; 
         float: none;

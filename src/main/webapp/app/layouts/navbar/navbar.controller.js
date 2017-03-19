@@ -25,6 +25,7 @@
         }
         $scope.selectedcourse = function($item) {
             $state.go('courseView', {name: $item.title});
+            collapseNavbar();
         }
         
         // $scope.courseSearchFn = function(str) {
