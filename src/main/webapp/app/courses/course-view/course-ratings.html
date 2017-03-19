@@ -3,9 +3,9 @@
 		<img src="content/images/pythonlearn_thumbnail_1x1.jpg"></img>
 		<div>
 			<div class="header-title">
-				<span>University of Michigan</span>
+				<span>{{vm.courseDetail.name}}</span>
 			</div>
-			<span class="header-content">Programming for Everybody (Getting Started with Python)</span>
+			<span class="header-content">{{vm.courseDetail.description}}</span>
 		</div>
 		<md-divider></md-divider>
 	</div>
@@ -37,7 +37,7 @@
 				<div class="md-list-item-text" layout="column">
 					<div class="review-header">
 						<div class="review-stars">
-							<rating value="5" max="5" color="#d49261"></rating>
+							<rating value="vm.courseDetail.rating" max="5" color="#d49261"></rating>
 							<!-- <rating ng-value="courseReview.value" max="5"></rating> -->
 						</div>
 						<div class="review-date">{{ courseReview.when }}</div>

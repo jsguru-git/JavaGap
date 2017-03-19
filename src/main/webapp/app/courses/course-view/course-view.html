@@ -1,156 +1,161 @@
-<!-- <div id="course-banner">
-	<img src="content/images/help.jpg" alt="" style="visibility: hidden;">
-</div> -->
-<div class="jg-layout-two-col">
-	<div class="row">
-		<div id="sideNavBar" class="jg-side-nav element-fix" side-navbar>
-			<ul>
-				<li><a class="vc_general vc_btn3 scrolly" href="#about">About</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
-				<li><a class="vc_general vc_btn3" ng-click="vm.rating()">Ratings</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
-				<li><a class="vc_general vc_btn3 scrolly" href="#expectations">Expectations</a></li>
-			</ul>
-		</div>
-		<div id="courseContent" class="jg-content">
-			<div id="header-container">
-				<div class="course-header">
-					<div class="course-header-title">{{vm.title}}</div>
-					<div class="course-header-headline">{{vm.title}}</div>
-					<div class="course-header-element-row">
-						<div class="course-header-item">
-							<span><rating value="vm.courseEntity.rating" max="5" color="#d49261" size="13px"></rating></span>
-							<span>&nbsp;{{vm.courseEntity.rating}}</span>
-							<span>&nbsp;({{vm.courseEntity.watchCount}} ratings)</span>
-						</div>
-						<div class="course-header-item">
-							<span>Last updated</span>
-							<span>&nbsp;{{vm.courseEntity.lastUpdatedDate | date: 'M/yyyy'}}</span>
-						</div>
-					</div>
-					<div class="course-header-element-row">
-						<div class="course-header-item"></div>
-						<div class="course-header-item"></div>
-					</div>
-				</div>
-			</div>
-			<div id="media-container">
-				<div id="media" class="element-fix">
-					<div class="row">
-						<div id="course_video" class="">
-							<videogular vg-theme="vm.config.theme">
-								<vg-media vg-src="vm.config.sources"
-										vg-tracks="vm.config.tracks">
-								</vg-media>
-					 
-								<vg-controls>
-									<vg-play-pause-button></vg-play-pause-button>
-									<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
-									<vg-scrub-bar>
-										<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-									</vg-scrub-bar>
-									<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
-									<vg-volume>
-										<vg-mute-button></vg-mute-button>
-										<vg-volume-bar></vg-volume-bar>
-									</vg-volume>
-									<vg-fullscreen-button></vg-fullscreen-button>
-								</vg-controls>
-					 
-								<vg-overlay-play></vg-overlay-play>
-								<vg-poster vg-url='vm.config.plugins.poster'></vg-poster>
-							</videogular>
-						</div>
-						<div id="course_info" class="">
-							<ul class="list">
-								<li class="list-item">
-									<span class="list-left"><i class="icon fa fa-clock-o"></i>Duration</span>
-									<span class="list-right">{{vm.courseEntity.duration}}</span>
-								</li>
-								<li class="list-item">
-									<span class="list-left"><i class="icon fa fa-play-circle"></i>Watched Count</span>
-									<span class="list-right">{{vm.courseEntity.watchCount}}</span>
-								</li>
-								<li class="list-item">
-									<span class="list-left"><i class="icon fa fa-star-half-o"></i>Ratings / Reviews</span>
-									<span class="list-right"><rating value="vm.courseEntity.rating" max="5" color="#d49261" size="13px"></rating></span>
-								</li>
-								<li class="list-item">
-									<span class="list-left"><i class="icon fa fa-calendar-o"></i>Published Date</span>
-									<span class="list-right">{{vm.courseEntity.publishedDate | date: 'M/yyyy'}}</span>
-								</li>
-								<li class="list-item">
-									<span class="list-left"><i class="icon fa fa-calendar"></i>Last Updated Date</span>
-									<span class="list-right">{{vm.courseEntity.lastUpdatedDate | date: 'M/yyyy'}}</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="section-container">
-				<div class="menuToggler dropdown" dropdown-menu style="margin-top: 10px;">
-					<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
-					<ul class="dropdown-menu">
+<div ng-switch = "vm.hasCourse">
+	<div ng-switch-when = "true">
+		<div class="jg-layout-two-col">
+			<div class="row">
+				<div id="sideNavBar" class="jg-side-nav element-fix" side-navbar>
+					<ul>
 						<li><a class="vc_general vc_btn3 scrolly" href="#about">About</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
-						<li><a class="vc_general vc_btn3" ng-click="vm.rating()">Ratings</a></li>
+						<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
 						<li><a class="vc_general vc_btn3 scrolly" href="#expectations">Expectations</a></li>
 					</ul>
 				</div>
-				<div id="about">
-					<header class="major">
-						<h1>About</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="prerequisite">
-					<header class="major">
-						<h1>Prerequisite</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="systemRequirements">
-					<header class="major">
-						<h1>System Requirements</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="specialization">
-					<header class="major">
-						<h1>Specialization</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="curriculum">
-					<header class="major">
-						<h1>Curriculum</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="shareThis">
-					<header class="major">
-						<h1>Share This</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
-				</div>
-				<div id="expectations">
-					<header class="major">
-						<h1>Expectations</h1>
-					</header>
-					<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+				<div id="courseContent" class="jg-content">
+					<div id="header-container">
+						<div class="course-header">
+							<div class="course-header-title">{{vm.name}}</div>
+							<div class="course-header-headline">{{vm.courseEntity.description}}</div>
+							<div class="course-header-element-row">
+								<div class="course-header-item">
+									<span><rating value="vm.courseEntity.rating" max="5" color="#d49261" size="13px"></rating></span>
+									<span>&nbsp;{{vm.courseEntity.rating}}</span>
+									<span>&nbsp;({{vm.watchCount}} ratings)</span>
+								</div>
+								<div class="course-header-item">
+									<span>Last updated</span>
+									<span>&nbsp;{{vm.courseEntity.lastUpdatedDate | date: 'M/yyyy'}}</span>
+								</div>
+							</div>
+							<div class="course-header-element-row">
+								<div class="course-header-item"></div>
+								<div class="course-header-item"></div>
+							</div>
+						</div>
+					</div>
+					<div id="media-container">
+						<div id="media" class="element-fix">
+							<div class="row">
+								<div id="course_video" class="">
+									<videogular vg-theme="vm.mediaConfig.theme">
+										<vg-media vg-src="vm.mediaConfig.sources"
+												vg-tracks="vm.mediaConfig.tracks">
+										</vg-media>
+							 
+										<vg-controls>
+											<vg-play-pause-button ng-click="vm.incWatchedCount(vm.name)"></vg-play-pause-button>
+											<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
+											<vg-scrub-bar>
+												<vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+											</vg-scrub-bar>
+											<vg-time-display>{{ timeLeft | date:'mm:ss' }}</vg-time-display>
+											<vg-volume>
+												<vg-mute-button></vg-mute-button>
+												<vg-volume-bar></vg-volume-bar>
+											</vg-volume>
+											<vg-fullscreen-button></vg-fullscreen-button>
+										</vg-controls>
+							 
+										<vg-overlay-play></vg-overlay-play>
+										<vg-poster vg-url='vm.mediaConfig.plugins.poster'></vg-poster>
+									</videogular>
+								</div>
+								<div id="course_info" class="">
+									<ul class="list">
+										<li class="list-item">
+											<span class="list-left"><i class="icon fa fa-clock-o"></i>Duration</span>
+											<span class="list-right">{{vm.courseEntity.duration}}</span>
+										</li>
+										<li class="list-item">
+											<span class="list-left"><i class="icon fa fa-play-circle"></i>Watched Count</span>
+											<span class="list-right">{{vm.watchCount}}</span>
+										</li>
+										<li class="list-item">
+											<span class="list-left"><i class="icon fa fa-star-half-o"></i>Ratings / Reviews</span>
+											<span class="list-right"><rating value="vm.courseEntity.rating" max="5" color="#d49261" size="13px"></rating></span>
+										</li>
+										<li class="list-item">
+											<span class="list-left"><i class="icon fa fa-calendar-o"></i>Published Date</span>
+											<span class="list-right">{{vm.courseEntity.publishedDate | date: 'M/yyyy'}}</span>
+										</li>
+										<li class="list-item">
+											<span class="list-left"><i class="icon fa fa-calendar"></i>Last Updated Date</span>
+											<span class="list-right">{{vm.courseEntity.lastUpdatedDate | date: 'M/yyyy'}}</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="section-container">
+						<div class="menuToggler dropdown" dropdown-menu style="margin-top: 10px;">
+							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a class="vc_general vc_btn3 scrolly" href="#about">About</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
+								<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
+								<li><a class="vc_general vc_btn3 scrolly" href="#expectations">Expectations</a></li>
+							</ul>
+						</div>
+						<div id="about">
+							<header class="major">
+								<h1>About</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="prerequisite">
+							<header class="major">
+								<h1>Prerequisite</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="systemRequirements">
+							<header class="major">
+								<h1>System Requirements</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="specialization">
+							<header class="major">
+								<h1>Specialization</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="curriculum">
+							<header class="major">
+								<h1>Curriculum</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="shareThis">
+							<header class="major">
+								<h1>Share This</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+						<div id="expectations">
+							<header class="major">
+								<h1>Expectations</h1>
+							</header>
+							<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique.</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+	<div ng-switch-when = "false">
+		<div class="text-center">
+			<h1>Sorry! This course was dropped.</h1>
+		</div>
+	</div>
 <script>
 	$(document).ready(function() {
 		$('.scrolly').scrolly();

@@ -3,17 +3,18 @@
 
     angular
         .module('javagapApp')
-        .controller('RatingsController', RatingsController);
+        .controller('CourseRatingsController', CourseRatingsController);
 
-    RatingsController.$inject = ['$scope', '$timeout', '$uibModalInstance'];
+    CourseRatingsController.$inject = ['$scope', '$timeout', '$uibModalInstance', 'entity'];
 
-    function RatingsController ($scope, $timeout, $uibModalInstance) {
+    function CourseRatingsController ($scope, $timeout, $uibModalInstance, entity) {
     	var vm = this;
     	vm.learner = null;
     	vm.learners = null;
         vm.review = null;
         vm.reviews = null;
-    	
+    	vm.courseDetail = entity;
+
         vm.cancel = cancel;
     	vm.loadLearners = loadLearners;
         vm.loadReviews = loadReviews;

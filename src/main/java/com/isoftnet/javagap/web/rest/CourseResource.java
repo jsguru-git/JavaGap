@@ -127,7 +127,7 @@ public class CourseResource {
             .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
     
-    @PostMapping("/course/count/{name}")
+    @GetMapping("/course/count/{name}")
     @Timed
     public ResponseEntity<Course> updateCourseWatchCount(@PathVariable String name) throws URISyntaxException {
         log.debug("REST request to updateCourseWatchedCount : {}", name);

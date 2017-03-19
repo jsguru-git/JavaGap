@@ -676,12 +676,10 @@ p {
 
 .close:hover, .close:focus {
     color: #aaaaaa;
-
 }
 
 input, textarea {
     border: 1px solid #dadbd8;
-    color: rgba(0, 0, 0, 0.87);
     font-size: 15px;
 }
 
@@ -815,8 +813,9 @@ section header.major {
 
 #content {
     min-height: 50vh;
-    margin: 3.5em 0 5em;
-    padding: 6em 0 3em; 
+    margin: 3.5em 0 0;
+    padding: 6em 0 8em;
+    background-color: #418ecf1a; 
 }
 
 .light_scheme {
@@ -1128,6 +1127,34 @@ dl.jh-entity-details > dt > span {
 
 .search-input {
     padding: 10px 20px;
+    width: 250px;
+    background-color: transparent;
+}
+
+.selected-bold {
+    font-weight: bold;
+}
+
+
+.angucomplete-dropdown {
+    padding: 0;
+    border-color: #ddd;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.angucomplete-row {
+    padding: 0 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: -1px;
+}
+
+.angucomplete-searching {
+    padding: 0 10px;
+}
+
+.angucomplete-selected-row {
+    background-color: #358ed7;
 }
 
 /*************** Courses Widget CSS ****************/
