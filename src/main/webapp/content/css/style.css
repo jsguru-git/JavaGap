@@ -87,6 +87,15 @@ a:hover, a:focus {
     text-decoration: none !important;
 }
 
+input,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border-radius: 0;
+}
+
 input[type="submit"], input[type="reset"], input[type="button"], button, .button {
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -535,18 +544,18 @@ ul.actions {
 }
 
 #banner .button.special {
-    background-color: #ffffff;
+   /* background-color: #ffffff;
     box-shadow: none;
+    color: #333333 !important;*/
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    color: #333333 !important;
 }
 
-#banner .button.special:hover {
+/*#banner .button.special:hover {
     background-color: #65caea;
     box-shadow: none;
     color: #ffffff !important;
     text-decoration: none;
-}
+}*/
 
 input.big[type="submit"], input.big[type="reset"], input.big[type="button"], button.big, .button.big {
     height: 3.75em;

@@ -6,7 +6,7 @@
 </header>
 <ul class="actions" ng-switch="vm.isAuthenticated()">
     <li ng-switch-when="false">
-        <button class="special big" style="cursor: pointer;" ng-click="vm.register()">Get Started</button>
+        <a class="button special big" ng-click="vm.register()" style="cursor: pointer;">Get Started</a>
     </li>
     <li ng-switch-when="true">
         <a class="button special big scrolly" href="#services" style="cursor: pointer;">Get Started</a>
