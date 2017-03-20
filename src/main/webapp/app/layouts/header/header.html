@@ -33,21 +33,23 @@
         input-class="form-control form-control-small"
         match-class="highlight">
       </div> -->
-      <div class="autocomplete">
-        <div angucomplete-alt 
-          id="course-search" 
-          placeholder="Search courses" 
-          pause="300" 
-          selected-object="selectedcourse" 
-          local-data="courses"
-          search-fields="name" 
-          title-field="name"
-          minlength="2" 
-          input-class="search-input" 
-          match-class="selected-bold"
-          clear-selected="true">
+      <div class="searchbox">
+        <div class="autocomplete">
+          <div angucomplete-alt 
+            id="course-search" 
+            placeholder="Search courses" 
+            pause="300" 
+            selected-object="selectedcourse" 
+            local-data="courses"
+            search-fields="name" 
+            title-field="name"
+            minlength="2" 
+            input-class="search-input" 
+            match-class="selected-bold"
+            clear-selected="true">
+          </div>
+          <i hidden-handler class="outline outline-search"></i>
         </div>
-        <i class="icon outline outline-search"></i>
       </div>
     </div>
   </div>
