@@ -254,6 +254,7 @@ ul.actions.vertical li > * {
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
+    z-index: 10;
 }
 
 #header .icon {
