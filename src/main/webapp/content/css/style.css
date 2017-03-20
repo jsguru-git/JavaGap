@@ -825,7 +825,8 @@ section header.major {
     min-height: 50vh;
     margin: 3.5em 0 0;
     padding: 6em 0 8em;
-    background-color: #418ecf1a; 
+    background-color: #418ecf1a;
+    background-color: rgba(65, 142, 207, 0.1);
 }
 
 .light_scheme {
