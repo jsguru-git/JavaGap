@@ -43,6 +43,7 @@
             local-data="courses"
             search-fields="name" 
             title-field="name"
+            description-field="watchCount"
             minlength="2" 
             input-class="search-input" 
             match-class="selected-bold"
@@ -87,10 +88,10 @@
                 <a ui-sref="courseView({name: 'jms'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-files-o"></i>JMS</a>
               </li>
               <li>
-                <a ui-sref="courseView({name: 'active-mq'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-tasks"></i>ACTIVE MQ</a>
+                <a ui-sref="courseView({name: 'active mq'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-tasks"></i>ACTIVE MQ</a>
               </li>
               <li>
-                <a ui-sref="courseView({name: 'tibco-ems'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-flask"></i>TIBCO EMS</a>
+                <a ui-sref="courseView({name: 'tibco ems'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-flask"></i>TIBCO EMS</a>
               </li>
               <li>
                 <a ui-sref="courseView({name: 'websphere mq'})" ng-click="vm.collapseNavbar()"><i class="icon fa fa-table"></i>WEBSPHERE MQ</a>

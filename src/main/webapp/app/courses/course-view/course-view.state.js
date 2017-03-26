@@ -13,10 +13,10 @@
             parent: 'courses',
             url: '/:name',
             data: {
-                
+                authorities: ['ROLE_USER']    
             },
             views: {
-                'content': {
+                'course-content': {
                     templateUrl: 'app/courses/course-view/course-view.html',
                     controller: 'CourseViewController',
                     controllerAs: 'vm'
@@ -30,7 +30,7 @@
                 name: null
             },
             data: {
-                //authorities: ['ROLE_USER']
+                authorities: ['ROLE_USER']
             },
             onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                 $uibModal.open({

@@ -23,13 +23,13 @@
 
         function onSaveSuccess (result) {
             vm.submitError = false;
-            alertify.notify('New subscription is created', 'success', 5, function(){  console.log('success'); });
+            alertify.notify('New course request is created', 'success', 5, function(){  console.log('success'); });
             $uibModalInstance.close(true);
         }
 
         function onSaveError () {
             vm.submitError = true;
-            alertify.notify('New subscription failed. Try again later', 'error', 5, function(){  console.log('failed'); });
+            alertify.notify('New course request failed. Try again later', 'error', 5, function(){  console.log('failed'); });
         }
 
         function save () {

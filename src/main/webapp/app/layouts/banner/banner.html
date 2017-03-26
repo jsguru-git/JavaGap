@@ -9,6 +9,25 @@
         <a class="button special big" ng-click="vm.register()" style="cursor: pointer;">Get Started</a>
     </li>
     <li ng-switch-when="true">
-        <a class="button special big scrolly" href="#services" style="cursor: pointer;">Get Started</a>
+        <div class="searchbox">
+            <div class="autocomplete">
+                <div angucomplete-alt 
+                id="course-search" 
+                placeholder="Search courses" 
+                pause="300" 
+                selected-object="selectedcourse" 
+                local-data="courses"
+                search-fields="name" 
+                title-field="name"
+                description-field="watchCount"
+                minlength="2" 
+                input-class="search-input" 
+                match-class="selected-bold"
+                clear-selected="true">
+                </div>
+                <i class="outline outline-search"></i>
+            </div>
+        </div>
+        <a class="button special big scrolly" href="#services" style="cursor: pointer;">Our Services</a>
     </li>
 </ul>

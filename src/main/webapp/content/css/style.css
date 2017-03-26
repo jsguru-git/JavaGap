@@ -274,6 +274,10 @@ ul.actions.vertical li > * {
     transform: translate(50%, 50%);
 }
 
+#banner ul.actions li > *:not(:first-child) {
+    margin-top: 15px;
+}
+
 .wrapper > * {
     /*border-bottom: 2px solid #eaeaea;*/
     overflow: hidden;
@@ -826,7 +830,7 @@ section header.major {
     margin: 3.5em 0 0;
     padding: 6em 0 8em;
     background-color: #418ecf1a;
-    background-color: rgba(65, 142, 207, 0.1);
+    background-color: rgb(236, 244, 251);
 }
 
 .light_scheme {
@@ -1069,20 +1073,39 @@ dl.jh-entity-details > dt > span {
     font-weight: bold;
 }
 
-.jg-side-nav {
+#sideContent {
+    position: absolute;
+    width: 250px;
+}
+
+#sideNavBar {
     width: 250px;
     float: left;
+}
+
+.jg-course-banner {
+    background-color: #353535;
+    padding-bottom: 10px;
+}
+
+.jg-course-content {
+    background-color: rgb(236, 244, 251);
 }
 
 .jg-content {
     position: relative;
 }
 
+.jg-layout-two-col {
+    position: relative;
+}
+
 .jg-layout-two-col .jg-content {
     margin-left: 280px;
-    border-left: 2px solid #eaeaea;
+    /*border-left: 2px solid #eaeaea;*/
     padding-left: 3%;
 }
+
 #sideNavBar > ul > li > a {
     width: 100%;
     text-align: left;
@@ -1091,23 +1114,25 @@ dl.jh-entity-details > dt > span {
     border: 1px solid #ddd;
     margin-bottom: -1px;
 }
+
 #sideNavBar > ul > li.active > a {
     background-color: #358ed7;
     border-color: rgb(53, 142, 215);
     color: #ffffff;
 }
+
 #sideNavBar > ul > li:not(.active) > a:hover {
     background-color: #e8e8e8;
 }
-#section-container,
-#header-container {
+
+.jg-content-body {
     margin-right: 300px;
     min-width: 250px;
 }
 
 #section-container > *:not(:first-child),
 #legalContent > *:not(:first-child) {
-    padding-top: 120px;
+    padding-top: 90px;
 }
 .jg-col-lg-1,.jg-col-lg-2,.jg-col-lg-3,
 .jg-col-lg-4,.jg-col-lg-5,.jg-col-lg-6,
@@ -1118,7 +1143,6 @@ dl.jh-entity-details > dt > span {
 }
 
 .course-header {
-    background-color: #353535;
     padding: 2em 1em;
     color: #fff;
 }
@@ -1183,6 +1207,17 @@ dl.jh-entity-details > dt > span {
 
 .angucomplete-selected-row {
     background-color: #358ed7;
+}
+
+.angucomplete-title {
+    text-align: left;
+    line-height: 3.5em;
+}
+
+.angucomplete-description {
+    line-height: 2em;
+    text-align: right;
+    font-weight: bold;
 }
 
 /*************** Courses Widget CSS ****************/
@@ -1262,17 +1297,17 @@ dl.jh-entity-details > dt > span {
     padding: 5px;
     width: 250px;
     border: 1px solid rgb(221, 221, 221);
-    background-color: rgb(234, 234, 234);
+    background-color: #fff;
 }
 #media #course_video,
 #media #course_info {
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
 }
 #media #course_video video {
     min-height: 0;
 }
 #course_info {
-    border-top: 1px solid #656565;
+    /*border-top: 1px solid #656565;*/
     padding-top: 15px;
 }
 .list {
@@ -1432,7 +1467,7 @@ dl.jh-entity-details > dt > span {
         display: none !important;
     }
 
-    .autocomplete > *:first-child {
+    .logo .autocomplete > *:first-child {
         visibility: hidden;
     }
     
