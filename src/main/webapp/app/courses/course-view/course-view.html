@@ -11,6 +11,7 @@
 									<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
 									<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
 									<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
+									<li><a ui-sref="blog" class="vc_general vc_btn3">Blog</a></li>
 									<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
 									<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
 									<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
@@ -48,7 +49,7 @@
 												<vg-media vg-src="vm.mediaConfig.sources"
 														vg-tracks="vm.mediaConfig.tracks">
 												</vg-media>
-									 
+
 												<vg-controls>
 													<vg-play-pause-button ng-click="vm.incWatchedCount(vm.name)"></vg-play-pause-button>
 													<vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display>
@@ -62,7 +63,7 @@
 													</vg-volume>
 													<vg-fullscreen-button></vg-fullscreen-button>
 												</vg-controls>
-									 
+
 												<vg-overlay-play></vg-overlay-play>
 												<vg-poster vg-url='vm.mediaConfig.plugins.poster'></vg-poster>
 											</videogular>
@@ -110,6 +111,7 @@
 										<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
 										<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
 										<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
+							            <li><a ui-sref="blog" class="vc_general vc_btn3">Blog</a></li>
 										<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
 										<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
 										<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
@@ -177,15 +179,15 @@
 		function stayOn(element) {
 			var scrollTop = $(window).scrollTop();
 			var container = $('div.jg-layout-two-col');
-			
+
 			if(typeof container.position() === 'undefined') return;
-			
+
 			var minFixedHeight = container.position().top;
 			var maxFixedHeight = container.height() - element.height();
 
 			var scrollMinimum = container.offset().top - minFixedHeight;
 			var scrollMaximun = maxFixedHeight + scrollMinimum;
-			
+
 			if(scrollTop < scrollMinimum) {
 				element.css({
 					position: 'initial'

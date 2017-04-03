@@ -146,7 +146,7 @@ input[type="submit"].special, input[type="reset"].special, input[type="button"].
 }
 
 input[type="submit"].special:hover, input[type="reset"].special:hover, input[type="button"].special:hover, button.special:hover, .button.special:hover {
-   
+
     background-color: #3fbfe7;
     color: #ffffff !important;
 }
@@ -188,17 +188,17 @@ ul.actions.vertical li > * {
     margin-right: 0.3em;
     border-top: 0.15em solid;
     border-bottom: 0.15em solid;
-    margin-left: 7px;   
+    margin-left: 7px;
     border-color: #aaaaaa;
 }
 
-.hamburger:before { 
+.hamburger:before {
     content: "";
     position: absolute;
     top: 0.25em;
     left: 0px;
     width: 100%;
-    border-top: 0.15em solid;   
+    border-top: 0.15em solid;
     border-color: #aaaaaa;
 }
 /*
@@ -337,7 +337,7 @@ form .form-group label {
 }
 
 form .form-button {
-    
+
 }
 
 .modal-body label.title {
@@ -599,7 +599,7 @@ input.big[type="submit"], input.big[type="reset"], input.big[type="button"], but
 }
 
 #banner .more:focus {
-    background-color: #ffffff !important;   
+    background-color: #ffffff !important;
 }
 
 a {
@@ -724,7 +724,7 @@ body.is-loading #banner .inner {
 }
 
 .wpb_wrapper {
-    
+
 }
 
 .vc_column-inner {
@@ -797,10 +797,10 @@ section header.major {
 }
 
 .scrollToTop{
-    width:50px; 
+    width:50px;
     height:50px;
-    padding:10px; 
-    text-align:center; 
+    padding:10px;
+    text-align:center;
     background: whiteSmoke;
     font-weight: bold;
     color: #444;
@@ -934,7 +934,7 @@ section header.major {
     background-image: url('../images/testimonials-bg.jpg') !important;
     /*background-attachment: fixed !important;*/
     background-position: 0 40% !important;
-    
+
 }
 
 .outline.icon:before {
@@ -1034,7 +1034,7 @@ ul.datetime-picker-dropdown {
 table.uib-daypicker th,
 table.uib-daypicker td {
     padding: 0;
-} 
+}
 
 .inner h2 {
     padding-bottom: 50px;
@@ -1050,13 +1050,14 @@ table.uib-daypicker td {
 
 .autocomplete {
     position: relative;
+    line-height: 3.5em;
 }
 
 .autocomplete > i {
     position: absolute;
     top: 25px;
-    left: 8px;
-    font-size: 30px !important;
+    left: 7px;
+    font-size: 25px !important;
     line-height: 0 !important;
     color: inherit;
     cursor: pointer;
@@ -1178,7 +1179,7 @@ dl.jh-entity-details > dt > span {
 }
 
 .search-input {
-    padding: 10px 15px 10px 40px;
+    padding: 5px 15px 5px 40px;
     width: 250px;
     background-color: transparent;
 }
@@ -1349,7 +1350,7 @@ dl.jh-entity-details > dt > span {
 
 .menuToggler {
     display: none;
-} 
+}
 .menuToggler a {
     width: 100%;
     color: #000;
@@ -1406,7 +1407,7 @@ dl.jh-entity-details > dt > span {
     }
     .menuToggler {
         display: block;
-    } 
+    }
 }
 
 @media (min-width: 1275px) {
@@ -1429,7 +1430,7 @@ dl.jh-entity-details > dt > span {
 @media (max-width: 767px) {
     .dropdown-menu:not(.datetime-picker-dropdown):not(.nav-dropdown) {
         position: relative;
-        top: inherit; 
+        top: inherit;
         float: none;
     }
 
@@ -1439,7 +1440,7 @@ dl.jh-entity-details > dt > span {
     }
     .navbar-collapse {
         max-height: 100vh;
-        overflow-y: scroll;  
+        overflow-y: scroll;
     }
 
     #ratings-modal {
@@ -1462,7 +1463,7 @@ dl.jh-entity-details > dt > span {
         position: inherit !important;
         top: 0 !important;
     }
-    
+
     .hidden-sm {
         display: none !important;
     }
@@ -1470,13 +1471,13 @@ dl.jh-entity-details > dt > span {
     .logo .autocomplete > *:first-child {
         visibility: hidden;
     }
-    
+
     .logo > .navbar-brand {
         position: absolute;
         transform: translateX(-50%);
         left: 50%;
     }
-    
+
     .logo.showSearchInput > .navbar-brand {
         visibility: hidden;
     }
@@ -1544,7 +1545,7 @@ dl.jh-entity-details > dt > span {
 }
 
 .active-header .drop-icon-wrapper i{
-    transform: rotate(180deg); 
+    transform: rotate(180deg);
 }
 
 /* jqwidget customize */

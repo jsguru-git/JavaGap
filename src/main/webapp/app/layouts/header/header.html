@@ -6,7 +6,10 @@
       <span class="icon-bar"></span>
     </button>
     <div class="logo">
-      <a class="navbar-brand" href="index.html">JAVAGAP</a>
+        <div ng-switch="vm.showSearchBox">
+            <a ng-switch-when="false" class="navbar-brand" href="index.html">JAVA<span style="color:#358ed7">GAP</span></a>
+            <a ng-switch-when="true" class="navbar-brand" href="index.html">JAVAGAP</a>
+        </div>
       <!-- <div angucomplete-alt
         id="course-search"
         placeholder="Search courses"
@@ -33,23 +36,25 @@
         input-class="form-control form-control-small"
         match-class="highlight">
       </div> -->
-      <div class="searchbox">
-        <div class="autocomplete">
-          <div angucomplete-alt 
-            id="course-search" 
-            placeholder="Search courses" 
-            pause="300" 
-            selected-object="selectedcourse" 
-            local-data="courses"
-            search-fields="name" 
-            title-field="name"
-            description-field="watchCount"
-            minlength="2" 
-            input-class="search-input" 
-            match-class="selected-bold"
-            clear-selected="true">
-          </div>
-          <i hidden-handler class="outline outline-search"></i>
+      <div ng-if="vm.showSearchBox">
+          <div class="searchbox">
+            <div class="autocomplete">
+              <div angucomplete-alt
+                id="course-search"
+                placeholder="Search courses"
+                pause="300"
+                selected-object="selectedcourse"
+                local-data="courses"
+                search-fields="name"
+                title-field="name"
+                description-field="watchCount"
+                minlength="2"
+                input-class="search-input"
+                match-class="selected-bold"
+                clear-selected="true">
+              </div>
+              <i hidden-handler class="outline outline-search"></i>
+            </div>
         </div>
       </div>
     </div>
@@ -59,7 +64,7 @@
       <li><a ng-click="vm.home()" class="highlight">HOME</a></li>
       <li><a href="#about-us" class="scrolly" ng-click="vm.aboutUs()">ABOUT US</a></li>
       <li class="dropdown menu-large" dropdown-menu>
-        <a class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>       
+        <a class="dropdown-toggle" data-toggle="dropdown">Courses<b class="caret"></b></a>
         <ul class="dropdown-menu megamenu row">
           <li class="col-sm-3">
             <ul>
@@ -138,18 +143,17 @@
           <li><a ui-sref="testimonial" ng-click="vm.collapseNavbar()">Testimonial</a></li>
           <li><a ui-sref="help" ng-click="vm.collapseNavbar()">Help</a></li>
         </ul>
-      </li> 
+      </li>
       <li class="dropdown menu-large" dropdown-menu>
         <a class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">
             <li><a ui-sref="consulting" ng-click="vm.collapseNavbar()">CONSULTING</a></li>
             <li><a ui-sref="training" ng-click="vm.collapseNavbar()">TRAINING</a></li>
             <li><a ui-sref="education" ng-click="vm.collapseNavbar()">EDUCATION</a></li>
-            <li><a ui-sref="blog" ng-click="vm.collapseNavbar()">BLOG</a></li>
             <li><a ui-sref="how-help" ng-click="vm.collapseNavbar()">HELP & FAQ</a></li>
             <li><a href="#contact" class="scrolly" ng-click="vm.contactUs()">CONTACT US</a></li>
         </ul>
-      </li>   
+      </li>
       <li class="dropdown menu-large" dropdown-menu ng-switch-when="true" has-authority="ROLE_ADMIN">
         <a class="dropdown-toggle" data-toggle="dropdown">ADMIN<b class="caret"></b></a>
         <ul class="dropdown-menu normalmenu row">

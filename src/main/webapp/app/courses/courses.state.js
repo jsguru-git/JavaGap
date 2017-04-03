@@ -12,6 +12,9 @@
             abstract: true,
             parent: 'app',
             url: '/courses',
+            data: {
+                HiddenSearchBox: true
+            },
             views: {
                 '@': {
                     templateUrl: 'app/layouts/content.html'

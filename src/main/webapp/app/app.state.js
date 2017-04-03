@@ -11,7 +11,7 @@
         $stateProvider.state('app', {
             //abstract: true,
             data: {
-                
+
             },
             views: {
                 '': {

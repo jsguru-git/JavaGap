@@ -41,7 +41,7 @@
 
         scrollTo.$inject = ['$location', '$stateParams', '$anchorScroll', '$timeout'];
         function scrollTo($location, $stateParams, $anchorScroll, $timeout) {
-            $timeout(function() { 
+            $timeout(function() {
                 $location.hash($stateParams.scrollTo);
                 $anchorScroll();
             }, 100);

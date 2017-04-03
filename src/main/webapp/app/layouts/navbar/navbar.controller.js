@@ -14,6 +14,7 @@
         vm.isAuthenticated = Principal.isAuthenticated;
         vm.identity = Principal.identity;
         vm.currentAccount = null;
+        vm.showSearchBox = !($state.current.data.HiddenSearchBox);
 
         $scope.courses = [];
 
@@ -27,13 +28,13 @@
             $state.go('courseView', {name: $item.title});
             collapseNavbar();
         }
-        
+
         // $scope.courseSearchFn = function(str) {
         //     return CourseByName.get({name : str}).$promise;
         // }
 
         // $scope.remoteUrlRequestFn = function(str) { return {q: str}; }
-        
+
         Principal.identity().then(function(account) {
             vm.currentAccount = account;
         });
@@ -49,7 +50,7 @@
         vm.logout = logout;
         vm.register = register;
         vm.disableLoggedUser = disableLoggedUser;
-        
+
         vm.contactUs = contactUs;
         vm.aboutUs = aboutUs;
 
