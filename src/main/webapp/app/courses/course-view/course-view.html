@@ -7,15 +7,15 @@
 						<div id="sideContent">
 							<div id="sideNavBar" class="jg-side-nav element-fix" side-navbar>
 								<ul>
-									<li><a class="vc_general vc_btn3 scrolly" href="#about">About</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
+									<li du-scrollspy="about"><a class="vc_general vc_btn3" href="#about"  du-smooth-scroll>About</a></li>
+									<li du-scrollspy="prerequisite"><a class="vc_general vc_btn3" href="#prerequisite"  du-smooth-scroll>Prerequisite</a></li>
+									<li du-scrollspy="systemRequirements"><a class="vc_general vc_btn3" href="#systemRequirements"  du-smooth-scroll>System Requirements</a></li>
 									<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
 									<li><a ui-sref="blog" class="vc_general vc_btn3">Blog</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
-									<li><a class="vc_general vc_btn3 scrolly" href="#expectations">Expectations</a></li>
+									<li du-scrollspy="specialization"><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
+									<li du-scrollspy="curriculum"><a class="vc_general vc_btn3" href="#curriculum"  du-smooth-scroll>Curriculum</a></li>
+									<li du-scrollspy="shareThis"><a class="vc_general vc_btn3" href="#shareThis" du-smooth-scroll>Share This</a></li>
+									<li du-scrollspy="expectations"><a class="vc_general vc_btn3" href="#expectations"  du-smooth-scroll>Expectations</a></li>
 								</ul>
 							</div>
 						</div>
@@ -107,15 +107,15 @@
 								<div class="menuToggler dropdown" dropdown-menu style="margin-top: 10px;">
 									<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="caret"></span></button>
 									<ul class="dropdown-menu nav-dropdown">
-										<li><a class="vc_general vc_btn3 scrolly" href="#about">About</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#prerequisite">Prerequisite</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#systemRequirements">System Requirements</a></li>
+										<li><a class="vc_general vc_btn3" href="#about"  du-smooth-scroll>About</a></li>
+										<li><a class="vc_general vc_btn3" href="#prerequisite"  du-smooth-scroll>Prerequisite</a></li>
+										<li><a class="vc_general vc_btn3" href="#systemRequirements"  du-smooth-scroll>System Requirements</a></li>
 										<li><a ui-sref="courseRatings({name: vm.name})" class="vc_general vc_btn3">Ratings</a></li>
 							            <li><a ui-sref="blog" class="vc_general vc_btn3">Blog</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#specialization">Specialization</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#curriculum">Curriculum</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#shareThis">Share This</a></li>
-										<li><a class="vc_general vc_btn3 scrolly" href="#expectations">Expectations</a></li>
+										<li><a class="vc_general vc_btn3" href="#specialization"  du-smooth-scroll>Specialization</a></li>
+										<li><a class="vc_general vc_btn3" href="#curriculum"  du-smooth-scroll>Curriculum</a></li>
+										<li><a class="vc_general vc_btn3" href="#shareThis"  du-smooth-scroll>Share This</a></li>
+										<li><a class="vc_general vc_btn3" href="#expectations"  du-smooth-scroll>Expectations</a></li>
 									</ul>
 								</div>
 								<div id="about">
@@ -174,8 +174,6 @@
 	</div>
 <script>
 	$(document).ready(function() {
-		$('.scrolly').scrolly();
-
 		function stayOn(element) {
 			var scrollTop = $(window).scrollTop();
 			var container = $('div.jg-layout-two-col');

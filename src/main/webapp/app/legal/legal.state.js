@@ -36,14 +36,16 @@
                     controllerAs: 'vm'
                 }
             },
-            onEnter: scrollTo
+            onEnter: scrollToFunc
         });
 
-        scrollTo.$inject = ['$location', '$stateParams', '$anchorScroll', '$timeout'];
-        function scrollTo($location, $stateParams, $anchorScroll, $timeout) {
+        scrollToFunc.$inject = ['$stateParams', '$timeout', '$document'];
+        function scrollToFunc($stateParams, $timeout, $document) {
+            var offset = 100;
+            var duration = 0;
             $timeout(function() {
-                $location.hash($stateParams.scrollTo);
-                $anchorScroll();
+                var destElement = angular.element(document.getElementById($stateParams.scrollTo));
+                $document.scrollToElement(destElement, offset, duration);
             }, 100);
         }
     }

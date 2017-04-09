@@ -34,7 +34,8 @@
     "videogular-angulartics": "^1.4.4",
     "angular-material": "^1.1.3",
     "angular-rating": "^3.1.0",
-    "angucomplete-alt": "^3.0.0"
+    "angucomplete-alt": "^3.0.0",
+    "angular-scroll": "^1.0.0"
   },
   "devDependencies": {
     "angular-mocks": "1.5.8"

@@ -26,14 +26,27 @@
             'com.2fdevs.videogular.plugins.poster',
             'ngMaterial',
             'angular-rating',
-            'angucomplete-alt'
+            'angucomplete-alt',
+            'duScroll'
         ])
+        .value('duScrollOffset', 100)
         .run(run);
 
-    run.$inject = ['stateHandler', 'translationHandler'];
+    run.$inject = ['$rootScope', 'stateHandler', 'translationHandler'];
 
-    function run(stateHandler, translationHandler) {
+    function run($rootScope, stateHandler, translationHandler) {
         stateHandler.initialize();
         translationHandler.initialize();
+        if(!window.history || !history.replaceState) {
+          return;
+        }
+        $rootScope.$on('duScrollspy:becameActive', function($event, $element, $target){
+          //Automaticly update location
+          var hash = $element.prop('hash');
+          //alert(hash);
+          if (hash) {
+            history.replaceState(null, null, hash);
+          }
+        });
     }
 })();

@@ -1133,7 +1133,9 @@ dl.jh-entity-details > dt > span {
 
 #section-container > *:not(:first-child),
 #legalContent > *:not(:first-child) {
-    padding-top: 90px;
+    /*padding-top: 90px;*/
+    padding: 15px 0 15px;
+
 }
 .jg-col-lg-1,.jg-col-lg-2,.jg-col-lg-3,
 .jg-col-lg-4,.jg-col-lg-5,.jg-col-lg-6,
